@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Player here.
  * 
- * @Aaron Lampert, Tony Bone, Ritu Bhalodia, Elena Fowler, Jarod Morris
+ * @Tony Bone, Ritu Bhalodia, Elena Fowler, Aaron Lampert, Jarod Morris
  * @Beta 0.1
  */
 public class Player extends Actor
