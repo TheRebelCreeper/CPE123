@@ -28,8 +28,7 @@ public class Player extends Actor
 
         if("space".equals(Greenfoot.getKey() )) //jumping key
         {
-            ySpeed = -15; //add jump speed?
-            setLocation(getX(), getY() + ySpeed); //leave ground
+            jump();
         }
 
     }    
@@ -65,5 +64,9 @@ public class Player extends Actor
         }
     }
 
-    
+    private void jump()
+    {
+        ySpeed = -15; //add jump speed?
+        setLocation(getX(), getY() + ySpeed); //leave ground
+    }
 }
