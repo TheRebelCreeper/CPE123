@@ -38,8 +38,22 @@ public class Player extends Actor
         System.out.println(i);
     }
     
+    /**
+     * Checks if an Actor is at the coordinates passed in
+     * 
+     * @param x The X position to check at
+     * @param y The Y position to check at
+     * @return Returns true if there is an object at the coordinates passed in
+     */
     private boolean objectIsBelow(int x, int y)
     {
-        return false;
+        //if (objectExists())
+        //{
+        //    return true;
+        //}
+        //else
+        //{
+            return false;
+        //}
     }
 }
