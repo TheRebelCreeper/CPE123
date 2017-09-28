@@ -26,7 +26,7 @@ public class Player extends Actor
             fall();
         }
 
-        if("space".equals(Greenfoot.getKey() )) //jumping key
+        if("space".equals(Greenfoot.getKey()) && objectIsBelow()) //jumping key
         {
             jump();
         }
