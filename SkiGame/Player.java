@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends Actor
 {
-    private final int GRAVITY = 4;
+    private final int GRAVITY_ACCEL = 1;
+    private int yspeed = 0;
     
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
@@ -16,7 +17,14 @@ public class Player extends Actor
      */
     public void act() 
     {
-        fall();
+        if (objectIsBelow())
+        {
+            yspeed = 0;
+        }
+        else
+        {
+            fall();
+        }
     }    
     
     /**
@@ -24,18 +32,8 @@ public class Player extends Actor
      */
     private void fall()
     {
-        boolean found = true;
-        int i = 0;
-        while (i < GRAVITY || !found)
-        {
-            if (objectIsBelow(getX(), getY() + i) || isAtEdge())
-            {
-                found = true;
-                //setLocation(getX(), getY() - (getImage().getHeight() / 2));
-            }
-            i++;
-        }
-        setLocation(getX(), getY() + (i - 1));
+        setLocation(getX(), getY() + yspeed);
+        yspeed += GRAVITY_ACCEL;
     }
     
     /**
@@ -45,15 +43,19 @@ public class Player extends Actor
      * @param y The Y position to check at
      * @return Returns true if there is an object at the coordinates passed in
      */
-    private boolean objectIsBelow(int x, int y)
+    private boolean objectIsBelow()
     {
-        //if (objectExists())
-        //{
-        //    return true;
-        //}
-        //else
-        //{
+        if (getOneObjectAtOffset(0, getImage().getHeight() / 2 + 2, Actor.class) != null)
+        {
+            return true;
+        }
+        else if (getY() >= getWorld().getHeight() - getImage().getHeight())
+        {
+            return true;
+        }
+        else
+        {
             return false;
-        //}
+        }
     }
 }
