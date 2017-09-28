@@ -18,14 +18,7 @@ public class Player extends Actor
      */
     public void act() 
     {
-        if (objectIsBelow())
-        {
-            ySpeed = 0;
-        }
-        else
-        {
-            fall();
-        }
+        checkGravity();
 
         if("space".equals(Greenfoot.getKey()) && objectIsBelow()) //jumping key
         {
@@ -66,10 +59,28 @@ public class Player extends Actor
             return false;
         }
     }
-
+    
+    /**
+     * Allows the player to jump
+     */
     private void jump()
     {
         ySpeed = -15; //add jump speed?
         setLocation(getX(), getY() + ySpeed); //leave ground
+    }
+    
+    /**
+     * Determines if the player should fall or not
+     */
+    private void checkGravity()
+    {
+        if (objectIsBelow())    // If object is on solid ground
+        {
+            ySpeed = 0;
+        }
+        else
+        {
+            fall();
+        }
     }
 }
