@@ -31,11 +31,11 @@ public class Player extends Actor
             if (objectIsBelow(getX(), getY() + i) || isAtEdge())
             {
                 found = true;
+                //setLocation(getX(), getY() - (getImage().getHeight() / 2));
             }
             i++;
         }
         setLocation(getX(), getY() + (i - 1));
-        System.out.println(i);
     }
     
     /**
