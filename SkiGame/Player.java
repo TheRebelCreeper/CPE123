@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Player extends Actor
 {
     private final int GRAVITY_ACCEL = 1;
+    private final int MAX_GRAV = 15;
     private int ySpeed = 0;
 
     /**
@@ -39,7 +40,7 @@ public class Player extends Actor
     private void fall()
     {
         setLocation(getX(), getY() + ySpeed);
-        if( ySpeed <= 20)   // Terminal Velocity
+        if( ySpeed <= MAX_GRAV)   // Terminal Velocity
         {
             ySpeed += GRAVITY_ACCEL;
         }
