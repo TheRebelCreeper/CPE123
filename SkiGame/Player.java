@@ -65,8 +65,5 @@ public class Player extends Actor
         }
     }
 
-    private void up()
-    {
-        setLocation(getX(), getY()-10);
-    }
+    
 }
