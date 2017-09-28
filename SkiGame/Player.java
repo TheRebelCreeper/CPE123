@@ -39,8 +39,10 @@ public class Player extends Actor
     private void fall()
     {
         setLocation(getX(), getY() + ySpeed);
-        if( ySpeed <= 20 )
+        if( ySpeed <= 20)   // Terminal Velocity
+        {
             ySpeed += GRAVITY_ACCEL;
+        }
     }
 
     /**
