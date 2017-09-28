@@ -9,8 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Player extends Actor
 {
     private final int GRAVITY_ACCEL = 1;
-    private int yspeed = 0;
-    
+    private int ySpeed = 0;
+
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -19,28 +19,31 @@ public class Player extends Actor
     {
         if (objectIsBelow())
         {
-            yspeed = 0;
+            ySpeed = 0;
         }
         else
         {
             fall();
         }
+        if( Greenfoot.isKeyDown("space"))
+        {
+            up();
+        }
     }    
-    
+
     /**
      * Causes the player to fall due to gravity if there is empty space below
      */
     private void fall()
     {
-        setLocation(getX(), getY() + yspeed);
-        yspeed += GRAVITY_ACCEL;
+        setLocation(getX(), getY() + ySpeed);
+        if( ySpeed <= 20 )
+        ySpeed += GRAVITY_ACCEL;
     }
-    
+
     /**
      * Checks if an Actor is at the coordinates passed in
      * 
-     * @param x The X position to check at
-     * @param y The Y position to check at
      * @return Returns true if there is an object at the coordinates passed in
      */
     private boolean objectIsBelow()
@@ -57,5 +60,10 @@ public class Player extends Actor
         {
             return false;
         }
+    }
+
+    private void up()
+    {
+        setLocation(getX(), getY()-10);
     }
 }
