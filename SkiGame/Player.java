@@ -14,6 +14,21 @@ public class Player extends Actor
      */
     public void act() 
     {
-        
+        fall();
     }    
+    
+    /**
+     * Causes the player to fall due to gravity if there is empty space below
+     */
+    private void fall()
+    {
+        //if (!objectIsBelow(x, y))
+        //{
+        //    y += 10;
+        //}
+        //else
+        //{
+        //    Check distances between 0-10
+        //}
+    }
 }
