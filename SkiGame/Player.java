@@ -25,10 +25,13 @@ public class Player extends Actor
         {
             fall();
         }
-        if( Greenfoot.isKeyDown("space"))
+
+        if("space".equals(Greenfoot.getKey() )) //jumping key
         {
-            up();
+            ySpeed = -15; //add jump speed?
+            setLocation(getX(), getY() + ySpeed); //leave ground
         }
+
     }    
 
     /**
@@ -38,7 +41,7 @@ public class Player extends Actor
     {
         setLocation(getX(), getY() + ySpeed);
         if( ySpeed <= 20 )
-        ySpeed += GRAVITY_ACCEL;
+            ySpeed += GRAVITY_ACCEL;
     }
 
     /**
