@@ -13,6 +13,14 @@ public class Player extends Actor
     private int ySpeed = 0;
 
     /**
+     * Constructor
+     */
+    public Player()
+    {
+        setRotation(10);
+    }
+    
+    /**
      * Act - do whatever the Player wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
