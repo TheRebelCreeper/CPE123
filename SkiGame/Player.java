@@ -11,6 +11,10 @@ public class Player extends Actor
     private final int GRAVITY_ACCEL = 1;
     private final int MAX_GRAV = 15;
     private int ySpeed = 0;
+    
+    
+    private GreenfootImage up = new GreenfootImage("placeholder1.png");
+    private GreenfootImage down = new GreenfootImage("placeholder2.png");
 
     /**
      * Constructor
@@ -28,11 +32,16 @@ public class Player extends Actor
     {
         checkGravity();
 
-        if("space".equals(Greenfoot.getKey()) && objectIsBelow()) //jumping key
+        if("up".equals(Greenfoot.getKey()) && objectIsBelow()) //jumping key
         {
             jump();
         }
-
+        if (Greenfoot.isKeyDown("down"))// animation for skier to duck
+        { setImage(down);   
+        }
+        else 
+        {setImage(up);  
+        }
     }    
 
     /**
