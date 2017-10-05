@@ -26,6 +26,8 @@ public class SkiWorld extends World
         addObject(player1, 300, 200);
         Snow snow = new Snow();
         addObject(snow,298,399);
-        snow.setLocation(298,399);
+        Tree tree = new Tree();
+        addObject(tree,420,235);
+        tree.setLocation(412,233);
     }
 }
