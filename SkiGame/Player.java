@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Player extends Actor
 {
     private final int GRAVITY_ACCEL = 1;
-    private final int MAX_GRAV = 15;
+    private final int MAX_GRAV = 10;
     private int ySpeed = 0;
     
     
@@ -35,12 +35,16 @@ public class Player extends Actor
     {
         checkGravity();
 
-        if("up".equals(Greenfoot.getKey()) && objectIsBelow()) //jumping key
+        if(Greenfoot.isKeyDown("up") && objectIsBelow()) //jumping key
+        {
+            jump();
+        }
+        else if (Greenfoot.isKeyDown("space") && objectIsBelow())
         {
             jump();
         }
         
-        if (Greenfoot.isKeyDown("down"))// animation for skier to duck
+        if (Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("shift"))// animation for skier to duck
         { 
             setImage(down);   
         }
