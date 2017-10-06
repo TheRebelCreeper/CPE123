@@ -7,7 +7,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class SkiWorld extends World
 {
-
+    private GreenfootImage myBackground;
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -16,6 +17,8 @@ public class SkiWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1, false); 
+        myBackground = new GreenfootImage("Background1.png");
+        setBackground(myBackground);
         prepare();
         setPaintOrder(Player.class, Obstacle.class);
     }

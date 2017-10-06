@@ -24,6 +24,7 @@ public class Player extends Actor
         setRotation(10);
         up = new GreenfootImage("placeholder1.png");
         down = new GreenfootImage("placeholder2.png");
+        setImage(up);
     }
     
     /**

@@ -8,12 +8,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Tree extends Obstacle
 {
+    private GreenfootImage myImage;
+    
     /**
      * Constructor
      */
     public Tree()
     {
         setRotation(10);
+        myImage = new GreenfootImage("pine-tree.png");
+        setImage(myImage);
     }
     
     /**
