@@ -30,4 +30,13 @@ public class SkiWorld extends World
         addObject(tree,420,235);
         tree.setLocation(412,233);
     }
+    
+    public void act()
+    {
+        if(Greenfoot.getRandomNumber(1000) < 7)
+        {
+            Tree tree = new Tree();
+            addObject(tree, 800, 270);
+        }
+    }
 }
