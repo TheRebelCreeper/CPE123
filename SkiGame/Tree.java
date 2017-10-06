@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Tree extends Obstacles
+public class Tree extends Obstacle
 {
     /**
      * Constructor
