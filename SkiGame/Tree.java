@@ -24,5 +24,32 @@ public class Tree extends Obstacles
     {
         // Add your action code here.
         move(-4);
-    }    
+        checkGravity();
+        checkRemove();
+    } 
+    
+    /**
+     * Checks if an Actor is at the coordinates passed in
+     * 
+     * @return Returns true if there is an object at the coordinates passed in
+     */
+    @Override
+    protected boolean objectIsBelow()
+    {
+        if (getOneObjectAtOffset(0, getImage().getHeight() / 2 + 2, Actor.class) != null)
+        {
+            if (getOneObjectAtOffset(0, getImage().getHeight() / 2 + 2, Player.class) == null)
+                return true;
+            else
+                return false;
+        }
+        else if (getY() >= getWorld().getHeight() - getImage().getHeight())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

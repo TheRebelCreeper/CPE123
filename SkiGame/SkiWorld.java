@@ -15,7 +15,7 @@ public class SkiWorld extends World
     public SkiWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(600, 400, 1, false); 
         prepare();
         
     }
@@ -23,12 +23,11 @@ public class SkiWorld extends World
     private void prepare()
     {
         Player player1 = new Player();
-        addObject(player1, 300, 200);
+        addObject(player1, 300, 182);
         Snow snow = new Snow();
         addObject(snow,298,399);
         Tree tree = new Tree();
-        addObject(tree,420,235);
-        tree.setLocation(412,233);
+        addObject(tree,412,233);
     }
     
     public void act()
@@ -36,7 +35,7 @@ public class SkiWorld extends World
         if(Greenfoot.getRandomNumber(1000) < 7)
         {
             Tree tree = new Tree();
-            addObject(tree, 800, 270);
+            addObject(tree, 630, 230);
         }
     }
 }
