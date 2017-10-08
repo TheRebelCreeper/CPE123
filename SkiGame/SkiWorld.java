@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class SkiWorld extends World
 {
     private GreenfootImage myBackground;
-    
+    private int imageCount = 0;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -40,5 +40,18 @@ public class SkiWorld extends World
             Tree tree = new Tree();
             addObject(tree, 630, 230);
         }
+        imageCount -= 1;
+        drawBackgroundImage();
+    }
+    
+    public void drawBackgroundImage()
+    {
+        if( imageCount < -myBackground.getWidth() )
+        {
+            imageCount += myBackground.getWidth();
+        }
+        int temp = imageCount;
+        getBackground().drawImage(myBackground, temp, 0);
+        getBackground().drawImage(myBackground, temp + myBackground.getWidth(), 0);
     }
 }
