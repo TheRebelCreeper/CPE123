@@ -40,7 +40,7 @@ public class SkiWorld extends World
             Tree tree = new Tree();
             addObject(tree, 630, 230);
         }
-        imageCount -= 1;
+        imageCount -= 3;
         drawBackgroundImage();
     }
     
