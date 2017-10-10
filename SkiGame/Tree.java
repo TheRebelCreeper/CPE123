@@ -27,7 +27,7 @@ public class Tree extends Obstacle
     public void act() 
     {
         // Add your action code here.
-        move(-4);
+        move(-6);
         checkGravity();
         checkRemove();
     } 
