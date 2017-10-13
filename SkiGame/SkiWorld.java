@@ -9,6 +9,8 @@ public class SkiWorld extends World
 {
     private GreenfootImage myBackground;
     private int imageCount = 0;
+    private int levelNumber = 1;
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -42,6 +44,11 @@ public class SkiWorld extends World
         }
         imageCount -= 3;
         drawBackgroundImage();
+        
+        if (levelNumber % 5 == 0)
+        {
+            //Building interface
+        }
     }
     
     public void drawBackgroundImage()
