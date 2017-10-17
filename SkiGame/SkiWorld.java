@@ -40,7 +40,7 @@ public class SkiWorld extends World
         if(Greenfoot.getRandomNumber(1000) < 7)
         {
             Tree tree = new Tree();
-            addObject(tree, 630, 230);
+            addObject(tree, 680, 230);
         }
         imageCount -= 3;
         drawBackgroundImage();
