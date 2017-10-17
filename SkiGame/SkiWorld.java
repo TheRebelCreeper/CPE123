@@ -53,7 +53,7 @@ public class SkiWorld extends World
         if(Greenfoot.getRandomNumber(1000) < 3)
         {
             Snowball sb = new Snowball();
-            addObject(sb, 680, 230);
+            addObject(sb, 680, 200);
         }
     }
     

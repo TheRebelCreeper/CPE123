@@ -23,7 +23,7 @@ public class Player extends Actor
     {
         setRotation(10);
         up = new GreenfootImage("skiernormal.png");
-        down = new GreenfootImage("placeholder2.png");
+        down = new GreenfootImage("skierducking.png");
         setImage(up);
     }
     
