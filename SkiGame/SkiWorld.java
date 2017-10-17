@@ -33,6 +33,7 @@ public class SkiWorld extends World
         addObject(snow,298,399);
         Tree tree = new Tree();
         addObject(tree,412,233);
+        player1.setLocation(297,200);
     }
     
     public void act()
