@@ -50,6 +50,11 @@ public class SkiWorld extends World
         {
             //Building interface
         }
+        if(Greenfoot.getRandomNumber(1000) < 3)
+        {
+            Snowball sb = new Snowball();
+            addObject(sb, 680, 230);
+        }
     }
     
     public void drawBackgroundImage()

@@ -19,6 +19,7 @@ public class Tree extends Obstacle
         myImage = new GreenfootImage("pine-tree.png");
         setImage(myImage);
     }
+   
     
     /**
      * Act - do whatever the Trees wants to do. This method is called whenever
