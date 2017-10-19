@@ -6,12 +6,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @Tony Bone, Ritu Bhalodia, Elena Fowler, Aaron Lampert, Jarod Morris
  * @Beta 0.1
  */
-public class Player extends Actor
+public class Player extends SmoothMover
 {
-    private final int GRAVITY_ACCEL = 1;
-    private final int MAX_GRAV = 10;
-    private int ySpeed = 0;
-    
+    private final double GRAVITY_ACCEL = 1.5;
+    private final double MAX_GRAV = 10.0;
+    private double ySpeed = 0;
+    private double startingY;
     
     private GreenfootImage normal;
     private GreenfootImage down;
@@ -21,13 +21,14 @@ public class Player extends Actor
     /**
      * Constructor
      */
-    public Player()
+    public Player(double start)
     {
         setRotation(10);
         normal = new GreenfootImage("skiernormal.png");
         down = new GreenfootImage("skierducking.png");
         jump = new GreenfootImage("skierjumping.png");
         hit = new GreenfootImage("skierhit.png");
+        startingY = start;
         setImage(normal);
     }
     
@@ -66,7 +67,11 @@ public class Player extends Actor
      */
     private void fall()
     {
-        setLocation(getX(), getY() + ySpeed);
+        setLocation(getExactX(), getExactY() + ySpeed);
+        if (getExactY() > startingY)
+        {
+            setLocation(getExactX(), startingY);
+        }
         if( ySpeed <= MAX_GRAV)   // Terminal Velocity
         {
             ySpeed += GRAVITY_ACCEL;
@@ -99,7 +104,7 @@ public class Player extends Actor
      */
     private void jump()
     {
-        ySpeed = -15; //add jump speed?
+        ySpeed = -20.00; //add jump speed?
         setLocation(getX(), getY() + ySpeed); //leave ground
     }
     
@@ -110,7 +115,7 @@ public class Player extends Actor
     {
         if (objectIsBelow())    // If object is on solid ground
         {
-            ySpeed = 0;
+            ySpeed = 0.0;
         }
         else
         {

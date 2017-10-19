@@ -27,13 +27,12 @@ public class SkiWorld extends World
     
     private void prepare()
     {
-        Player player1 = new Player();
-        addObject(player1, 300, 182);
+        Player player1 = new Player(200.0);
+        addObject(player1, 297, 200);
         Snow snow = new Snow();
         addObject(snow,298,399);
         Tree tree = new Tree();
         addObject(tree,412,233);
-        player1.setLocation(297,200);
     }
     
     public void act()
