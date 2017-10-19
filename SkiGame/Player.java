@@ -13,8 +13,10 @@ public class Player extends Actor
     private int ySpeed = 0;
     
     
-    private GreenfootImage up;
+    private GreenfootImage normal;
     private GreenfootImage down;
+    private GreenfootImage jump;
+    private GreenfootImage hit;
 
     /**
      * Constructor
@@ -22,9 +24,11 @@ public class Player extends Actor
     public Player()
     {
         setRotation(10);
-        up = new GreenfootImage("skier4.png");
-        down = new GreenfootImage("placeholder2.png");
-        setImage(up);
+        normal = new GreenfootImage("skiernormal.png");
+        down = new GreenfootImage("skierducking.png");
+        jump = new GreenfootImage("skierjumping.png");
+        hit = new GreenfootImage("skierhit.png");
+        setImage(normal);
     }
     
     /**
@@ -37,11 +41,14 @@ public class Player extends Actor
 
         if(Greenfoot.isKeyDown("up") && objectIsBelow()) //jumping key
         {
+           setImage(jump);
             jump();
+            
         }
         else if (Greenfoot.isKeyDown("space") && objectIsBelow())
         {
             jump();
+            setImage(jump);
         }
         
         if (Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("shift"))// animation for skier to duck
@@ -50,7 +57,7 @@ public class Player extends Actor
         }
         else 
         {
-            setImage(up);  
+            setImage(normal);  
         }
     }    
 
