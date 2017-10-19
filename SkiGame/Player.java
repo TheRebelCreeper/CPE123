@@ -12,6 +12,7 @@ public class Player extends SmoothMover
     private final double MAX_GRAV = 10.0;
     private double ySpeed = 0;
     private double startingY;
+    private boolean isAlive = true;
     
     private GreenfootImage normal;
     private GreenfootImage down;
@@ -113,7 +114,7 @@ public class Player extends SmoothMover
      */
     private void checkGravity()
     {
-        if (objectIsBelow())    // If object is on solid ground
+        if (objectIsBelow() && isAlive)    // If object is on solid ground
         {
             ySpeed = 0.0;
         }
