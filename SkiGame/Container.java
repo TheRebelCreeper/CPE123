@@ -19,7 +19,7 @@ public class Container extends Actor
         if (Greenfoot.mouseClicked(this))
         {
             if (object != null)
-                object.setPlaced(false);
+                object.setPlaced(1);
         }
     }  
     
