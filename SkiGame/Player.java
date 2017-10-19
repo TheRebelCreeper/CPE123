@@ -45,7 +45,6 @@ public class Player extends SmoothMover
         {
            setImage(jump);
             jump();
-            
         }
         else if (Greenfoot.isKeyDown("space") && objectIsBelow())
         {

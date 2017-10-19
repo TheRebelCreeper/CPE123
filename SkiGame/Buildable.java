@@ -27,13 +27,16 @@ public class Buildable extends Actor
      */
     public void act() 
     {
-        mi = Greenfoot.getMouseInfo();
+        //controls where to place the object
+       
         if (placed == 1)
         {
+            mi = Greenfoot.getMouseInfo();
             if (mi != null)
                 setLocation(mi.getX(), mi.getY());
         }
         
+        // Controls placing the object
         if (Greenfoot.mouseClicked(this) && placed == 1)
         {
             if (isValidLocation())
@@ -45,6 +48,7 @@ public class Buildable extends Actor
         if (placed == 2)
         {
             checkGravity();
+            //All normal functionality goes in this if statement
         }
     }    
     
