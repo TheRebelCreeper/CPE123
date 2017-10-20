@@ -1,5 +1,4 @@
-import greenfoot.*;
-import java.util.ArrayList;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class Player here.
@@ -14,13 +13,13 @@ public class Player extends SmoothMover
     private double ySpeed = 0;
     private double startingY;
     private boolean isAlive = true;
-    private ArrayList<Actor> hits = new ArrayList<Actor>();
-    private boolean below = true;
-
+    private int hits = 0;
+    
     private GreenfootImage normal;
     private GreenfootImage down;
     private GreenfootImage jump;
     private GreenfootImage hit;
+    
 
     /**
      * Constructor
@@ -35,7 +34,7 @@ public class Player extends SmoothMover
         startingY = start;
         setImage(normal);
     }
-
+    
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -47,16 +46,16 @@ public class Player extends SmoothMover
 
         if(Greenfoot.isKeyDown("up") && objectIsBelow()) //jumping key
         {
-            setImage(jump);
+           setImage(jump);
             jump();
-
+            
         }
         else if (Greenfoot.isKeyDown("space") && objectIsBelow())
         {
             jump();
             setImage(jump);
         }
-
+        
         if (Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("shift"))// animation for skier to duck
         { 
             setImage(down);   
@@ -92,22 +91,18 @@ public class Player extends SmoothMover
     {
         if (getOneObjectAtOffset(0, getImage().getHeight() / 2 + 2, Actor.class) != null)
         {
-            below = true;
             return true;
         }
         else if (getY() >= getWorld().getHeight() - getImage().getHeight())
         {
-            below = true;
             return true;
-
         }
         else
         {
-            below = false;
             return false;
         }
     }
-
+    
     /**
      * Allows the player to jump
      */
@@ -116,13 +111,13 @@ public class Player extends SmoothMover
         ySpeed = -20.00; //add jump speed?
         setLocation(getX(), getY() + ySpeed); //leave ground
     }
-
+    
     /**
      * Determines if the player should fall or not
      */
     private void checkGravity()
     {
-        if (below && isAlive)    // If object is on solid ground
+        if (objectIsBelow() && isAlive)    // If object is on solid ground
         {
             ySpeed = 0.0;
         }
@@ -131,37 +126,15 @@ public class Player extends SmoothMover
             fall();
         }
     }
-
+    
     public void checkCollision()
     {
         Actor obstacle = getOneIntersectingObject(Obstacle.class);
         if(obstacle != null)
         {
-
-            if(!alreadyHit(obstacle))
-            {
-                hits.add(obstacle);
-            }
-
-            if(hits.size() == 3)
-            {
-                isAlive = false;
-                startingY = getWorld().getHeight();
-            }
-
+            System.out.println("Hit");
+            hits++;
+            System.out.println(hits);
         }
-    }
-
-    public boolean alreadyHit(Actor o)
-    {
-        boolean alreadyHit = false;
-        for(int i = 0; i < hits.size(); i++)
-        {
-            if(o == hits.get(i))
-            {
-                alreadyHit = true;
-            }
-        }
-        return alreadyHit;
     }
 }
