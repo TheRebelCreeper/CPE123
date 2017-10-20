@@ -13,13 +13,11 @@ public class Player extends SmoothMover
     private double ySpeed = 0;
     private double startingY;
     private boolean isAlive = true;
-    private int hits = 0;
     
     private GreenfootImage normal;
     private GreenfootImage down;
     private GreenfootImage jump;
     private GreenfootImage hit;
-    
 
     /**
      * Constructor
@@ -42,13 +40,11 @@ public class Player extends SmoothMover
     public void act() 
     {
         checkGravity();
-        checkCollision();
 
         if(Greenfoot.isKeyDown("up") && objectIsBelow()) //jumping key
         {
            setImage(jump);
             jump();
-            
         }
         else if (Greenfoot.isKeyDown("space") && objectIsBelow())
         {
@@ -124,17 +120,6 @@ public class Player extends SmoothMover
         else
         {
             fall();
-        }
-    }
-    
-    public void checkCollision()
-    {
-        Actor obstacle = getOneIntersectingObject(Obstacle.class);
-        if(obstacle != null)
-        {
-            System.out.println("Hit");
-            hits++;
-            System.out.println(hits);
         }
     }
 }
