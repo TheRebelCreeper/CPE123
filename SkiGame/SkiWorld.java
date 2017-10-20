@@ -39,6 +39,7 @@ public class SkiWorld extends World
         Container container = new Container();
         container.setObject(buildable);
         addObject(container,59,92);
+        removeObject(tree);
     }
 
     public void act()
@@ -84,6 +85,6 @@ public class SkiWorld extends World
     public void setIsAlive(boolean a)
     {
         isAlive = a;
-        System.out.print(isAlive);
+        System.out.println(isAlive);
     }
 }
