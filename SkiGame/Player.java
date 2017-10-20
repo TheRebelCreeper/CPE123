@@ -1,4 +1,5 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
+import java.util.ArrayList;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class Player here.
@@ -13,6 +14,7 @@ public class Player extends SmoothMover
     private double ySpeed = 0;
     private double startingY;
     private boolean isAlive = true;
+    private ArrayList<Actor> hits = new ArrayList<Actor>();
     
     private GreenfootImage normal;
     private GreenfootImage down;
@@ -40,7 +42,8 @@ public class Player extends SmoothMover
     public void act() 
     {
         checkGravity();
-
+        checkCollision();
+        
         if(Greenfoot.isKeyDown("up") && objectIsBelow()) //jumping key
         {
            setImage(jump);
@@ -121,5 +124,36 @@ public class Player extends SmoothMover
         {
             fall();
         }
+    }
+    
+    public void checkCollision()
+    {
+        Actor obstacle = getOneIntersectingObject(Obstacle.class);
+        if(obstacle != null)
+        {
+            if(!alreadyHit(obstacle))
+            {
+                hits.add(obstacle);
+            }
+            
+            if(hits.size() == 3)
+            {
+                isAlive = false;
+                startingY = getWorld().getHeight();
+            }
+        }
+    }
+    
+    public boolean alreadyHit(Actor o)
+    {
+        boolean hit = false;
+        for(int i = 0; i < hits.size(); i++)
+        {
+            if(o == hits.get(i))
+            {
+                hit = true;
+            }
+        }
+        return hit;
     }
 }
