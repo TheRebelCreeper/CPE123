@@ -18,14 +18,9 @@ public class Snowball extends Obstacle
         setImage(new GreenfootImage("snowball.png"));
     }
     
-    
     public void act() 
     {
         move (-7);
         checkRemove();
-        
     }    
-    
-
-
 }

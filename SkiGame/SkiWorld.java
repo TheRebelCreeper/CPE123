@@ -49,7 +49,7 @@ public class SkiWorld extends World
             //Building interface
         }
 
-        if(isAlive = true)
+        if(isAlive == true)
         {
             imageCount -= 3;
             drawBackgroundImage();
