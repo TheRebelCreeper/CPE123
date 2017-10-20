@@ -85,6 +85,5 @@ public class SkiWorld extends World
     public void setIsAlive(boolean a)
     {
         isAlive = a;
-        System.out.println(isAlive);
     }
 }
