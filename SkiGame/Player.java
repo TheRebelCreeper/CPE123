@@ -143,6 +143,7 @@ public class Player extends SmoothMover
                 isAlive = false;
                 SkiWorld w = (SkiWorld) getWorld();
                 w.setIsAlive(isAlive);
+                setImage(hit);
             }
         }
     }
