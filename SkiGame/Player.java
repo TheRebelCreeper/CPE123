@@ -139,7 +139,7 @@ public class Player extends SmoothMover
             if(hits.size() == 3)
             {
                 isAlive = false;
-                startingY = getWorld().getHeight();
+                startingY = getWorld().getHeight() + 40;
             }
         }
     }
