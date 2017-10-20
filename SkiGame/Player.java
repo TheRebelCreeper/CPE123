@@ -14,7 +14,7 @@ public class Player extends SmoothMover
     private double ySpeed = 0;
     private double startingY;
     private boolean isAlive = true;
-    private ArrayList<Actor> hits;
+    private ArrayList<Actor> hits = new ArrayList<Actor>();
     
     private GreenfootImage normal;
     private GreenfootImage down;
@@ -31,7 +31,6 @@ public class Player extends SmoothMover
         down = new GreenfootImage("skierducking.png");
         jump = new GreenfootImage("skierjumping.png");
         hit = new GreenfootImage("skierhit.png");
-        hits = new ArrayList<Actor>();
         startingY = start;
         setImage(normal);
     }
@@ -53,14 +52,16 @@ public class Player extends SmoothMover
         else if (Greenfoot.isKeyDown("space") && objectIsBelow())
         {
             jump();
-            setImage(jump);
         }
-        
         if (Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("shift"))// animation for skier to duck
         { 
             setImage(down);   
         }
-        else 
+         else if (Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("space"))
+        {
+           setImage(jump);
+        }
+        else
         {
             setImage(normal);  
         }
@@ -142,7 +143,6 @@ public class Player extends SmoothMover
                 isAlive = false;
                 SkiWorld w = (SkiWorld) getWorld();
                 w.setIsAlive(isAlive);
-                setImage(hit);
             }
         }
     }
