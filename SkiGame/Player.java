@@ -142,6 +142,7 @@ public class Player extends SmoothMover
                 startingY = getWorld().getHeight() + 40;
                 SkiWorld w = (SkiWorld) getWorld();
                 w.setIsAlive(isAlive);
+                setImage(hit);
             }
         }
     }
