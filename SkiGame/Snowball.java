@@ -15,6 +15,7 @@ public class Snowball extends Obstacle
      public Snowball()
     {
         setRotation(10);
+        setImage(new GreenfootImage("snowball.png"));
     }
     
     

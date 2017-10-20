@@ -14,7 +14,7 @@ public class Player extends SmoothMover
     private double ySpeed = 0;
     private double startingY;
     private boolean isAlive = true;
-    private ArrayList<Actor> hits = new ArrayList<Actor>();
+    private ArrayList<Actor> hits;
     
     private GreenfootImage normal;
     private GreenfootImage down;
@@ -31,6 +31,7 @@ public class Player extends SmoothMover
         down = new GreenfootImage("skierducking.png");
         jump = new GreenfootImage("skierjumping.png");
         hit = new GreenfootImage("skierhit.png");
+        hits = new ArrayList<Actor>();
         startingY = start;
         setImage(normal);
     }
@@ -71,7 +72,7 @@ public class Player extends SmoothMover
     private void fall()
     {
         setLocation(getExactX(), getExactY() + ySpeed);
-        if (getExactY() > startingY)
+        if (getExactY() > startingY && isAlive)
         {
             setLocation(getExactX(), startingY);
         }
@@ -92,7 +93,7 @@ public class Player extends SmoothMover
         {
             return true;
         }
-        else if (getY() >= getWorld().getHeight() - getImage().getHeight())
+        else if (getY() >= getWorld().getHeight() - getImage().getHeight() + 400)
         {
             return true;
         }
@@ -139,7 +140,6 @@ public class Player extends SmoothMover
             if(hits.size() >= 3)
             {
                 isAlive = false;
-                startingY = getWorld().getHeight() + 40;
                 SkiWorld w = (SkiWorld) getWorld();
                 w.setIsAlive(isAlive);
                 setImage(hit);
