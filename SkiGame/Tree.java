@@ -43,7 +43,7 @@ public class Tree extends Obstacle
     {
         if (getOneObjectAtOffset(0, getImage().getHeight() / 2 + 2, Actor.class) != null)
         {
-            if (getOneObjectAtOffset(0, getImage().getHeight() / 2 + 2, Player.class) == null)
+            if (getOneObjectAtOffset(0, getImage().getHeight() / 2 + 2, Tree.class) == null)
                 return true;
             else
                 return false;

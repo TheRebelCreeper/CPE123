@@ -136,10 +136,12 @@ public class Player extends SmoothMover
                 hits.add(obstacle);
             }
             
-            if(hits.size() == 3)
+            if(hits.size() >= 3)
             {
                 isAlive = false;
                 startingY = getWorld().getHeight() + 40;
+                SkiWorld w = (SkiWorld) getWorld();
+                w.setIsAlive(isAlive);
             }
         }
     }

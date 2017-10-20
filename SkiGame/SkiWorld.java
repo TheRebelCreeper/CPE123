@@ -10,7 +10,8 @@ public class SkiWorld extends World
     private GreenfootImage myBackground;
     private int imageCount = 0;
     private int levelNumber = 1;
-    
+    public boolean isAlive = true;
+
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -24,7 +25,7 @@ public class SkiWorld extends World
         prepare();
         setPaintOrder(Player.class, Obstacle.class);
     }
-    
+
     private void prepare()
     {
         Player player1 = new Player(200.0);
@@ -39,38 +40,36 @@ public class SkiWorld extends World
         container.setObject(buildable);
         addObject(container,59,92);
     }
-    
+
     public void act()
     {
-        if(Greenfoot.getRandomNumber(1000) < 7)
-        {
-            Tree tree = new Tree();
-            addObject(tree, 680, 230);
-        }
-        imageCount -= 3;
-        drawBackgroundImage();
-        
         if (levelNumber % 5 == 0)
         {
             //Building interface
         }
-        if(Greenfoot.getRandomNumber(1000) < 3)
+
+        if(isAlive = true)
         {
-            Snowball sb = new Snowball();
-            addObject(sb, 680, 200);
+            imageCount -= 3;
+            drawBackgroundImage();
+            if(Greenfoot.getRandomNumber(1000) < 7)
+            {
+                Tree tree = new Tree();
+                addObject(tree, 680, 230);
+            }
+            if(Greenfoot.getRandomNumber(1000) < 3)
+            {
+                Snowball sb = new Snowball();
+                addObject(sb, 680, 200);
+            }
+            if(Greenfoot.getRandomNumber(1000) < 3)
+            {
+                Bird bird = new Bird();
+                addObject(bird, 680, 200);
+            }
         }
-          if(Greenfoot.getRandomNumber(1000) < 3)
-        {
-            Bird bird = new Bird();
-            addObject(bird, 680, 200);
-        }
-    
-    
-    
-    
-    
     }
-    
+
     public void drawBackgroundImage()
     {
         if( imageCount < -myBackground.getWidth() )
@@ -80,5 +79,11 @@ public class SkiWorld extends World
         int temp = imageCount;
         getBackground().drawImage(myBackground, temp, 0);
         getBackground().drawImage(myBackground, temp + myBackground.getWidth(), 0);
+    }
+    
+    public void setIsAlive(boolean a)
+    {
+        isAlive = a;
+        System.out.print(isAlive);
     }
 }
