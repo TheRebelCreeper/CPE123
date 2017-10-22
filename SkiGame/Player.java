@@ -15,6 +15,10 @@ public class Player extends SmoothMover
     private double startingY;
     private boolean isAlive = true;
     private ArrayList<Actor> hits = new ArrayList<Actor>();
+    private boolean didGetHit = false;
+    
+    private int delay;
+    private static final int DELAY = 1;
     
     private GreenfootImage normal;
     private GreenfootImage down;
@@ -33,6 +37,7 @@ public class Player extends SmoothMover
         hit = new GreenfootImage("skierhit.png");
         startingY = start;
         setImage(normal);
+        delay = DELAY;
     }
     
     /**
@@ -61,7 +66,7 @@ public class Player extends SmoothMover
         {
            setImage(jump);
         }
-        else
+        else if(hits.size() < 3 && didGetHit == false)
         {
             setImage(normal);  
         }
@@ -133,16 +138,22 @@ public class Player extends SmoothMover
         Actor obstacle = getOneIntersectingObject(Obstacle.class);
         if(obstacle != null)
         {
+            setImage(hit);
             if(!alreadyHit(obstacle))
             {
                 hits.add(obstacle);
+                didGetHit = true;
+                this.setImage(hit);
+                delayImage();
             }
             
             if(hits.size() >= 3)
             {
+                this.setImage(hit);
                 isAlive = false;
                 SkiWorld w = (SkiWorld) getWorld();
                 w.setIsAlive(isAlive);
+                //setImage(hit);
             }
         }
     }
@@ -158,5 +169,15 @@ public class Player extends SmoothMover
             }
         }
         return hit;
+    }
+    
+    private void delayImage()
+    {
+        delay--;
+        if(delay <= 0)
+        {
+            didGetHit = false;
+            delay = DELAY;
+        }
     }
 }
