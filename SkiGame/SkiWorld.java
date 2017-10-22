@@ -58,6 +58,8 @@ public class SkiWorld extends World
                 Tree tree = new Tree();
                 addObject(tree, 680, 230);
                 
+                Material1 Material1 = new Material1();
+                addObject(Material1, 680, 235);
             }
             if(Greenfoot.getRandomNumber(1000) < 3)
             {

@@ -18,7 +18,8 @@ public class BuildWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         prepare();
-    }
+    }
+
 
     public void prepare()
     {   Snow snow = new Snow();
@@ -27,7 +28,7 @@ public class BuildWorld extends World
         addObject(toolbar,86,209);
         toolbar.setLocation(72,206);
 
-        Trees trees = new Trees();
+        Tree trees = new Tree();
         addObject(trees,467,247);
         trees.setLocation(489,252);
     }
