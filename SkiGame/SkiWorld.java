@@ -53,15 +53,15 @@ public class SkiWorld extends World
         {
             imageCount -= 3;
             drawBackgroundImage();
-            if(Greenfoot.getRandomNumber(1000) < 7)
+            if(Greenfoot.getRandomNumber(1000) < 5)
             {
                 Tree tree = new Tree();
                 addObject(tree, 680, 230);
                 
                 Material1 Material1 = new Material1();
-                addObject(Material1, 680, 235);
+                addObject(Material1, 670, 190);
             }
-            if(Greenfoot.getRandomNumber(1000) < 3)
+            if(Greenfoot.getRandomNumber(1000) < 2)
             {
                 Snowball sb = new Snowball();
                 addObject(sb, 680, 200);

@@ -8,15 +8,26 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Material1 extends Material
 {
+    protected final int GRAVITY_ACCEL = 1;
+    protected final int MAX_GRAV = 15;
+    protected int ySpeed = 0;
+    private GreenfootImage myImage;
     /**
      * Act - do whatever the Material1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    public void Material1()
+    {
+        myImage = new GreenfootImage("Material1.png");
+        setImage(myImage);
+        setRotation(10);
+    }
+    
     public void act() 
     {
         // Add your action code here.
         move(-6);
-        
+        checkRemove();
     }    
     
     protected boolean objectIsBelow()
@@ -38,5 +49,17 @@ public class Material1 extends Material
         }
     }
     
+    
+    protected void checkRemove()
+    {
+        if (getX() < 0)
+        {
+            getWorld().removeObject(this);
+        }
+    }
+    
+    
+    
+  
     
 }
