@@ -49,7 +49,7 @@ public class SkiWorld extends World
             //Building interface
         }
 
-        if(isAlive == true)
+        if(isAlive = true)
         {
             imageCount -= 3;
             drawBackgroundImage();
@@ -57,6 +57,7 @@ public class SkiWorld extends World
             {
                 Tree tree = new Tree();
                 addObject(tree, 680, 230);
+                
             }
             if(Greenfoot.getRandomNumber(1000) < 3)
             {
@@ -87,4 +88,12 @@ public class SkiWorld extends World
         isAlive = a;
         System.out.println(isAlive);
     }
+    
+    
+    public void endGame()
+    {
+        SkiWorldOver go = new SkiWorldOver();
+        Greenfoot.setWorld(go);
+    }
+        
 }
