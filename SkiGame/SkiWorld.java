@@ -23,7 +23,7 @@ public class SkiWorld extends World
         myBackground = new GreenfootImage("Background1.png");
         setBackground(myBackground);
         prepare();
-        setPaintOrder(Player.class, Obstacle.class);
+        setPaintOrder(PlayerHitbox.class, Player.class, Obstacle.class);
     }
 
     private void prepare()
@@ -49,7 +49,7 @@ public class SkiWorld extends World
             //Building interface
         }
 
-        if(isAlive = true)
+        if(isAlive == true)
         {
             imageCount -= 3;
             drawBackgroundImage();
@@ -59,7 +59,7 @@ public class SkiWorld extends World
                 addObject(tree, 680, 230);
                 
                 Material1 Material1 = new Material1();
-                addObject(Material1, 670, 190);
+                //addObject(Material1, 670, 190);
             }
             if(Greenfoot.getRandomNumber(1000) < 2)
             {

@@ -1,5 +1,6 @@
 import greenfoot.*;
 import java.util.ArrayList;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 
 /**
  * Write a description of class Player here.
@@ -25,6 +26,8 @@ public class Player extends SmoothMover
     private GreenfootImage jump;
     private GreenfootImage hit;
 
+    private PlayerHitbox hitbox;
+    
     /**
      * Constructor
      */
@@ -38,6 +41,12 @@ public class Player extends SmoothMover
         startingY = start;
         setImage(normal);
         delay = DELAY;
+    }
+    
+    protected void addedToWorld(World w)
+    {
+        hitbox = new PlayerHitbox(this, 55, 95, -7, -3, true); // Set to false for invisible hitbox
+        getWorld().addObject(hitbox, getX(), getY());
     }
     
     /**
@@ -95,11 +104,11 @@ public class Player extends SmoothMover
      */
     private boolean objectIsBelow()
     {
-        if (getOneObjectAtOffset(0, getImage().getHeight() / 2 + 2, Actor.class) != null)
+        if (hitbox.getOneObjectAtOffsetPublic(0, getImage().getHeight() / 2 + 2, Snow.class) != null)
         {
             return true;
         }
-        else if (getY() >= getWorld().getHeight() - getImage().getHeight() + 400)
+        else if (hitbox.getY() >= getWorld().getHeight() - getImage().getHeight() + 400)
         {
             return true;
         }
@@ -135,7 +144,7 @@ public class Player extends SmoothMover
     
     public void checkCollision()
     {
-        Actor obstacle = getOneIntersectingObject(Obstacle.class);
+        Actor obstacle = hitbox.getOneIntersectingObjectPublic(Obstacle.class);
         if(obstacle != null)
         {
             setImage(hit);

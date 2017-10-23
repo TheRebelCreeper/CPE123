@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Material1 extends Material
+public class Material1 extends Actor
 {
     protected final int GRAVITY_ACCEL = 1;
     protected final int MAX_GRAV = 15;
