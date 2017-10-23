@@ -28,18 +28,15 @@ public class SkiWorld extends World
 
     private void prepare()
     {
-        Player player1 = new Player(200.0);
+        Player player1 = new Player();
         addObject(player1, 297, 200);
         Snow snow = new Snow();
         addObject(snow,298,399);
-        Tree tree = new Tree();
-        addObject(tree,412,233);
         Buildable buildable = new Buildable();
         addObject(buildable,89,93);
         Container container = new Container();
         container.setObject(buildable);
         addObject(container,59,92);
-        removeObject(tree);
     }
 
     public void act()

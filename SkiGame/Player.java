@@ -31,20 +31,20 @@ public class Player extends SmoothMover
     /**
      * Constructor
      */
-    public Player(double start)
+    public Player()
     {
         setRotation(10);
         normal = new GreenfootImage("skiernormal.png");
         down = new GreenfootImage("skierducking.png");
         jump = new GreenfootImage("skierjumping.png");
         hit = new GreenfootImage("skierhit.png");
-        startingY = start;
         setImage(normal);
         delay = DELAY;
     }
     
     protected void addedToWorld(World w)
     {
+        startingY = getY();
         hitbox = new PlayerHitbox(this, 55, 95, -7, -3, true); // Set to false for invisible hitbox
         getWorld().addObject(hitbox, getX(), getY());
     }
@@ -57,16 +57,8 @@ public class Player extends SmoothMover
     {
         checkGravity();
         checkCollision();
+        checkJump();
         
-        if(Greenfoot.isKeyDown("up") && objectIsBelow()) //jumping key
-        {
-           setImage(jump);
-            jump();
-        }
-        else if (Greenfoot.isKeyDown("space") && objectIsBelow())
-        {
-            jump();
-        }
         if (Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("shift"))// animation for skier to duck
         { 
             setImage(down);   
@@ -81,6 +73,19 @@ public class Player extends SmoothMover
         }
     }    
 
+    private void checkJump()
+    {
+        if(Greenfoot.isKeyDown("up") && objectIsBelow()) //jumping key
+        {
+           setImage(jump);
+            jump();
+        }
+        else if (Greenfoot.isKeyDown("space") && objectIsBelow())
+        {
+            jump();
+        }
+    }
+    
     /**
      * Causes the player to fall due to gravity if there is empty space below
      */
@@ -124,7 +129,7 @@ public class Player extends SmoothMover
     private void jump()
     {
         ySpeed = -20.00; //add jump speed?
-        setLocation(getX(), getY() + ySpeed); //leave ground
+        setLocation(getExactX(), getExactY() + ySpeed); //leave ground
     }
     
     /**
