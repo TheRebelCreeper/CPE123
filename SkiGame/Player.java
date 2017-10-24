@@ -156,6 +156,7 @@ public class Player extends SmoothMover
             if(!alreadyHit(obstacle))
             {
                 hits.add(obstacle);
+                System.out.println("Hit " + hits.size());
                 didGetHit = true;
                 this.setImage(hit);
                 delayImage();
