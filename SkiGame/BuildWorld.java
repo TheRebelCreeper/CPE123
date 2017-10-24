@@ -31,6 +31,11 @@ public class BuildWorld extends World
         Tree trees = new Tree();
         addObject(trees,467,247);
         trees.setLocation(489,252);
+        Material1 material1 = new Material1();
+        addObject(material1,73,204);
+        material1.setLocation(191,204);
+        material1.setLocation(162,205);
+        material1.setLocation(68,188);
     }
     
 
