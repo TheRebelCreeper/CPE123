@@ -10,6 +10,11 @@ public class Container extends Actor
 {
     private Buildable object;
     
+    public Container()
+    {
+        setImage(new GreenfootImage("ToolBar.png"));
+    }
+    
     /**
      * Act - do whatever the Container wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
