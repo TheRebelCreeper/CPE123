@@ -29,4 +29,33 @@ public class PlayerHitbox extends Hitbox
             getWorld().removeObject(this);
         }
     }   
+    
+    public void crouchHitbox()
+    {
+        GreenfootImage img = new GreenfootImage(55, 65);
+        if (visible)
+        {
+            img.setColor(Color.RED);
+            img.setTransparency(100);
+            img.fill();
+        }
+        setImage(img);
+    }
+    
+    public void jumpHitbox()
+    {
+        
+    }
+    
+    public void normalHitbox()
+    {
+        GreenfootImage img = new GreenfootImage(55, 95);
+        if (visible)
+        {
+            img.setColor(Color.RED);
+            img.setTransparency(100);
+            img.fill();
+        }
+        setImage(img);
+    }
 }

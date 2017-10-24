@@ -18,6 +18,11 @@ public class Player extends SmoothMover
     private ArrayList<Actor> hits = new ArrayList<Actor>();
     private boolean didGetHit = false;
     
+    private boolean upPressed;
+    private boolean downPressed;
+    private boolean spacePressed;
+    private boolean shiftPressed;
+    
     private int delay;
     private static final int DELAY = 1;
     
@@ -55,32 +60,44 @@ public class Player extends SmoothMover
      */
     public void act() 
     {
+        upPressed = Greenfoot.isKeyDown("up");
+        downPressed = Greenfoot.isKeyDown("down");
+        shiftPressed = Greenfoot.isKeyDown("shift");
+        spacePressed = Greenfoot.isKeyDown("space");
+        
         checkGravity();
         checkCollision();
         checkJump();
         
-        if (Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("shift"))// animation for skier to duck
+        if (downPressed || shiftPressed)// animation for skier to duck
         { 
-            setImage(down);   
+            setImage(down); 
+            hitbox.crouchHitbox();
         }
-         else if (Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("space"))
+        else if (upPressed || spacePressed)
         {
            setImage(jump);
+           hitbox.jumpHitbox();
         }
         else if(hits.size() < 3 && didGetHit == false)
         {
-            setImage(normal);  
+            setImage(normal); 
+            hitbox.normalHitbox();
+        }
+        
+        if (getExactY() > startingY && isAlive && !(shiftPressed || downPressed))
+        {
+            setLocation(getExactX(), startingY);
         }
     }    
 
     private void checkJump()
     {
-        if(Greenfoot.isKeyDown("up") && objectIsBelow()) //jumping key
+        if(upPressed && objectIsBelow()) //jumping key
         {
-           setImage(jump);
-            jump();
+           jump();
         }
-        else if (Greenfoot.isKeyDown("space") && objectIsBelow())
+        else if (spacePressed && objectIsBelow())
         {
             jump();
         }
@@ -92,10 +109,7 @@ public class Player extends SmoothMover
     private void fall()
     {
         setLocation(getExactX(), getExactY() + ySpeed);
-        if (getExactY() > startingY && isAlive)
-        {
-            setLocation(getExactX(), startingY);
-        }
+
         if( ySpeed <= MAX_GRAV)   // Terminal Velocity
         {
             ySpeed += GRAVITY_ACCEL;
@@ -156,7 +170,7 @@ public class Player extends SmoothMover
             if(!alreadyHit(obstacle))
             {
                 hits.add(obstacle);
-                System.out.println("Hit " + hits.size());
+                //System.out.println("Hit " + hits.size());
                 didGetHit = true;
                 this.setImage(hit);
                 delayImage();

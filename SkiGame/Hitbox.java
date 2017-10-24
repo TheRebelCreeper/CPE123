@@ -13,6 +13,7 @@ public abstract class Hitbox extends Actor
     protected int offsetX;
     protected int offsetY;
     protected Actor host;
+    protected boolean visible;
     
      public Hitbox(Actor a, int w, int h, int x, int y, boolean visible)
     {
@@ -21,6 +22,7 @@ public abstract class Hitbox extends Actor
         offsetX = x;
         offsetY = y;
         img = new GreenfootImage(w, h);
+        this.visible = visible;
         if (visible)
         {
             img.setColor(Color.RED);
