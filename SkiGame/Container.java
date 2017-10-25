@@ -21,10 +21,9 @@ public class Container extends Actor
      */
     public void act() 
     {
-        if (Greenfoot.mouseClicked(this))
+        if (object != null && Greenfoot.mouseClicked(this))
         {
-            if (object != null)
-                object.setPlaced(1);
+            object.setPlaced(1);
         }
     }  
     
