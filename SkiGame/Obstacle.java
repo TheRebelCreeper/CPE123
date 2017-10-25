@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Obstacle extends Actor
+public abstract class Obstacle extends Actor
 {
     protected final int GRAVITY_ACCEL = 1;
     protected final int MAX_GRAV = 15;
@@ -16,10 +16,7 @@ public class Obstacle extends Actor
      * Act - do whatever the Obstacles wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act() 
-    {
-        // Add your action code here.
-    }    
+    public abstract void act();   
     
     /**
      * Causes the player to fall due to gravity if there is empty space below
