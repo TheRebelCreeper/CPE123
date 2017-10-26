@@ -24,7 +24,7 @@ public class Player extends SmoothMover
     private boolean shiftPressed;
     
     private int delay;
-    private static final int DELAY = 5;
+    private static final int DELAY = 6;
     
     private GreenfootImage normal;
     private GreenfootImage down;
@@ -132,7 +132,7 @@ public class Player extends SmoothMover
         List<Actor> list = hitbox.getHitboxIntersectionsAtOffset(0, hitbox.getImage().getHeight() / 2 + 5, Actor.class);
         if (list.size() > 0 && !(list.get(0) instanceof Player))
         {
-            System.out.println(list.get(0));
+            //System.out.println(list.get(0));
             return true;
         }
         else if (hitbox.getY() >= getWorld().getHeight() - getImage().getHeight() + 400)
