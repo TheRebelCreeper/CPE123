@@ -24,7 +24,7 @@ public class Player extends SmoothMover
     private boolean shiftPressed;
     
     private int delay;
-    private static final int DELAY = 1;
+    private static final int DELAY = 5;
     
     private GreenfootImage normal;
     private GreenfootImage down;
@@ -79,7 +79,7 @@ public class Player extends SmoothMover
            setImage(jump);
            hitbox.jumpHitbox();
         }
-        else if(hits.size() < 3 && didGetHit == false)
+        else if( /*hits.size()  < 3 && */ didGetHit == false)
         {
             setImage(normal); 
             hitbox.normalHitbox();
@@ -88,6 +88,12 @@ public class Player extends SmoothMover
         if (getExactY() > startingY && isAlive && !(shiftPressed || downPressed))
         {
             setLocation(getExactX(), startingY);
+        }
+        
+        if(didGetHit == true)
+        {
+            setImage(hit);
+            delayImage();
         }
     }    
 
@@ -174,8 +180,8 @@ public class Player extends SmoothMover
                 hits.add(obstacle);
                 //System.out.println("Hit " + hits.size());
                 didGetHit = true;
-                this.setImage(hit);
-                delayImage();
+                
+                
             }
             
             if(hits.size() >= 3)
