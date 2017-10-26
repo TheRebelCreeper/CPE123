@@ -29,7 +29,7 @@ public class SkiWorld extends World
     private void prepare()
     {
         Player player1 = new Player();
-        addObject(player1, 297, 200);
+        addObject(player1, 297, 195);
         Snow snow = new Snow();
         addObject(snow,298,399);
     }

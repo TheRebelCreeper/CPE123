@@ -49,7 +49,7 @@ public class Player extends SmoothMover
     
     protected void addedToWorld(World w)
     {
-        startingY = getY();
+        startingY = getY() + 5;
         hitbox = new PlayerHitbox(this, 55, 95, -7, -3, true); // Set to false for invisible hitbox
         getWorld().addObject(hitbox, getX(), getY());
     }
@@ -123,7 +123,8 @@ public class Player extends SmoothMover
      */
     private boolean objectIsBelow()
     {
-        if (hitbox.getOneObjectAtOffsetPublic(0, getImage().getHeight() / 2 + 2, Snow.class) != null)
+        List<Actor> list = hitbox.getHitboxIntersectionsAtOffset(0, hitbox.getImage().getHeight() / 2 + 2, Actor.class);
+        if (list.size() > 0 && !(list.get(0) instanceof Player))
         {
             return true;
         }
@@ -167,8 +168,6 @@ public class Player extends SmoothMover
         if(obstacle != null)
         {
             setImage(hit);
-            
-            //adds hit obstacle to list
             if(!alreadyHit(obstacle))
             {
                 hits.add(obstacle);
@@ -178,7 +177,6 @@ public class Player extends SmoothMover
                 delayImage();
             }
             
-            //dies
             if(hits.size() >= 3)
             {
                 this.setImage(hit);
@@ -190,7 +188,6 @@ public class Player extends SmoothMover
         }
     }
     
-    //checks if the player has already hit that obstcle
     public boolean alreadyHit(Actor o)
     {
         boolean hit = false;
@@ -204,7 +201,6 @@ public class Player extends SmoothMover
         return hit;
     }
     
-    //delaying change of hit image
     private void delayImage()
     {
         delay--;
