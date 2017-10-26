@@ -32,11 +32,6 @@ public class SkiWorld extends World
         addObject(player1, 297, 200);
         Snow snow = new Snow();
         addObject(snow,298,399);
-        Buildable buildable = new Buildable();
-        addObject(buildable,89,93);
-        Container container = new Container();
-        container.setObject(buildable);
-        addObject(container,59,92);
     }
 
     public void act()
