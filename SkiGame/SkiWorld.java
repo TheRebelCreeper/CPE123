@@ -32,6 +32,8 @@ public class SkiWorld extends World
         addObject(player1, 297, 195);
         Snow snow = new Snow();
         addObject(snow,298,399);
+        Heart health = new Heart();
+        addObject(health, getWidth()-60, 60);
     }
 
     public void act()
