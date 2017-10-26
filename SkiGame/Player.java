@@ -123,9 +123,10 @@ public class Player extends SmoothMover
      */
     private boolean objectIsBelow()
     {
-        List<Actor> list = hitbox.getHitboxIntersectionsAtOffset(0, hitbox.getImage().getHeight() / 2 + 2, Actor.class);
+        List<Actor> list = hitbox.getHitboxIntersectionsAtOffset(0, hitbox.getImage().getHeight() / 2 + 5, Actor.class);
         if (list.size() > 0 && !(list.get(0) instanceof Player))
         {
+            System.out.println(list.get(0));
             return true;
         }
         else if (hitbox.getY() >= getWorld().getHeight() - getImage().getHeight() + 400)
