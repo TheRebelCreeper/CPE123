@@ -167,6 +167,8 @@ public class Player extends SmoothMover
         if(obstacle != null)
         {
             setImage(hit);
+            
+            //adds hit obstacle to list
             if(!alreadyHit(obstacle))
             {
                 hits.add(obstacle);
@@ -176,6 +178,7 @@ public class Player extends SmoothMover
                 delayImage();
             }
             
+            //dies
             if(hits.size() >= 3)
             {
                 this.setImage(hit);
@@ -187,6 +190,7 @@ public class Player extends SmoothMover
         }
     }
     
+    //checks if the player has already hit that obstcle
     public boolean alreadyHit(Actor o)
     {
         boolean hit = false;
@@ -200,6 +204,7 @@ public class Player extends SmoothMover
         return hit;
     }
     
+    //delaying change of hit image
     private void delayImage()
     {
         delay--;
