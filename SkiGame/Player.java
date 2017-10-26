@@ -42,7 +42,7 @@ public class Player extends SmoothMover
         normal = new GreenfootImage("skiernormal.png");
         down = new GreenfootImage("skierducking.png");
         jump = new GreenfootImage("skierjumping.png");
-        hit = new GreenfootImage("skierhit.png");
+        hit = new GreenfootImage("skierhit.png"); 
         setImage(normal);
         delay = DELAY;
     }
@@ -50,7 +50,7 @@ public class Player extends SmoothMover
     protected void addedToWorld(World w)
     {
         startingY = getY() + 5;
-        hitbox = new PlayerHitbox(this, 55, 95, -7, -3, true); // Set to false for invisible hitbox
+        hitbox = new PlayerHitbox(this, 55, 95, -7, -3, false); // Set to false for invisible hitbox
         getWorld().addObject(hitbox, getX(), getY());
     }
     
