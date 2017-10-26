@@ -8,17 +8,28 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Buildable extends Actor
 {
+    /**Instance variable for the MouseInfo*/
     private MouseInfo mi;
+    /**Placed holds the current state of the Actor. 
+     * 0 for not clicked yet, 
+     * 1 for moving around, 
+     * 2 for placed*/
     private int placed;
     
+    /**Constant holding the acceleration due to gravity*/
     private final int GRAVITY_ACCEL = 1;
+    /**Constant holding the terminal velocity*/
     private final int MAX_GRAV = 10;
-    private int ySpeed = 0;
+    /**Holds the speed of the Actor*/
+    private int ySpeed;
     
+    /**
+     * Constructor for buildable
+     */
     public Buildable()
     {
         placed = 0;
-        mi = Greenfoot.getMouseInfo();
+        ySpeed = 0;
     }
     
     /**
@@ -28,35 +39,46 @@ public class Buildable extends Actor
     public void act() 
     {
         //controls where to place the object
-       
-        if (placed == 1)
+        if (placed == 1)    // If the container has been clicked
         {
             mi = Greenfoot.getMouseInfo();
-            if (mi != null)
-                setLocation(mi.getX(), mi.getY());
+            if (mi != null) // If the mouse is on the window
+                setLocation(mi.getX(), mi.getY());  // Set to location to the current mouse position
         }
         
         // Controls placing the object
-        if (Greenfoot.mouseClicked(this) && placed == 1)
+        if (Greenfoot.mouseClicked(this) && placed == 1)    // If the object is clicked on
         {
             if (isValidLocation())
             {
-                placed = 2;
+                placed = 2; // Place the object
             }
         }
         
         if (placed == 2)
         {
-            checkGravity();
+            checkGravity(); // Gravity will now affect the buildable
             //All normal functionality goes in this if statement
         }
     }    
     
+    /**
+     * Checks if the posision where the object is placed is valid
+     * 
+     * To be implemented later
+     * 
+     * @return  Returns true if the location is valid
+     */
     private boolean isValidLocation()
     {
         return true;
     }
     
+    /**
+     * Setter for the placed variable
+     * 
+     * @param int placed    Value to set placed to
+     */
     public void setPlaced(int placed)
     {
         this.placed = placed;

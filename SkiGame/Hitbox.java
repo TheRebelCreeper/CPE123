@@ -41,7 +41,12 @@ public abstract class Hitbox extends Actor
     
     public List getHitboxIntersections()
     {
-        return getIntersectingObjects(Actor.class);
+        return removeHost(getIntersectingObjects(Actor.class));
+    }
+    
+    public List getHitboxIntersectionsAtOffset(int dx, int dy, java.lang.Class<Actor> cls)
+    {
+        return removeHost(getObjectsAtOffset(dx, dy, cls));
     }
     
     public Actor getOneObjectAtOffsetPublic(int x, int y, java.lang.Class<?> a)
@@ -52,5 +57,19 @@ public abstract class Hitbox extends Actor
     public Actor getOneIntersectingObjectPublic(java.lang.Class<?> cls)
     {
         return getOneIntersectingObject(cls);
+    }
+    
+    private List<Actor> removeHost(List<Actor> list)
+    {
+        for (int i = list.size() - 1; i > 0; i--)
+        {
+            if (list.get(i).equals(host))
+            {
+                //System.out.println(list.get(i));
+                list.remove(i);
+            }
+        }
+        
+        return list;
     }
 }
