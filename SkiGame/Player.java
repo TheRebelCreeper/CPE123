@@ -79,7 +79,7 @@ public class Player extends SmoothMover
            setImage(jump);
            hitbox.jumpHitbox();
         }
-        else if( /*hits.size()  < 3 && */ didGetHit == false)
+        else if( isAlive == true && didGetHit == false)
         {
             setImage(normal); 
             hitbox.normalHitbox();
