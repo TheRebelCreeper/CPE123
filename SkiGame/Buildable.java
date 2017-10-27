@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Buildable extends Actor
+public class Buildable extends Actor implements Gravity
 {
     /**Instance variable for the MouseInfo*/
     private MouseInfo mi;
@@ -16,10 +16,6 @@ public class Buildable extends Actor
      * 2 for placed*/
     private int placed;
     
-    /**Constant holding the acceleration due to gravity*/
-    private final int GRAVITY_ACCEL = 1;
-    /**Constant holding the terminal velocity*/
-    private final int MAX_GRAV = 10;
     /**Holds the speed of the Actor*/
     private int ySpeed;
     
@@ -87,7 +83,7 @@ public class Buildable extends Actor
     /**
      * Determines if the player should fall or not
      */
-    private void checkGravity()
+    public void checkGravity()
     {
         if (objectIsBelow())    // If object is on solid ground
         {
@@ -104,7 +100,7 @@ public class Buildable extends Actor
      * 
      * @return Returns true if there is an object at the coordinates passed in
      */
-    private boolean objectIsBelow()
+    public boolean objectIsBelow()
     {
         if (getOneObjectAtOffset(0, getImage().getHeight() / 2 + 2, Actor.class) != null)
         {
@@ -123,7 +119,7 @@ public class Buildable extends Actor
     /**
      * Causes the player to fall due to gravity if there is empty space below
      */
-    private void fall()
+    public void fall()
     {
         setLocation(getX(), getY() + ySpeed);
         if( ySpeed <= MAX_GRAV)   // Terminal Velocity
