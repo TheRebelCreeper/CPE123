@@ -207,6 +207,8 @@ public class Player extends SmoothMover implements Gravity
                 hits.add(obstacle);
                 //System.out.println("Hit " + hits.size());
                 didGetHit = true; 
+                SkiWorld w = (SkiWorld) getWorld();
+                w.removeObject(w.getHealth(hits.size() -1));
             }
             
             if(hits.size() >= 3)

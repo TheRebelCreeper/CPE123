@@ -15,6 +15,8 @@ public class SkiWorld extends World
     private int levelNumber = 1;
     /**Whether the player is alive or not*/
     public boolean isAlive = true;
+    
+    Heart[] health = new Heart[3];
 
     /**
      * Constructor for objects of class MyWorld.
@@ -43,8 +45,12 @@ public class SkiWorld extends World
         Snow snow = new Snow();
         addObject(snow,298,399);
         //Adds the heart
-        Heart health = new Heart();
-        addObject(health, getWidth()-60, 60);
+        health[2] = new Heart();
+        addObject(health[2], getWidth()-50, 50);
+        health[1] = new Heart();
+        addObject(health[1], getWidth()-95, 50);
+        health[0] = new Heart();
+        addObject(health[0], getWidth()-140, 50);
     }
 
     /**
@@ -139,5 +145,10 @@ public class SkiWorld extends World
             Snowball sb = new Snowball();
             addObject(sb, 680, 200);
         }
+    }
+    
+    public Heart getHealth(int n)
+    {
+        return health[n];
     }
 }
