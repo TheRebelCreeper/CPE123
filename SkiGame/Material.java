@@ -6,17 +6,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Material1 extends Actor
+public class Material extends Actor implements Gravity
 {
-    protected final int GRAVITY_ACCEL = 1;
-    protected final int MAX_GRAV = 15;
     protected int ySpeed = 0;
     private GreenfootImage myImage;
+    
     /**
      * Act - do whatever the Material1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void Material1()
+    public void Material()
     {
         myImage = new GreenfootImage("Material1.png");
         setImage(myImage);
@@ -30,7 +29,7 @@ public class Material1 extends Actor
         checkRemove();
     }    
     
-    protected boolean objectIsBelow()
+    public boolean objectIsBelow()
     {
         if (getOneObjectAtOffset(0, getImage().getHeight() / 2 + 2, Actor.class) != null)
         {
@@ -47,8 +46,17 @@ public class Material1 extends Actor
         {
             return false;
         }
+    }   
+    
+    public void checkGravity()
+    {
+        
     }
     
+    public void fall()
+    {
+        
+    }
     
     protected void checkRemove()
     {
@@ -57,9 +65,4 @@ public class Material1 extends Actor
             getWorld().removeObject(this);
         }
     }
-    
-    
-    
-  
-    
 }

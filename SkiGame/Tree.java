@@ -7,17 +7,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Tree extends Obstacle
-{
-    private GreenfootImage myImage;
-    
+{    
     /**
      * Constructor
      */
     public Tree()
     {
         setRotation(10);
-        myImage = new GreenfootImage("pine-tree.png");
-        setImage(myImage);
+        setImage(new GreenfootImage("pine-tree.png"));  // Sets the image of Tree
     }
    
     
@@ -29,8 +26,8 @@ public class Tree extends Obstacle
     {
         // Add your action code here.
         move(-6);
-        checkGravity();
-        checkRemove();
+        checkGravity();     // Checks the gravity for Tree
+        checkRemove();      // Checks to remove Tree
     } 
     
     /**
@@ -39,15 +36,18 @@ public class Tree extends Obstacle
      * @return Returns true if there is an object at the coordinates passed in
      */
     @Override
-    protected boolean objectIsBelow()
+    public boolean objectIsBelow()
     {
+        // If it is touching another Actor
         if (getOneObjectAtOffset(0, getImage().getHeight() / 2 + 2, Actor.class) != null)
         {
+            // If it isn't another Tree
             if (getOneObjectAtOffset(0, getImage().getHeight() / 2 + 2, Tree.class) == null)
                 return true;
             else
                 return false;
         }
+        // If it is touching the edge of the world
         else if (getY() >= getWorld().getHeight() - getImage().getHeight())
         {
             return true;

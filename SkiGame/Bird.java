@@ -18,7 +18,9 @@ public class Bird extends Obstacle
         setImage(new GreenfootImage("bird1.png"));
     }
     
-    
+    /**
+     * Act method for Bird
+     */
     public void act() 
     {
         move (-8);

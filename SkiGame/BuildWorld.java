@@ -9,8 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class BuildWorld extends World
 {
     /**
-     * Constructor for objects of class BuildWorld.
-     * 
+     * Constructor for objects of class BuildWorld. 
      */
     public BuildWorld()
     {    
@@ -20,14 +19,17 @@ public class BuildWorld extends World
         setBackground(new GreenfootImage("Background1.png"));
     }
 
-
+    /**
+     * Prepares the objects in BuildWorld
+     */
     public void prepare()
-    {   Snow snow = new Snow();
+    {   
+        Snow snow = new Snow();
         addObject(snow,298,399);
 
         Tree tree = new Tree();
         addObject(tree,489,252);
-        
+
         // Material1 material1 = new Material1();
         // addObject(material1,73,204);
         // material1.setLocation(191,204);

@@ -8,9 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Heart extends Actor
 {
+    /**
+     * Constructor for Heart
+     */
     public Heart()
     {
-        setImage(new GreenfootImage("Heart.png"));
+        setImage(new GreenfootImage("Heart.png"));  // Sets the image of Heart
     }
     
     /**

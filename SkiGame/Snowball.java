@@ -9,8 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Snowball extends Obstacle
 {
     /**
-     * Act - do whatever the Snowball wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Constructor for Snowball
      */
      public Snowball()
     {
@@ -18,6 +17,10 @@ public class Snowball extends Obstacle
         setImage(new GreenfootImage("snowball.png"));
     }
     
+    /**
+     * Act - do whatever the Snowball wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
     public void act() 
     {
         move (-7);
