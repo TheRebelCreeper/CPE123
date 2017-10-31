@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Tree extends Obstacle
 {    
+    int speed;
+    
     /**
      * Constructor
      */
@@ -15,6 +17,7 @@ public class Tree extends Obstacle
     {
         setRotation(10);
         setImage(new GreenfootImage("pine-tree.png"));  // Sets the image of Tree
+        speed = -6;
     }
    
     
@@ -25,10 +28,15 @@ public class Tree extends Obstacle
     public void act() 
     {
         // Add your action code here.
-        move(-6);
+        move(speed);
         checkGravity();     // Checks the gravity for Tree
         checkRemove();      // Checks to remove Tree
-    } 
+    }
+    
+    public void setSpeed(int s)
+    {
+        speed += s;
+    }
     
     /**
      * Checks if an Actor is at the coordinates passed in

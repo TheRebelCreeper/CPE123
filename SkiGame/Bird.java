@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bird extends Obstacle
 {
+    int speed;
+    
     /**
      * Act - do whatever the Bird wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -16,6 +18,7 @@ public class Bird extends Obstacle
     {
         setRotation(10);
         setImage(new GreenfootImage("bird1.png"));
+        speed = -8;
     }
     
     /**
@@ -23,7 +26,12 @@ public class Bird extends Obstacle
      */
     public void act() 
     {
-        move (-8);
+        move (speed);
         checkRemove();
-    }    
+    }   
+    
+    public void setSpeed(int s)
+    {
+        speed += s;
+    }
 }

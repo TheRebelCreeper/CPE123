@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Snowball extends Obstacle
 {
+    int speed;
+    
     /**
      * Constructor for Snowball
      */
@@ -15,6 +17,7 @@ public class Snowball extends Obstacle
     {
         setRotation(10);
         setImage(new GreenfootImage("snowball.png"));
+        speed = -7;
     }
     
     /**
@@ -25,5 +28,10 @@ public class Snowball extends Obstacle
     {
         move (-7);
         checkRemove();
-    }    
+    }   
+    
+    public void setSpeed(int s)
+    {
+        speed += s;
+    }
 }
