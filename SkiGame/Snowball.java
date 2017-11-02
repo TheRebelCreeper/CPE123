@@ -8,8 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Snowball extends Obstacle
 {
-    int speed;
-    
     /**
      * Constructor for Snowball
      */

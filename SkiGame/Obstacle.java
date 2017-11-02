@@ -10,6 +10,7 @@ public abstract class Obstacle extends Actor implements Gravity
 {
     /**Vertical Velocity*/
     protected int ySpeed = 0;
+    protected int speed = 0;
     
     /**
      * Act - do whatever the Obstacles wants to do. This method is called whenever

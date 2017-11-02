@@ -7,9 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Bird extends Obstacle
-{
-    int speed;
-    
+{   
     /**
      * Act - do whatever the Bird wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
