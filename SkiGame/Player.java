@@ -163,11 +163,11 @@ public class Player extends SmoothMover implements Gravity
      */
     private void checkJump()
     {
-        if(upPressed && objectIsBelow()) // If UP is pressed and there is an object below the player
+        if(upPressed && objectIsBelow() && isAlive) // If UP is pressed and there is an object below the player
         {
            jump();
         }
-        else if (spacePressed && objectIsBelow()) // If SPACE is pressed and there is an object below the player
+        else if (spacePressed && objectIsBelow() && isAlive) // If SPACE is pressed and there is an object below the player
         {
             jump();
         }

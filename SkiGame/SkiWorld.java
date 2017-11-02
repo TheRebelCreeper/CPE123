@@ -10,6 +10,8 @@ public class SkiWorld extends World
     /**Holds the background of SkiWorld*/
     private GreenfootImage myBackground;
 
+    private int treeSpawnRate, birdSpawnRate, snowballSpawnRate;
+    
     private int imageCount = 0;
 
     /**Current level of the game*/
@@ -70,6 +72,11 @@ public class SkiWorld extends World
             if (levelNumber == 1)
             {
                 imageCount -= 3;
+                
+                treeSpawnRate = 5;
+                birdSpawnRate = 3;
+                snowballSpawnRate = 2;
+                
                 drawBackgroundImage(); // Updates the background          
                 generateTree();     // Generates a tree
                 generateBird();     // Generates a bird
@@ -79,6 +86,11 @@ public class SkiWorld extends World
             else if (levelNumber == 2)
             {
                 imageCount -= 3;
+                                
+                treeSpawnRate = 5;
+                birdSpawnRate = 3;
+                snowballSpawnRate = 2;
+                
                 drawBackgroundImage(); // Updates the background          
                 generateTree();     // Generates a tree
                 generateBird();     // Generates a bird
@@ -88,6 +100,11 @@ public class SkiWorld extends World
             else if (levelNumber == 3)
             {
                 imageCount -= 3;
+                                
+                treeSpawnRate = 5;
+                birdSpawnRate = 3;
+                snowballSpawnRate = 2;
+                
                 drawBackgroundImage(); // Updates the background          
                 generateTree();     // Generates a tree
                 generateBird();     // Generates a bird
@@ -97,6 +114,11 @@ public class SkiWorld extends World
             else if (levelNumber == 4)
             {
                 imageCount -= 3;
+                                
+                treeSpawnRate = 5;
+                birdSpawnRate = 3;
+                snowballSpawnRate = 2;
+                
                 drawBackgroundImage(); // Updates the background          
                 generateTree();     // Generates a tree
                 generateBird();     // Generates a bird
@@ -106,6 +128,11 @@ public class SkiWorld extends World
             else if (levelNumber == 5)
             {
                 imageCount -= 3;
+                                
+                treeSpawnRate = 5;
+                birdSpawnRate = 3;
+                snowballSpawnRate = 2;
+                
                 drawBackgroundImage(); // Updates the background          
                 generateTree();     // Generates a tree
                 generateBird();     // Generates a bird
@@ -154,7 +181,7 @@ public class SkiWorld extends World
      */
     private void generateTree()
     {
-        if(Greenfoot.getRandomNumber(1000) < 5) // 0.5% chance of spawning a tree
+        if(Greenfoot.getRandomNumber(1000) < treeSpawnRate) // Chance of spawning a tree
         {
             Tree tree = new Tree();
             addObject(tree, 680, 230);
@@ -169,7 +196,7 @@ public class SkiWorld extends World
      */
     private void generateBird()
     {
-        if(Greenfoot.getRandomNumber(1000) < 3) // 0.3% chance of spawning a bird
+        if(Greenfoot.getRandomNumber(1000) < birdSpawnRate) // Chance of spawning a bird
         {
             Bird bird = new Bird();
             addObject(bird, 680, 200);
@@ -181,7 +208,7 @@ public class SkiWorld extends World
      */
     private void generateSnowball()
     {
-        if(Greenfoot.getRandomNumber(1000) < 2) // 0.2% chance of spawning a snowball
+        if(Greenfoot.getRandomNumber(1000) < snowballSpawnRate) // Chance of spawning a snowball
         {
             Snowball sb = new Snowball();
             addObject(sb, 680, 200);
