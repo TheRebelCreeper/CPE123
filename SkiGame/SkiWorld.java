@@ -71,6 +71,7 @@ public class SkiWorld extends World
             generateTree();     // Generates a tree
             generateBird();     // Generates a bird
             generateSnowball(); // Generates a snowball
+            generateLodge();
         }
     }
 
@@ -146,6 +147,17 @@ public class SkiWorld extends World
             addObject(sb, 680, 200);
         }
     }
+    
+    private void generateLodge()
+    {
+        if( Greenfoot.getRandomNumber(1000) < 500 )
+        {
+            Lodge lodge = new Lodge();
+            addObject(lodge, 680, 200);
+        }
+    }
+    
+    
     
     public Heart getHealth(int n)
     {
