@@ -151,4 +151,17 @@ public class SkiWorld extends World
     {
         return health[n];
     }
+    
+    public int getLevel()
+    {
+        return levelNumber;
+    }
+    
+    /*public void setLevel()
+    {
+        if(levelNumber == 1)
+        {
+            
+        }
+    } */
 }
