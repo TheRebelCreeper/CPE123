@@ -67,12 +67,51 @@ public class SkiWorld extends World
 
         if(isAlive) // If the player is alive
         {
-            imageCount -= 3;
-            drawBackgroundImage(); // Updates the background          
-            generateTree();     // Generates a tree
-            generateBird();     // Generates a bird
-            generateSnowball(); // Generates a snowball
-            generateLodge();
+            if (levelNumber == 1)
+            {
+                imageCount -= 3;
+                drawBackgroundImage(); // Updates the background          
+                generateTree();     // Generates a tree
+                generateBird();     // Generates a bird
+                generateSnowball(); // Generates a snowball
+                generateLodge();
+            }
+            else if (levelNumber == 2)
+            {
+                imageCount -= 3;
+                drawBackgroundImage(); // Updates the background          
+                generateTree();     // Generates a tree
+                generateBird();     // Generates a bird
+                generateSnowball(); // Generates a snowball
+                generateLodge();
+            }
+            else if (levelNumber == 3)
+            {
+                imageCount -= 3;
+                drawBackgroundImage(); // Updates the background          
+                generateTree();     // Generates a tree
+                generateBird();     // Generates a bird
+                generateSnowball(); // Generates a snowball
+                generateLodge();
+            }
+            else if (levelNumber == 4)
+            {
+                imageCount -= 3;
+                drawBackgroundImage(); // Updates the background          
+                generateTree();     // Generates a tree
+                generateBird();     // Generates a bird
+                generateSnowball(); // Generates a snowball
+                generateLodge();
+            }
+            else if (levelNumber == 5)
+            {
+                imageCount -= 3;
+                drawBackgroundImage(); // Updates the background          
+                generateTree();     // Generates a tree
+                generateBird();     // Generates a bird
+                generateSnowball(); // Generates a snowball
+                generateLodge();
+            }
         }
     }
 
@@ -163,19 +202,10 @@ public class SkiWorld extends World
         return health[n];
     }
     
-
     public int getLevel()
     {
         return levelNumber;
     }
-    
-    public void setLevel()
-    {
-        if(levelNumber == 1)
-        {
-            
-        }
-    } 
 
     public void setLevel(int level)
     {
