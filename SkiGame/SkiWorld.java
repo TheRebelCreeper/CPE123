@@ -73,7 +73,7 @@ public class SkiWorld extends World
             {
                 imageCount -= 3;
                 
-                treeSpawnRate = 5;
+                treeSpawnRate = 5;  // chance out of 1000
                 birdSpawnRate = 3;
                 snowballSpawnRate = 2;
                 
