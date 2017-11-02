@@ -13,7 +13,7 @@ public class SkiWorld extends World
     private int imageCount = 0;
 
     /**Current level of the game*/
-    public static int levelNumber;
+    public static int levelNumber = 1;
     /**Whether the player is alive or not*/
     public boolean isAlive = true;
     
