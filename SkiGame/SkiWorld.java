@@ -183,7 +183,10 @@ public class SkiWorld extends World
     {
         levelNumber = level;
     }
+<<<<<<< HEAD
     
     
+=======
+>>>>>>> 096be2212d52eef7cfe9853a5fd9fbe7bdb299d6
 
 }
