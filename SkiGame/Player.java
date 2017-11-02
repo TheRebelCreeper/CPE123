@@ -33,6 +33,8 @@ public class Player extends SmoothMover implements Gravity
     private int delay;
     /**Needs comment explaining*/
     private static final int DELAY = 6;
+    /**Player's hitbox*/
+    private PlayerHitbox hitbox;
     
     /**Image of the player normally*/
     private GreenfootImage normal;
@@ -43,8 +45,16 @@ public class Player extends SmoothMover implements Gravity
     /**Image of the player taking damage*/
     private GreenfootImage hit;
     
-    /**Hitbox of the player*/
-    private PlayerHitbox hitbox;
+    /**Images for snow animation*/
+    private GreenfootImage normal1;
+    private GreenfootImage normal2;
+    private GreenfootImage normal3;
+    private GreenfootImage normal4;
+    
+    private int frame;
+    
+    private GreenfootSound gettinghit;
+    private GreenfootSound die;
     
     /**
      * Constructor
@@ -56,6 +66,14 @@ public class Player extends SmoothMover implements Gravity
         down = new GreenfootImage("skierducking.png");
         jump = new GreenfootImage("skierjumping.png");
         hit = new GreenfootImage("skierhit.png"); 
+        
+        normal1 = new GreenfootImage("skiernormal1.png");
+        normal2 = new GreenfootImage("skiernormal2.png");
+        normal3 = new GreenfootImage("skiernormal3.png");
+        normal4 = new GreenfootImage("skiernormal4.png");
+        gettinghit = new GreenfootSound("sounds/gettinghit.mp3");  
+        die = new GreenfootSound("sounds/die.mp3");
+        
         setImage(normal);
         delay = DELAY;
     }
@@ -97,7 +115,8 @@ public class Player extends SmoothMover implements Gravity
         }
         else if(isAlive && !didGetHit)      // normal animation for the skier
         {
-            setImage(normal);       // Changes image for the skier
+            animatesnow();
+            //setImage(normal);       // Changes image for the skier
             hitbox.normalHitbox();  // Changes hitbox for the skier
         }
         
@@ -110,11 +129,35 @@ public class Player extends SmoothMover implements Gravity
         // If the player got hit
         if(didGetHit)
         {
+            gettinghit.play();
             setImage(hit);
             delayImage();
         }
-    }    
+    }
+    
+    public void animatesnow(){ 
+        frame++;
+        if (frame==1)
+        {
+            setImage(normal1);
+        }
+        else if(frame==2)
+        {
+            setImage(normal2);
+        }
+        else if(frame==3)
+        {
+            setImage(normal3);
+        }
+        else if (frame==4)
+        {
+            setImage(normal4);
+            frame = 1;
+            return;
+        }
 
+    }
+    
     /**
      * Checks if the player is jumping
      */
@@ -221,6 +264,7 @@ public class Player extends SmoothMover implements Gravity
                 isAlive = false;
                 SkiWorld w = (SkiWorld)getWorld();
                 w.setIsAlive(isAlive);
+                die.play();
                 //setImage(hit);
             }
         }
