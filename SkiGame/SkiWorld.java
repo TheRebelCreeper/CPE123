@@ -12,7 +12,8 @@ public class SkiWorld extends World
 
     private int imageCount = 0;
 
-    private int levelNumber = 1;
+    /**Current level of the game*/
+    public static int levelNumber;
     /**Whether the player is alive or not*/
     public boolean isAlive = true;
     
@@ -71,6 +72,7 @@ public class SkiWorld extends World
             generateTree();     // Generates a tree
             generateBird();     // Generates a bird
             generateSnowball(); // Generates a snowball
+            generateLodge();
         }
     }
 
@@ -147,11 +149,23 @@ public class SkiWorld extends World
         }
     }
     
+    private void generateLodge()
+    {
+        if( Greenfoot.getRandomNumber(1000) < 500 )
+        {
+            Lodge lodge = new Lodge();
+            addObject(lodge, 680, 200);
+        }
+    }
+    
+    
+    
     public Heart getHealth(int n)
     {
         return health[n];
     }
     
+<<<<<<< HEAD
     public int getLevel()
     {
         return levelNumber;
@@ -164,4 +178,15 @@ public class SkiWorld extends World
             
         }
     } */
+=======
+    public void setLevel(int level)
+    {
+        levelNumber = level;
+    }
+    
+    public int getLevel()
+    {
+        return levelNumber;
+    }
+>>>>>>> 4b9805f291e44f7b9dae6288cb969efc5390237d
 }
