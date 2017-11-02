@@ -43,12 +43,16 @@ public class Player extends SmoothMover implements Gravity
     /**Image of the player taking damage*/
     private GreenfootImage hit;
     
+    /**Images for snow animation*/
     private GreenfootImage normal1;
     private GreenfootImage normal2;
     private GreenfootImage normal3;
     private GreenfootImage normal4;
     
     private int frame;
+    
+    private GreenfootSound gettinghit;
+    private GreenfootSound die;
     
     private PlayerHitbox hitbox;
     
@@ -70,6 +74,8 @@ public class Player extends SmoothMover implements Gravity
         normal2 = new GreenfootImage("skiernormal2.png");
         normal3 = new GreenfootImage("skiernormal3.png");
         normal4 = new GreenfootImage("skiernormal4.png");
+        gettinghit = new GreenfootSound("sounds/gettinghit.mp3");  
+        die = new GreenfootSound("sounds/die.mp3");
         
         setImage(normal);
         delay = DELAY;
@@ -126,6 +132,7 @@ public class Player extends SmoothMover implements Gravity
         // If the player got hit
         if(didGetHit)
         {
+            gettinghit.play();
             setImage(hit);
             delayImage();
         }
@@ -260,6 +267,7 @@ public class Player extends SmoothMover implements Gravity
                 isAlive = false;
                 SkiWorld w = (SkiWorld)getWorld();
                 w.setIsAlive(isAlive);
+                die.play();
                 //setImage(hit);
             }
         }
