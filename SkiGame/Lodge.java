@@ -9,13 +9,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Lodge extends Actor implements Gravity
 {
     protected int ySpeed = 0;
+    
+    public Lodge()
+    {
+        setRotation(10);
+        setImage(new GreenfootImage("anchor.png"));
+    }
     /**
      * Act - do whatever the Lodge wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        // Add your action code here.
+        
     }    
     /**
      * Checks if an Actor is at the coordinates passed in

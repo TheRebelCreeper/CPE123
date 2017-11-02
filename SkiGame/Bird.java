@@ -18,7 +18,7 @@ public class Bird extends Obstacle
     {
         setRotation(10);
         setImage(new GreenfootImage("bird1.png"));
-        speed = -8;
+        speed = -6;
     }
     
     /**
