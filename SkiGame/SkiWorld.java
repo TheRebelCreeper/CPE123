@@ -12,7 +12,8 @@ public class SkiWorld extends World
 
     private int imageCount = 0;
 
-    private int levelNumber = 1;
+    /**Current level of the game*/
+    public static int levelNumber;
     /**Whether the player is alive or not*/
     public boolean isAlive = true;
     
@@ -150,5 +151,15 @@ public class SkiWorld extends World
     public Heart getHealth(int n)
     {
         return health[n];
+    }
+    
+    public void setLevel(int level)
+    {
+        levelNumber = level;
+    }
+    
+    public int getLevel()
+    {
+        return levelNumber;
     }
 }

@@ -33,6 +33,8 @@ public class Player extends SmoothMover implements Gravity
     private int delay;
     /**Needs comment explaining*/
     private static final int DELAY = 6;
+    /**Player's hitbox*/
+    private PlayerHitbox hitbox;
     
     /**Image of the player normally*/
     private GreenfootImage normal;
@@ -53,11 +55,6 @@ public class Player extends SmoothMover implements Gravity
     
     private GreenfootSound gettinghit;
     private GreenfootSound die;
-    
-    private PlayerHitbox hitbox;
-    
-    
-    
     
     /**
      * Constructor
