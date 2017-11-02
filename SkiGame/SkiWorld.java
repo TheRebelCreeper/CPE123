@@ -158,8 +158,6 @@ public class SkiWorld extends World
         }
     }
     
-    
-    
     public Heart getHealth(int n)
     {
         return health[n];
@@ -171,22 +169,16 @@ public class SkiWorld extends World
         return levelNumber;
     }
     
-    /*public void setLevel()
+    public void setLevel()
     {
         if(levelNumber == 1)
         {
             
         }
-    } */
+    } 
 
     public void setLevel(int level)
     {
         levelNumber = level;
     }
-<<<<<<< HEAD
-    
-    
-=======
->>>>>>> 096be2212d52eef7cfe9853a5fd9fbe7bdb299d6
-
 }
