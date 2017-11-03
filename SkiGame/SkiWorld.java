@@ -74,8 +74,8 @@ public class SkiWorld extends World
                 imageCount -= 3;
                 
                 treeSpawnRate = 5;  // chance out of 1000
-                birdSpawnRate = 3;
-                snowballSpawnRate = 2;
+                birdSpawnRate = 0;
+                snowballSpawnRate = 0;
                 
                 drawBackgroundImage(); // Updates the background          
                 generateTree();     // Generates a tree
@@ -229,14 +229,15 @@ public class SkiWorld extends World
         return health[n];
     }
     
-    public int getLevel()
+    public static int getLevel()
     {
         return levelNumber;
     }
 
-    public void setLevel(int level)
+    public static void setLevel(int level)
     {
         levelNumber = level;
+        /**This code doesn't do anything. All local variables*/
         Tree t = new Tree();
         t.setSpeed(level);
         Snowball s = new Snowball();
