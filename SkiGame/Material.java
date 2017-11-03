@@ -9,35 +9,34 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Material extends Actor implements Gravity
 {
     protected int ySpeed = 0;
-    private GreenfootImage myImage;
+    
+    public Material()
+    {
+        
+    }
     
     /**
      * Act - do whatever the Material1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void Material()
+    
+    public void fall()
     {
-        myImage = new GreenfootImage("Material1.png");
-        setImage(myImage);
-        setRotation(10);
+        setLocation(getX(), getY());
+        if( ySpeed <= MAX_GRAV)   // If velocity is less than terminal velocity
+        {
+            ySpeed += GRAVITY_ACCEL;    // Accelerate
+        }
     }
     
-    public void act() 
+     public boolean objectIsBelow()
     {
-        // Add your action code here.
-        move(-6);
-        checkRemove();
-    }    
-    
-    public boolean objectIsBelow()
-    {
+        // If there is an object right below the image
         if (getOneObjectAtOffset(0, getImage().getHeight() / 2 + 2, Actor.class) != null)
         {
-            if (getOneObjectAtOffset(0, getImage().getHeight() / 2 + 2, Tree.class) == null)
-                return true;
-            else
-                return false;
+            return true;
         }
+        // If the Actor is below the world
         else if (getY() >= getWorld().getHeight() - getImage().getHeight())
         {
             return true;
@@ -46,18 +45,24 @@ public class Material extends Actor implements Gravity
         {
             return false;
         }
-    }   
+    }
     
     public void checkGravity()
     {
+        if (objectIsBelow())    // If object is on solid ground
+        {
+            ySpeed = -6;     // Set vertical velocity to 0
+        }
+        else
+        {
+            fall();     // Fall due to gravity
+        }
         
     }
     
-    public void fall()
-    {
-        
-    }
-    
+    /**
+     * Checks if the Actor should be removed from the world
+     */
     protected void checkRemove()
     {
         if (getX() < 0)
