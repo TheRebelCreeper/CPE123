@@ -133,6 +133,12 @@ public class Player extends SmoothMover implements Gravity
             setImage(hit);
             delayImage();
         }
+        
+        if(getY() > getWorld().getHeight() + 30)
+        {
+            SkiWorldOver s = new SkiWorldOver();
+            Greenfoot.setWorld(s);
+        }
     }
     
     public void animatesnow(){ 
