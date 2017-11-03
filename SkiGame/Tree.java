@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Tree extends Obstacle
 {      
+    
+    
     /**
      * Constructor
      */
@@ -31,9 +33,10 @@ public class Tree extends Obstacle
         checkRemove();      // Checks to remove Tree
     }
     
-    public void setSpeed(int s)
+    public void setSpeed(int l)
     {
-        speed += s;
+        int difference = l-1;
+        speed = -6 - difference;
     }
     
     /**

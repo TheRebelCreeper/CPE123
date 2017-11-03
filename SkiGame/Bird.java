@@ -28,8 +28,9 @@ public class Bird extends Obstacle
         checkRemove();
     }   
     
-    public void setSpeed(int s)
+    public void setSpeed(int l)
     {
-        speed += s;
+        int difference = l-1;
+        speed = -6 - difference;
     }
 }

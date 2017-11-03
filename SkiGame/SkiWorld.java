@@ -237,5 +237,11 @@ public class SkiWorld extends World
     public void setLevel(int level)
     {
         levelNumber = level;
+        Tree t = new Tree();
+        t.setLevel(level);
+        Snowball s = newSnowball();
+        s.setLevel(level);
+        Bird b = new Bird();
+        b.setLevel(level);
     }
 }
