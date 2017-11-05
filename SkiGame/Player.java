@@ -139,6 +139,14 @@ public class Player extends SmoothMover implements Gravity
             SkiWorldOver s = new SkiWorldOver();
             Greenfoot.setWorld(s);
         }
+        
+        SkiWorld a = (SkiWorld)getWorld();
+        if( a.getLodgeDelay() > 1800 )
+        {
+            move(5);
+            endLevel();
+        }
+        
     }
     
     public void animatesnow(){ 
@@ -304,6 +312,15 @@ public class Player extends SmoothMover implements Gravity
         {
             didGetHit = false;
             delay = DELAY;
+        }
+    }
+
+    public void endLevel()
+    {
+        if( isTouching( Lodge.class ) )
+        {
+            LevelMenu b = new LevelMenu();      
+            Greenfoot.setWorld( b );
         }
     }
 }

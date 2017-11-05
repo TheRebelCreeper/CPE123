@@ -22,6 +22,8 @@ public class SkiWorld extends World
     Heart[] health = new Heart[3];
 
     private int lodgeDelay = 0;
+    
+    Player player;
     /**
      * Constructor for objects of class MyWorld.
      */
@@ -43,7 +45,7 @@ public class SkiWorld extends World
     private void prepare()
     {
         //Adds the player
-        Player player = new Player();
+        player = new Player();
         addObject(player, 297, 195);
         //Adds the slope
         Snow snow = new Snow();
@@ -222,8 +224,10 @@ public class SkiWorld extends World
         if( lodgeDelay >= 1800 )
         {
             Lodge lodge = new Lodge();
-            addObject(lodge, 600, 300);
+            addObject(lodge, 600, 250);
+            
         }
+        
     }
     
     public Heart getHealth(int n)
@@ -246,5 +250,10 @@ public class SkiWorld extends World
         s.setSpeed(level);
         Bird b = new Bird();
         b.setSpeed(level);
+    }
+    
+    public int getLodgeDelay()
+    {
+        return lodgeDelay;
     }
 }
