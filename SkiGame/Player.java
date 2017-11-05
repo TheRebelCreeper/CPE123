@@ -51,6 +51,11 @@ public class Player extends SmoothMover implements Gravity
     private GreenfootImage normal3;
     private GreenfootImage normal4;
     
+    private GreenfootImage ducking1;
+    private GreenfootImage ducking2;
+    private GreenfootImage ducking3;
+    private GreenfootImage ducking4;
+    
     private int frame;
     
     private GreenfootSound gettinghit;
@@ -71,6 +76,10 @@ public class Player extends SmoothMover implements Gravity
         normal2 = new GreenfootImage("skiernormal2.png");
         normal3 = new GreenfootImage("skiernormal3.png");
         normal4 = new GreenfootImage("skiernormal4.png");
+        ducking1 = new GreenfootImage("skierduckingsnow1.png");
+        ducking2 = new GreenfootImage("skierduckingsnow2.png");
+        ducking3 = new GreenfootImage("skierduckingsnow3.png");
+        ducking4 = new GreenfootImage("skierduckingsnow4.png");
         gettinghit = new GreenfootSound("sounds/gettinghit.mp3");  
         die = new GreenfootSound("sounds/die.mp3");
         
@@ -105,7 +114,7 @@ public class Player extends SmoothMover implements Gravity
         
         if (downPressed || shiftPressed)    // animation for skier to duck
         { 
-            setImage(down);         // Changes image for the skier
+            animatesnowducking();         // Changes image for the skier
             hitbox.crouchHitbox();  // Changes hitbox for the skier
         }
         else if (upPressed || spacePressed) // animation for the skier to jump
@@ -172,6 +181,28 @@ public class Player extends SmoothMover implements Gravity
 
     }
     
+    public void animatesnowducking() {
+        
+        frame++;
+        if (frame==1)
+        {
+            setImage(ducking1);
+        }
+        else if(frame==2)
+        {
+            setImage(ducking2);
+        }
+        else if(frame==3)
+        {
+            setImage(ducking3);
+        }
+        else if (frame==4)
+        {
+            setImage(ducking4);
+            frame = 1;
+            return;
+        }
+    }
     /**
      * Checks if the player is jumping
      */
