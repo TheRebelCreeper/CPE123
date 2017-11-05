@@ -21,6 +21,7 @@ public class SkiWorld extends World
     
     Heart[] health = new Heart[3];
 
+    private int lodgeDelay = 0;
     /**
      * Constructor for objects of class MyWorld.
      */
@@ -140,6 +141,7 @@ public class SkiWorld extends World
                 generateLodge();
             }
         }
+        lodgeDelay++;
     }
 
     /**
@@ -217,7 +219,7 @@ public class SkiWorld extends World
     
     private void generateLodge()
     {
-        if( Greenfoot.getRandomNumber(1000) < 1 )
+        if( lodgeDelay >= 1800 )
         {
             Lodge lodge = new Lodge();
             addObject(lodge, 600, 300);
