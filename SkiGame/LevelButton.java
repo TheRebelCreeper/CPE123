@@ -13,6 +13,7 @@ public class LevelButton extends Actor
     public LevelButton(int level)
     {
         this.level = level;
+        setImage("SKIButtonLevelSelect.png");
     }
     
     /**

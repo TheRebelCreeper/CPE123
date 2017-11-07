@@ -27,6 +27,8 @@ public class SkiWorld extends World
     public int obstacleDELAY;
     
     
+    private Label label;
+    
     Player player;
     /**
      * Constructor for objects of class MyWorld.
@@ -62,7 +64,10 @@ public class SkiWorld extends World
         health[0] = new Heart();
         addObject(health[0], getWidth()-140, 50);
         
-        obstacleDELAY = obstacleDelay;
+
+        label = new Label( "Level: " + levelNumber, 48 );
+        addObject( label, 100, 50 );
+
     }
 
     /**
@@ -240,7 +245,7 @@ public class SkiWorld extends World
         if( lodgeDelay >= 1800 )
         {
             Lodge lodge = new Lodge();
-            addObject(lodge, 600, 250);
+            addObject(lodge, 600, 275);
             
         }
         
