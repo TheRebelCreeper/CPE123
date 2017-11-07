@@ -111,6 +111,7 @@ public class Player extends SmoothMover implements Gravity
         checkGravity();     // Checks the gravity 
         checkCollision();   // Checks for collisions
         checkJump();        // Checks if the player should jump
+        checkForCollisions();  // Checks for collisions with Material1
         
         if (downPressed || shiftPressed)    // animation for skier to duck
         { 
@@ -353,5 +354,15 @@ public class Player extends SmoothMover implements Gravity
             LevelMenu b = new LevelMenu();      
             Greenfoot.setWorld( b );
         }
+    }
+    
+    public void checkForCollisions()
+    {
+        Actor Material1 =getOneIntersectingObject(Material1.class);
+        if (Material1 !=null)
+        {   SkiWorld world =(SkiWorld) getWorld();
+            world.removeObject(Material1);
+        }
+        
     }
 }
