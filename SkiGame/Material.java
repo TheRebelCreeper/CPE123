@@ -22,7 +22,6 @@ public class Material extends Actor implements Gravity
     
     public void fall()
     {
-        setLocation(getX(), getY());
         if( ySpeed <= MAX_GRAV)   // If velocity is less than terminal velocity
         {
             ySpeed += GRAVITY_ACCEL;    // Accelerate
@@ -51,7 +50,7 @@ public class Material extends Actor implements Gravity
     {
         if (objectIsBelow())    // If object is on solid ground
         {
-            ySpeed = -6;     // Set vertical velocity to 0
+            ySpeed = 0;     // Set vertical velocity to 0
         }
         else
         {
