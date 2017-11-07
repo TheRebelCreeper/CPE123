@@ -254,7 +254,7 @@ public class SkiWorld extends World
         if( lodgeDelay >= 1800 )
         {
             Lodge lodge = new Lodge();
-            addObject(lodge, 600, 250);
+            addObject(lodge, 600, 275);
             
         }
         
