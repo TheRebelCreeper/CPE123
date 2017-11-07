@@ -63,12 +63,10 @@ public class SkiWorld extends World
         health[0] = new Heart();
         addObject(health[0], getWidth()-140, 50);
         
-<<<<<<< HEAD
+
         label = new Label( "Level: " + levelNumber, 48 );
         addObject( label, 300, 50 );
-=======
-        obstacleDELAY = obstacleDelay;
->>>>>>> 1467f4b28786a927e8307584dd3f4b1f6a2b6266
+
     }
 
     /**
