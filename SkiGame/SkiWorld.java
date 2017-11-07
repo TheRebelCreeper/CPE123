@@ -23,6 +23,8 @@ public class SkiWorld extends World
 
     private int lodgeDelay = 0;
     
+    private Label label;
+    
     Player player;
     /**
      * Constructor for objects of class MyWorld.
@@ -57,6 +59,9 @@ public class SkiWorld extends World
         addObject(health[1], getWidth()-95, 50);
         health[0] = new Heart();
         addObject(health[0], getWidth()-140, 50);
+        
+        label = new Label( "Level: " + levelNumber, 48 );
+        addObject( label, 300, 50 );
     }
 
     /**
