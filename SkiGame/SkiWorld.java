@@ -99,7 +99,10 @@ public class SkiWorld extends World
                 imageCount -= 3;
                                 
                 spawnRate = 150;
-                
+                GreenfootImage bg = new GreenfootImage("sandbackground.jpg");
+                myBackground = bg;
+                GreenfootImage s = new GreenfootImage("sandslope.png");
+                Snow sn = new Snow();
                 drawBackgroundImage(); // Updates the background          
                 spawnObstacles();
                 generateLodge();
