@@ -18,6 +18,7 @@ public class Material1 extends Material
         setImage(myImage);
         speed = -6;
         setRotation(10);
+        part = new Buildable();
     }
     
     /**
