@@ -26,6 +26,7 @@ public class Buildable extends Actor implements Gravity
     {
         placed = 0;
         ySpeed = 0;
+        setImage(new GreenfootImage("barrel.png"));
     }
     
     /**

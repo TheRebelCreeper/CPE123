@@ -28,5 +28,4 @@ public class SkiWorldIntro extends World
             Greenfoot.setWorld(world);
          }
     }
-    
 }

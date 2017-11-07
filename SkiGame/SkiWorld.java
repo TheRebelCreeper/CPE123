@@ -29,7 +29,9 @@ public class SkiWorld extends World
     
     private Label label;
     
-    Player player;
+    private Player player;
+    
+    private Snow snow;
     /**
      * Constructor for objects of class MyWorld.
      */
@@ -54,7 +56,7 @@ public class SkiWorld extends World
         player = new Player();
         addObject(player, 297, 195);
         //Adds the slope
-        Snow snow = new Snow();
+        snow = new Snow();
         addObject(snow,298,399);
         //Adds the heart
         health[2] = new Heart();

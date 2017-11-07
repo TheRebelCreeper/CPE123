@@ -21,6 +21,7 @@ public class BuildWorld extends World
     StartButtonBuildWorld startbuttonbuildworld;
     private boolean isButtonClicked;
     private Container[] myContainers;
+    private final int NUM_OF_CONTAINERS = 3;
     public static int count = 0;
     
     public BuildWorld()
@@ -29,12 +30,15 @@ public class BuildWorld extends World
         super(SWIDTH, SHEIGHT, 1, false); 
         bimg = new GreenfootImage("BackgroundEx.png");
         shiftWorld(0);
-        myContainers = new Container[3];
+        myContainers = new Container[NUM_OF_CONTAINERS];
         prepare();
-        
+        setPaintOrder(Hitbox.class);
     }
-    public void act(){
-        if(Greenfoot.mouseClicked(startbuttonbuildworld) || isButtonClicked){
+    
+    public void act()
+    {
+        if(Greenfoot.mouseClicked(startbuttonbuildworld) || isButtonClicked)
+        {
             skierbuild.move(5);
             isButtonClicked = true;
         }
@@ -60,7 +64,7 @@ public class BuildWorld extends World
         myContainers[2] = new Container();
         addObject(myContainers[2],74,332);
 
-        for (int i = 0; i < count && i < 3; i++)
+        for (int i = 0; i < count && i < NUM_OF_CONTAINERS; i++)
         {
             myContainers[i].setObject(new Buildable());
         }
