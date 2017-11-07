@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Material extends Actor implements Gravity
 {
     protected int ySpeed = 0;
+    public Buildable part;
     
     public Material()
     {
@@ -68,6 +69,5 @@ public class Material extends Actor implements Gravity
         {
             getWorld().removeObject(this);
         }
-    }
-    
+    }  
 }

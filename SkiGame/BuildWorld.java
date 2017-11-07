@@ -20,14 +20,18 @@ public class BuildWorld extends World
     SkierBuild skierbuild;
     StartButtonBuildWorld startbuttonbuildworld;
     private boolean isButtonClicked;
+    private Container[] myContainers;
+    public static int count = 0;
+    
     public BuildWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(SWIDTH, SHEIGHT, 1, false); 
         bimg = new GreenfootImage("BackgroundEx.png");
         shiftWorld(0);
+        myContainers = new Container[3];
         prepare();
-
+        
     }
     public void act(){
         if(Greenfoot.mouseClicked(startbuttonbuildworld) || isButtonClicked){
@@ -47,32 +51,35 @@ public class BuildWorld extends World
         Tree tree = new Tree();
         //addObject(tree,489,252);
 
-        // Material1 material1 = new Material1();
-        // addObject(material1,73,204);
-        // material1.setLocation(191,204);
-        // material1.setLocation(162,205);
-        // material1.setLocation(68,188);
+        myContainers[0] = new Container();
+        addObject(myContainers[0],74,71);
 
-        Container container = new Container();
-        addObject(container,74,71);
+        myContainers[1] = new Container();
+        addObject(myContainers[1],74,204);
+        
+        myContainers[2] = new Container();
+        addObject(myContainers[2],74,332);
 
-        Container container2 = new Container();
-        addObject(container2,74,204);
+        for (int i = 0; i < count && i < 3; i++)
+        {
+            myContainers[i].setObject(new Buildable());
+        }
+        
+        if (myContainers[0].getObject() != null)
+        {
+            addObject(myContainers[0].getObject(),74,71);
+        }
 
-        Container container3 = new Container();
-        addObject(container3,74,332);
+        if (myContainers[1].getObject() != null)
+        {
+            addObject(myContainers[1].getObject(),74,203);
+        }
 
-        Buildable buildable = new Buildable();
-        container.setObject(buildable);
-        addObject(buildable,74,71);
-
-        Buildable buildable2 = new Buildable();
-        container2.setObject(buildable2);
-        addObject(buildable2,74,203);
-
-        Buildable buildable3 = new Buildable();
-        container3.setObject(buildable3);
-        addObject(buildable3,74,333);
+        if (myContainers[2].getObject() != null)
+        {
+            addObject(myContainers[2].getObject(),74,333);
+        }
+        
         skierbuild = new SkierBuild();
         addObject(skierbuild,303,197);
         startbuttonbuildworld = new StartButtonBuildWorld();
@@ -100,6 +107,4 @@ public class BuildWorld extends World
             a.setAbsoluteLocation(dx);
         }
     }
-
-
 }

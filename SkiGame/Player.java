@@ -351,17 +351,18 @@ public class Player extends SmoothMover implements Gravity
     {
         if( isTouching( Lodge.class ) )
         {
-            LevelMenu b = new LevelMenu();      
-            Greenfoot.setWorld( b );
+            BuildWorld b = new BuildWorld();      
+            Greenfoot.setWorld(b);
         }
     }
     
     public void checkForCollisions()
     {
-        Actor Material1 =getOneIntersectingObject(Material1.class);
-        if (Material1 !=null)
+        Actor m = getOneIntersectingObject(Material1.class);
+        if (m !=null)
         {   SkiWorld world =(SkiWorld) getWorld();
-            world.removeObject(Material1);
+            BuildWorld.count += 1;
+            world.removeObject(m);
         }
         
     }
