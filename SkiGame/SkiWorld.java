@@ -102,7 +102,7 @@ public class SkiWorld extends World
                 GreenfootImage bg = new GreenfootImage("sandbackground.jpg");
                 myBackground = bg;
                 GreenfootImage s = new GreenfootImage("sandslope.png");
-                Snow sn = new Snow();
+                snow.setImage(s);
                 drawBackgroundImage(); // Updates the background          
                 spawnObstacles();
                 generateLodge();
