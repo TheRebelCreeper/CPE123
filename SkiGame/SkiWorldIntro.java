@@ -24,7 +24,7 @@ public class SkiWorldIntro extends World
     {
         if (Greenfoot.mouseClicked(this))
         {
-            SkiWorld world = new SkiWorld();
+            LevelMenu world = new LevelMenu();
             Greenfoot.setWorld(world);
          }
     }
