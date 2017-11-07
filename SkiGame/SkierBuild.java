@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class SkierBuild extends ScrollingActor
+public class SkierBuild extends ScrollingActor implements Gravity
 {
     public SkierBuild()
     {
@@ -49,5 +49,20 @@ public class SkierBuild extends ScrollingActor
             setLocation(getX()+speedX, getY());
         }
         speedX = 0;
+    }
+    
+    public boolean objectIsBelow()
+    {
+        return true;
+    }
+    
+    public void fall()
+    {
+        
+    }
+    
+    public void checkGravity()
+    {
+        
     }
 }
