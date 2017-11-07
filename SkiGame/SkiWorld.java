@@ -87,7 +87,7 @@ public class SkiWorld extends World
             {
                 imageCount -= 3;
                 
-                spawnRate = 150;
+                spawnRate = 200;
                 
                 drawBackgroundImage(); // Updates the background          
                 
@@ -98,7 +98,7 @@ public class SkiWorld extends World
             {
                 imageCount -= 3;
                                 
-                spawnRate = 100;
+                spawnRate = 150;
                 
                 drawBackgroundImage(); // Updates the background          
                 spawnObstacles();
@@ -108,7 +108,7 @@ public class SkiWorld extends World
             {
                 imageCount -= 3;
                                 
-                spawnRate = 70;
+                spawnRate = 120;
                 
                 drawBackgroundImage(); // Updates the background          
                 spawnObstacles();
@@ -118,7 +118,7 @@ public class SkiWorld extends World
             {
                 imageCount -= 3;
                                 
-                spawnRate = 50;
+                spawnRate = 100;
                 
                 drawBackgroundImage(); // Updates the background          
                 spawnObstacles();
@@ -128,12 +128,10 @@ public class SkiWorld extends World
             {
                 imageCount -= 3;
                                 
-                spawnRate = 20;
+                spawnRate = 80;
                 
-                drawBackgroundImage(); // Updates the background          
-                generateTree();     // Generates a tree
-                generateBird();     // Generates a bird
-                generateSnowball(); // Generates a snowball
+                drawBackgroundImage();
+                spawnObstacles();        
                 generateLodge();
             }
         }
