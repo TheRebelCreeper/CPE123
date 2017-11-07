@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Tree extends Obstacle
 {      
     
-    
+    public static int speed;
     /**
      * Constructor
      */

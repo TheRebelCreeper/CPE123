@@ -188,6 +188,7 @@ public class SkiWorld extends World
         if(Greenfoot.getRandomNumber(1000) < treeSpawnRate) // Chance of spawning a tree
         {
             Tree tree = new Tree();
+            //tree.setSpeed(levelNumber);
             addObject(tree, 680, 230);
 
             Material1 Material1 = new Material1();
@@ -203,6 +204,7 @@ public class SkiWorld extends World
         if(Greenfoot.getRandomNumber(1000) < birdSpawnRate) // Chance of spawning a bird
         {
             Bird bird = new Bird();
+            //bird.setSpeed(levelNumber);
             addObject(bird, 680, 200);
         }
     }
@@ -215,6 +217,7 @@ public class SkiWorld extends World
         if(Greenfoot.getRandomNumber(1000) < snowballSpawnRate) // Chance of spawning a snowball
         {
             Snowball sb = new Snowball();
+            //sb.setSpeed(levelNumber);
             addObject(sb, 680, 200);
         }
     }
@@ -244,12 +247,12 @@ public class SkiWorld extends World
     {
         levelNumber = level;
         /**This code doesn't do anything. All local variables*/
-        Tree t = new Tree();
+         /*Tree t = new Tree();
         t.setSpeed(level);
         Snowball s = new Snowball();
         s.setSpeed(level);
         Bird b = new Bird();
-        b.setSpeed(level);
+        b.setSpeed(level); */
     }
     
     public int getLodgeDelay()
