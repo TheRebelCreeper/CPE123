@@ -13,7 +13,7 @@ public class Lodge extends Actor implements Gravity
     public Lodge()
     {
         setRotation(10);
-        setImage(new GreenfootImage("anchor.png"));
+        setImage(new GreenfootImage("lodge.png"));
     }
     /**
      * Act - do whatever the Lodge wants to do. This method is called whenever
