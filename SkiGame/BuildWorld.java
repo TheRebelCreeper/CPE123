@@ -17,6 +17,9 @@ public class BuildWorld extends World
     private final static int SHEIGHT = 400;
     private final static int WWIDTH = 1000;
     private GreenfootImage bimg;
+    SkierBuild skierbuild;
+    StartButtonBuildWorld startbuttonbuildworld;
+    private boolean isButtonClicked;
     public BuildWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -26,7 +29,13 @@ public class BuildWorld extends World
         prepare();
 
     }
-
+    public void act(){
+        if(Greenfoot.mouseClicked(startbuttonbuildworld) || isButtonClicked){
+            skierbuild.move(5);
+            isButtonClicked = true;
+        }
+    }
+    
     /**
      * Prepares the objects in BuildWorld
      */
@@ -64,8 +73,10 @@ public class BuildWorld extends World
         Buildable buildable3 = new Buildable();
         container3.setObject(buildable3);
         addObject(buildable3,74,333);
-        SkierBuild skierbuild = new SkierBuild();
+        skierbuild = new SkierBuild();
         addObject(skierbuild,303,197);
+        startbuttonbuildworld = new StartButtonBuildWorld();
+        addObject(startbuttonbuildworld,522,338);
     }
 
     public void shiftWorld(int dx) {
