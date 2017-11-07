@@ -8,9 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class SkierBuild extends ScrollingActor implements Gravity
 {
+    /**Vertical Velocity*/
+    private int ySpeed = 0;
+    
     public SkierBuild()
     {
         setImage(new GreenfootImage("placeholder2.png"));
+        setRotation(10);
     }
     
     /**
@@ -24,7 +28,7 @@ public class SkierBuild extends ScrollingActor implements Gravity
     public void act(){
         handleKeyPresses();
         boundedMove();
-         
+        checkGravity();
     }
 
     private void handleKeyPresses() {
@@ -53,16 +57,41 @@ public class SkierBuild extends ScrollingActor implements Gravity
     
     public boolean objectIsBelow()
     {
-        return true;
+        // If it is touching another Actor
+        if (getOneObjectAtOffset(0, getImage().getHeight() / 2 + 2, Actor.class) != null)
+        {
+            return true;
+        }
+        // If it is touching the edge of the world
+        else if (getY() >= getWorld().getHeight() - getImage().getHeight())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     
     public void fall()
     {
-        
+        setLocation(getX(), getY() + ySpeed);
+
+        if( ySpeed <= MAX_GRAV)   // If velocity is less than terminal velocity
+        {
+            ySpeed += GRAVITY_ACCEL;    // Accelerate
+        }
     }
     
     public void checkGravity()
     {
-        
+        if (objectIsBelow())    // If object is on solid ground and is alive
+        {
+            ySpeed = 0;   // Set vertical speed to 0
+        }
+        else
+        {
+            fall();
+        }
     }
 }
