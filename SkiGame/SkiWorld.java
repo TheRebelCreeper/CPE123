@@ -10,7 +10,8 @@ public class SkiWorld extends World
     /**Holds the background of SkiWorld*/
     private GreenfootImage myBackground;
 
-    private int treeSpawnRate, birdSpawnRate, snowballSpawnRate;
+    //private int treeSpawnRate, birdSpawnRate, snowballSpawnRate;
+    private int spawnRate;
     
     private int imageCount = 0;
 
@@ -81,9 +82,7 @@ public class SkiWorld extends World
             {
                 imageCount -= 3;
                 
-                treeSpawnRate = 5;  // chance out of 1000
-                birdSpawnRate = 0;
-                snowballSpawnRate = 0;
+                spawnRate = 150;
                 
                 drawBackgroundImage(); // Updates the background          
                 
@@ -94,9 +93,7 @@ public class SkiWorld extends World
             {
                 imageCount -= 3;
                                 
-                treeSpawnRate = 5;
-                birdSpawnRate = 3;
-                snowballSpawnRate = 2;
+                spawnRate = 100;
                 
                 drawBackgroundImage(); // Updates the background          
                 spawnObstacles();
@@ -106,9 +103,7 @@ public class SkiWorld extends World
             {
                 imageCount -= 3;
                                 
-                treeSpawnRate = 5;
-                birdSpawnRate = 3;
-                snowballSpawnRate = 2;
+                spawnRate = 70;
                 
                 drawBackgroundImage(); // Updates the background          
                 spawnObstacles();
@@ -118,9 +113,7 @@ public class SkiWorld extends World
             {
                 imageCount -= 3;
                                 
-                treeSpawnRate = 5;
-                birdSpawnRate = 3;
-                snowballSpawnRate = 2;
+                spawnRate = 50;
                 
                 drawBackgroundImage(); // Updates the background          
                 spawnObstacles();
@@ -130,9 +123,7 @@ public class SkiWorld extends World
             {
                 imageCount -= 3;
                                 
-                treeSpawnRate = 5;
-                birdSpawnRate = 3;
-                snowballSpawnRate = 2;
+                spawnRate = 20;
                 
                 drawBackgroundImage(); // Updates the background          
                 generateTree();     // Generates a tree
@@ -197,7 +188,7 @@ public class SkiWorld extends World
                 generateSnowball();
             }
             
-            int d = Greenfoot.getRandomNumber(40) + 100;
+            int d = Greenfoot.getRandomNumber(40) + spawnRate;
             obstacleDelay = d;
         }
     }
