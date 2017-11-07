@@ -10,7 +10,7 @@ public class LevelMenu extends World
 {
     private final int LEVEL_NUMBER = 5;
     private LevelButton[] button = new LevelButton[LEVEL_NUMBER];
-    
+
     /**
      * Constructor for objects of class MainMenu.
      * 
@@ -18,11 +18,20 @@ public class LevelMenu extends World
     public LevelMenu()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(568, 400, 1); 
         for (int i = 0; i < LEVEL_NUMBER; i++)
         {
             button[i] = new LevelButton(i + 1);
             addObject(button[i], i * (getWidth() / LEVEL_NUMBER) + 50, 200);
         }
+        prepare();
+    }
+
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
     }
 }
