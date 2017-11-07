@@ -6,8 +6,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class SkierBuild extends ScrollingActor implements Gravity
+public class SkierBuild extends ScrollingActor
 {
+    public SkierBuild()
+    {
+        setImage(new GreenfootImage("placeholder2.png"));
+    }
+    
     /**
      * Act - do whatever the Hiker wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -19,18 +24,9 @@ public class SkierBuild extends ScrollingActor implements Gravity
     public void act(){
         handleKeyPresses();
         boundedMove();
-        
-          
+         
     }
-    public void checkGravity(){
-    
-    }
-    public boolean objectIsBelow(){
-        return true;
-    }
-    public void fall(){
-        
-    }
+
     private void handleKeyPresses() {
         handleArrowKey("left", -SPEED);
         handleArrowKey("right", SPEED);
