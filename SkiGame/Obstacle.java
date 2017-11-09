@@ -6,10 +6,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public abstract class Obstacle extends Actor implements Gravity
+public abstract class Obstacle extends SmoothMover implements Gravity
 {
     /**Vertical Velocity*/
-    protected int ySpeed = 0;
+    protected double ySpeed = 0;
     //protected int speed = 0;
     
     /**

@@ -13,7 +13,7 @@ public class SkierBuild extends ScrollingActor implements Gravity
     
     public SkierBuild()
     {
-        setImage(new GreenfootImage("placeholder2.png"));
+        setImage(new GreenfootImage("skiernormal.png"));
         setRotation(10);
     }
     

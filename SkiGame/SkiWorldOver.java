@@ -27,7 +27,7 @@ public class SkiWorldOver extends World
     { 
         if(Greenfoot.mouseClicked(this))
         {    
-            
+            BuildWorld.count = 0;
             Greenfoot.setWorld(new SkiWorld());
         }
     }
