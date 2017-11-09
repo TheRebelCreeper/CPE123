@@ -61,6 +61,8 @@ public class Player extends SmoothMover implements Gravity
     private GreenfootSound gettinghit;
     private GreenfootSound die;
     
+    boolean touchingMaterial1 =false;
+    
     /**
      * Constructor
      */
@@ -361,8 +363,22 @@ public class Player extends SmoothMover implements Gravity
         Actor m = getOneIntersectingObject(Material1.class);
         if (m !=null)
         {   SkiWorld world =(SkiWorld) getWorld();
+            MaterialBar materialbar =world.getMaterialBar();
+            if(touchingMaterial1 ==false)
+            {
+                materialbar.loseHealth();
+                touchingMaterial1 =true;
+                if(materialbar.health <=0)
+                {
+                    
+                }
+            }
             BuildWorld.count += 1;
             world.removeObject(m);
+        }
+        else 
+        {
+            touchingMaterial1 =false;
         }
         
     }

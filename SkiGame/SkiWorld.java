@@ -32,6 +32,9 @@ public class SkiWorld extends World
     private Player player;
     
     private Snow snow;
+    
+    MaterialBar materialbar = new MaterialBar();
+    
     /**
      * Constructor for objects of class MyWorld.
      */
@@ -69,8 +72,11 @@ public class SkiWorld extends World
 
         label = new Label( "Level: " + levelNumber, 48 );
         addObject( label, 100, 50 );
+        
+        addObject(materialbar, 530, 90);
 
     }
+    
 
     /**
      * Act method for SkiWorld
@@ -279,5 +285,10 @@ public class SkiWorld extends World
     public int getLodgeDelay()
     {
         return lodgeDelay;
+    }
+    
+    public MaterialBar getMaterialBar()
+    {
+        return materialbar;
     }
 }

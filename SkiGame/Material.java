@@ -11,6 +11,7 @@ public class Material extends Actor implements Gravity
     protected int ySpeed = 0;
     public Buildable part;
     
+    
     public Material()
     {
         
