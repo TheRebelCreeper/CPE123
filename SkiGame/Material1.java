@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Material1 extends Material
 {
     private GreenfootImage myImage;
-    private int speed;
+    private static double speed;
     
     public Material1()
     {
@@ -36,8 +36,12 @@ public class Material1 extends Material
      * 
      * @param int Value to increase speed by
      */
-    public void setSpeed(int s)
+    public void setSpeed(int l)
     {
-        speed += s;
+        if(l != 0)
+        {
+            int difference = l - 1;
+            speed = -6 - difference + .5*(l-1);
+        }
     }
 }

@@ -8,17 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Snowball extends Obstacle
 {
-    public static int speed;
+    public static double speed;
     /**
      * Constructor for Snowball
      */
-     public Snowball()
+    public Snowball()
     {
         setRotation(10);
         setImage(new GreenfootImage("snowball.png"));
         speed = -7;
     }
-    
+
     /**
      * Act - do whatever the Snowball wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -28,10 +28,13 @@ public class Snowball extends Obstacle
         move (-7);
         checkRemove();
     }   
-    
+
     public void setSpeed(int l)
     {
-        int difference = l - 1;
-        speed = -7 - difference;
+        if(l != 0)
+        {
+            int difference = l - 1;
+            speed = -7 - difference + .5*(l-1);
+        }
     }
 }

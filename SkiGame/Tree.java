@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Tree extends Obstacle
 {      
-    
+
     public static double speed;
     /**
      * Constructor
@@ -19,8 +19,7 @@ public class Tree extends Obstacle
         setImage(new GreenfootImage("pine-tree.png"));  // Sets the image of Tree
         speed = -6;
     }
-   
-    
+
     /**
      * Act - do whatever the Trees wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -32,13 +31,16 @@ public class Tree extends Obstacle
         checkGravity();     // Checks the gravity for Tree
         checkRemove();      // Checks to remove Tree
     }
-    
+
     public void setSpeed(int l)
     {
-        int difference = l-1;
-        speed = -6 - difference;
+        if(l != 0)
+        {
+            int difference = l-1;
+            speed = -6 - difference + .5*(l-1);
+        }
     }
-    
+
     /**
      * Checks if an Actor is at the coordinates passed in
      * 

@@ -215,11 +215,12 @@ public class SkiWorld extends World
         //if(Greenfoot.getRandomNumber(1000) < treeSpawnRate) // Chance of spawning a tree
         //{
             Tree tree = new Tree();
-            //tree.setSpeed(levelNumber);
+            tree.setSpeed(levelNumber);
             addObject(tree, 680, 230);
 
-            Material1 Material1 = new Material1();
-            addObject(Material1, 670, 190);
+            Material1 material1 = new Material1();
+            material1.setSpeed(levelNumber);
+            addObject(material1, 670, 190);
        // }
     }
 
@@ -231,7 +232,7 @@ public class SkiWorld extends World
         //if(Greenfoot.getRandomNumber(1000) < birdSpawnRate) // Chance of spawning a bird
         //{
             Bird bird = new Bird();
-            //bird.setSpeed(levelNumber);
+            bird.setSpeed(levelNumber);
             addObject(bird, 680, 200);
         //}
     }
@@ -244,7 +245,7 @@ public class SkiWorld extends World
         //if(Greenfoot.getRandomNumber(1000) < snowballSpawnRate) // Chance of spawning a snowball
         //{
             Snowball sb = new Snowball();
-            //sb.setSpeed(levelNumber);
+            sb.setSpeed(levelNumber);
             addObject(sb, 680, 200);
         //}
     }
