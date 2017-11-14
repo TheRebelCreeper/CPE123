@@ -35,7 +35,6 @@ public class SkiWorld extends World
     
     MaterialBar materialbar = new MaterialBar();
     
-    public Lodge lodge;
     /**
      * Constructor for objects of class MyWorld.
      */
@@ -193,7 +192,7 @@ public class SkiWorld extends World
             if(num == 0)
             {
                 generateTree();
-                if(Greenfoot.getRandomNumber(1000) < 3)
+                if(Greenfoot.getRandomNumber(1000) < 50)
                 {
                     generateLedge();
                 }
@@ -258,14 +257,15 @@ public class SkiWorld extends World
     private void generateLedge()
     {
         Ledge l = new Ledge();
-        addObject(l, 680, 200);
+        l.setSpeed(levelNumber);
+        addObject(l, 680, 100);
     }
     
     private void generateLodge()
     {
         if( lodgeDelay >= 1800 )
         {
-            lodge = new Lodge();
+            Lodge lodge = new Lodge();
             addObject(lodge, 600, 275);
             
         }
@@ -302,10 +302,5 @@ public class SkiWorld extends World
     public MaterialBar getMaterialBar()
     {
         return materialbar;
-    }
-    
-    public Lodge getLodge()
-    {
-        return lodge;
     }
 }
