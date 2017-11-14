@@ -14,11 +14,18 @@ public class Snowball extends Obstacle
      */
     public Snowball()
     {
-        setRotation(10);
-        setImage(new GreenfootImage("snowball.png"));
+        setRotation(9);
         speed = -7;
     }
 
+    /**
+     * Called when the Player is added to the world
+     */
+    protected void addedToWorld(World w)
+    {
+        snowBallImage();
+    }
+    
     /**
      * Act - do whatever the Snowball wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -28,6 +35,18 @@ public class Snowball extends Obstacle
         move (-7);
         checkRemove();
     }   
+    
+    private void snowBallImage()
+    {
+        if( ((SkiWorld)getWorld()).getLevel() == 1 )
+        {
+            setImage( new GreenfootImage("snowball.png"));
+        }
+        else if( ((SkiWorld)getWorld()).getLevel() == 2 )
+        {
+            setImage( new GreenfootImage("tumbleweed.jpg"));
+        }
+    }
 
     public void setSpeed(int l)
     {
