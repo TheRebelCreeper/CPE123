@@ -44,7 +44,7 @@ public class Snowball extends Obstacle
         }
         else if( ((SkiWorld)getWorld()).getLevel() == 2 )
         {
-            setImage( new GreenfootImage("tumbleweed.jpg"));
+            setImage( new GreenfootImage("tumbleweed.png"));
         }
     }
 
