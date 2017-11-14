@@ -6,9 +6,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Material extends Actor implements Gravity
+public class Material extends SmoothMover implements Gravity
 {
-    protected int ySpeed = 0;
+    protected double ySpeed = 0;
     public Buildable part;
     
     
