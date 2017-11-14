@@ -10,25 +10,25 @@ public class SkierBuild extends ScrollingActor implements Gravity
 {
     /**Vertical Velocity*/
     private int ySpeed = 0;
+    private int speedX = 1;
+    private static final int SPEED = 2;
+    private static final int BOUNDARY = 40;
     
     public SkierBuild()
     {
         setImage(new GreenfootImage("skiernormal.png"));
-        setRotation(10);
+        setRotation(-30);
     }
     
     /**
      * Act - do whatever the Hiker wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-        
-    private int speedX = 1;
-    private static final int SPEED = 2;
-    private static final int BOUNDARY = 40;
     public void act(){
         handleKeyPresses();
         boundedMove();
         checkGravity();
+        resetAngle();
     }
 
     private void handleKeyPresses() {
@@ -92,6 +92,17 @@ public class SkierBuild extends ScrollingActor implements Gravity
         else
         {
             fall();
+        }
+    }
+    
+     private void resetAngle()
+    {
+        if (!objectIsBelow())
+        {
+            if ((getRotation()) < 10 || getRotation() > 180)
+            {
+                setRotation(getRotation() + 2);
+            }
         }
     }
 }
