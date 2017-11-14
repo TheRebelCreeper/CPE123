@@ -155,6 +155,7 @@ public class Player extends SmoothMover implements Gravity
         SkiWorld a = (SkiWorld)getWorld();
         if( a.getLodgeDelay() > 1800 )
         {
+            turnTowards( a.getLodge().getX(), a.getLodge().getY());
             move(5);
             endLevel();
         }
