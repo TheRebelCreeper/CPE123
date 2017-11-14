@@ -120,7 +120,10 @@ public class SkiWorld extends World
                 imageCount -= 3;
                                 
                 spawnRate = 120;
-                
+                GreenfootImage sb = new GreenfootImage("spacebackground.png");
+                myBackground = sb;
+                GreenfootImage s = new GreenfootImage("spaceslope.png");
+                snow.setImage(s);
                 drawBackgroundImage(); // Updates the background          
                 spawnObstacles();
                 generateLodge();
@@ -192,10 +195,6 @@ public class SkiWorld extends World
             if(num == 0)
             {
                 generateTree();
-                if(Greenfoot.getRandomNumber(1000) < 50)
-                {
-                    generateLedge();
-                }
             }
             if(num == 1)
             {
@@ -252,13 +251,6 @@ public class SkiWorld extends World
             sb.setSpeed(levelNumber);
             addObject(sb, 680, 200);
         //}
-    }
-    
-    private void generateLedge()
-    {
-        Ledge l = new Ledge();
-        l.setSpeed(levelNumber);
-        addObject(l, 680, 100);
     }
     
     private void generateLodge()
