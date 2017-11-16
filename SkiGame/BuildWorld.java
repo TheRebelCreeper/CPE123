@@ -77,7 +77,10 @@ public class BuildWorld extends World
             }
             if (SkiWorld.getLevel() == 5){
                 star = new Star();
-                
+                world.addObject(star,51,261);
+                world.addObject(star,160,260);
+                world.addObject(star,272,259);
+                world.addObject(star,389,262);
                 world.addObject(star,501,260);
             }
         }
