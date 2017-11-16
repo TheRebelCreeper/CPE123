@@ -74,7 +74,7 @@ public class SkiWorld extends World
         label = new Label( "Level: " + levelNumber, 48 );
         addObject( label, 100, 50 );
         
-        addObject(materialbar, 530, 90);
+        addObject(materialbar, 90, 350);
 
     }
     
@@ -192,7 +192,7 @@ public class SkiWorld extends World
         obstacleDelay--;
         if(obstacleDelay <= 0)
         {
-            int num = Greenfoot.getRandomNumber(3);
+            int num = Greenfoot.getRandomNumber(4);
             if(num == 0)
             {
                 generateTree();
@@ -204,6 +204,10 @@ public class SkiWorld extends World
             if(num == 2)
             {
                 generateSnowball();
+            }
+            if(num == 3)
+            {
+                generateLedge();
             }
             
             int d = Greenfoot.getRandomNumber(40) + spawnRate;
@@ -242,11 +246,6 @@ public class SkiWorld extends World
             bird.setSpeed(levelNumber);
             addObject(bird, 680, 210);
             
-            // if(Greenfoot.getRandomNumber(1000) < 50)
-            //{
-                generateLedge();
-                generatePower();
-            //}
         //}
     }
 
@@ -269,7 +268,9 @@ public class SkiWorld extends World
     {
         Ledge l = new Ledge();
         l.setSpeed(levelNumber);
-        addObject(l, 680, 170);
+        addObject(l, 680, 180);
+        
+        generatePower();
         
         Material1 material1 = new Material1();
         material1.setSpeed(levelNumber);
@@ -281,7 +282,7 @@ public class SkiWorld extends World
     {
         Power p = new Power();
         p.setSpeed(levelNumber);
-        addObject(p, 680, 145);
+        addObject(p, 665, 150);
     }
 
     private void generateLodge()
@@ -307,13 +308,6 @@ public class SkiWorld extends World
     public static void setLevel(int level)
     {
         levelNumber = level;
-        /**This code doesn't do anything. All local variables*/
-         /*Tree t = new Tree();
-        t.setSpeed(level);
-        Snowball s = new Snowball();
-        s.setSpeed(level);
-        Bird b = new Bird();
-        b.setSpeed(level); */
     }
     
     public int getLodgeDelay()
