@@ -281,7 +281,7 @@ public class SkiWorld extends World
 
     private void generateLodge()
     {
-        if( lodgeDelay >= 1800 )
+        if( lodgeDelay >= 1800 && player.getMaterialCount() >= 3 )
         {
             Lodge lodge = new Lodge();
             addObject(lodge, 600, 275);
