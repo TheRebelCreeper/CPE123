@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Power extends SmoothMover
 {
     public static double speed;
+    private GreenfootImage powerup;
     /**
      * Act - do whatever the Power wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -18,6 +19,8 @@ public class Power extends SmoothMover
     {
         setRotation(10);
         speed = -6;
+        powerup = new GreenfootImage ("snowflakerainbow.png");
+        setImage(powerup);
     }
     
     public void act() 
