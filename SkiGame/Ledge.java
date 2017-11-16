@@ -13,7 +13,7 @@ public class Ledge extends SmoothMover
      * Act - do whatever the Ledge wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void prepare()
+    public Ledge()
     {
         setRotation(10);
         setImage("ledge.png");
@@ -23,6 +23,7 @@ public class Ledge extends SmoothMover
     public void act() 
     {
         // Add your action code here.
+        
         move(speed);
         checkRemove();
     }
