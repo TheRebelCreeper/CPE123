@@ -14,6 +14,7 @@ public class SkiWorld extends World
     private int spawnRate;
     
     private int imageCount = 0;
+    
 
     /**Current level of the game*/
     public static int levelNumber = 1;

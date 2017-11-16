@@ -23,7 +23,10 @@ public class BuildWorld extends World
     private Container[] myContainers;
     private final int NUM_OF_CONTAINERS = 3;
     public static int count = 0;
+    private Star star;
     
+    
+
     public BuildWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -34,7 +37,7 @@ public class BuildWorld extends World
         prepare();
         setPaintOrder(Hitbox.class);
     }
-    
+
     public void act()
     {
         if(Greenfoot.mouseClicked(startbuttonbuildworld) || isButtonClicked)
@@ -42,8 +45,44 @@ public class BuildWorld extends World
             skierbuild.move(5);
             isButtonClicked = true;
         }
+        changeMainMenu();
     }
-    
+
+    public void changeMainMenu()
+    {
+        if (skierbuild.getX() > 560){
+            LevelMenu world = new LevelMenu();
+            Greenfoot.setWorld(world);
+            if (SkiWorld.getLevel() == 1){
+                star = new Star();
+                world.addObject(star,51,261);
+            }
+            if (SkiWorld.getLevel() == 2){
+                star = new Star();
+                world.addObject(star,51,261);
+                world.addObject(star,160,260);
+            }
+            if (SkiWorld.getLevel() == 3){
+                star = new Star();
+                world.addObject(star,51,261);
+                world.addObject(star,160,260);
+                world.addObject(star,272,259);
+            }
+            if (SkiWorld.getLevel() == 4){
+                star = new Star();
+                world.addObject(star,51,261);
+                world.addObject(star,160,260);
+                world.addObject(star,272,259);
+                world.addObject(star,389,262);
+            }
+            if (SkiWorld.getLevel() == 5){
+                star = new Star();
+                
+                world.addObject(star,501,260);
+            }
+        }
+    }
+
     /**
      * Prepares the objects in BuildWorld
      */
@@ -60,7 +99,7 @@ public class BuildWorld extends World
 
         myContainers[1] = new Container();
         addObject(myContainers[1],74,204);
-        
+
         myContainers[2] = new Container();
         addObject(myContainers[2],74,332);
 
@@ -68,7 +107,7 @@ public class BuildWorld extends World
         {
             myContainers[i].setObject(new Buildable());
         }
-        
+
         if (myContainers[0].getObject() != null)
         {
             addObject(myContainers[0].getObject(),74,71);
@@ -83,7 +122,7 @@ public class BuildWorld extends World
         {
             addObject(myContainers[2].getObject(),74,333);
         }
-        
+
         skierbuild = new SkierBuild();
         addObject(skierbuild,303,197);
         startbuttonbuildworld = new StartButtonBuildWorld();
