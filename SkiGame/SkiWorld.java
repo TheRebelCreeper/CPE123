@@ -239,7 +239,7 @@ public class SkiWorld extends World
         //{
             Bird bird = new Bird();
             bird.setSpeed(levelNumber);
-            addObject(bird, 680, 200);
+            addObject(bird, 680, 205);
             
             // if(Greenfoot.getRandomNumber(1000) < 50)
             //{
@@ -258,7 +258,7 @@ public class SkiWorld extends World
         //{
             Snowball sb = new Snowball();
             sb.setSpeed(levelNumber);
-            addObject(sb, 680, 200);
+            addObject(sb, 680, 205);
         //}
     }
     
