@@ -32,9 +32,9 @@ public class MaterialBar extends Actor
     {
         setImage(new GreenfootImage(MaterialBarWidth +2, MaterialBarHeight +2));
         GreenfootImage myImage =getImage();
-        myImage.setColor(Color.WHITE);
+        myImage.setColor(Color.BLACK);
         myImage.drawRect(0, 0, MaterialBarWidth +1, MaterialBarHeight +1);
-        myImage.setColor(Color.RED);
+        myImage.setColor(Color.GREEN);
         myImage.fillRect(1, 1, health*pixelsPerHealthPoint, MaterialBarHeight);
         
         

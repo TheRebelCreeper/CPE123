@@ -73,7 +73,7 @@ public class SkiWorld extends World
         label = new Label( "Level: " + levelNumber, 48 );
         addObject( label, 100, 50 );
         
-        addObject(materialbar, 530, 90);
+        addObject(materialbar, 90, 350);
 
     }
     
