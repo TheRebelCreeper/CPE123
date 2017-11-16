@@ -239,7 +239,7 @@ public class SkiWorld extends World
         //{
             Bird bird = new Bird();
             bird.setSpeed(levelNumber);
-            addObject(bird, 680, 205);
+            addObject(bird, 680, 210);
             
             // if(Greenfoot.getRandomNumber(1000) < 50)
             //{
@@ -258,7 +258,7 @@ public class SkiWorld extends World
         //{
             Snowball sb = new Snowball();
             sb.setSpeed(levelNumber);
-            addObject(sb, 680, 205);
+            addObject(sb, 680, 210);
         //}
     }
     
@@ -268,7 +268,7 @@ public class SkiWorld extends World
     {
         Ledge l = new Ledge();
         l.setSpeed(levelNumber);
-        addObject(l, 680, 165);
+        addObject(l, 680, 170);
     }
     
 
@@ -281,7 +281,7 @@ public class SkiWorld extends World
 
     private void generateLodge()
     {
-        if( lodgeDelay >= 1800 && player.getMaterialCount() >= 3 )
+        if( lodgeDelay >= 1800 ) 
         {
             Lodge lodge = new Lodge();
             addObject(lodge, 600, 275);

@@ -65,8 +65,6 @@ public class Player extends SmoothMover implements Gravity
     
     public ArrayList<Power> totalp = new ArrayList<Power>();
     
-    public int materialCount;
-    
     /**
      * Constructor
      */
@@ -380,18 +378,12 @@ public class Player extends SmoothMover implements Gravity
             }
             BuildWorld.count += 1;
             world.removeObject(m);
-            materialCount++;
         }
         else 
         {
             touchingMaterial1 =false;
         }
         
-    }
-    
-    public int getMaterialCount()
-    {
-        return materialCount;
     }
     
     public void checkForPower()
@@ -413,7 +405,7 @@ public class Player extends SmoothMover implements Gravity
                 totalp.add((Power)p);
                 SkiWorld w = (SkiWorld) getWorld();
                 w.removeObject(p);
-                System.out.println(totalp.size());
+                //System.out.println(totalp.size());
             }
             
             
