@@ -253,6 +253,7 @@ public class SkiWorld extends World
         //}
     }
     
+<<<<<<< HEAD
 
     private void generateLedge()
     {
@@ -262,6 +263,8 @@ public class SkiWorld extends World
     }
     
 
+=======
+>>>>>>> 732cce7dd05a63a77ca236dc876cb684329f11f0
     private void generateLodge()
     {
         if( lodgeDelay >= 1800 )
