@@ -63,6 +63,8 @@ public class Player extends SmoothMover implements Gravity
     
     boolean touchingMaterial1 =false;
     
+    public ArrayList<Power> totalp = new ArrayList<Power>();
+    
     /**
      * Constructor
      */
@@ -113,7 +115,8 @@ public class Player extends SmoothMover implements Gravity
         checkGravity();     // Checks the gravity 
         checkCollision();   // Checks for collisions
         checkJump();        // Checks if the player should jump
-        checkForCollisions();  // Checks for collisions with Material1
+        checkForMaterials();
+        checkForPower();// Checks for collisions with Material1
         
         if (downPressed || shiftPressed)    // animation for skier to duck
         { 
@@ -358,7 +361,7 @@ public class Player extends SmoothMover implements Gravity
         }
     }
     
-    public void checkForCollisions()
+    public void checkForMaterials()
     {
         Actor m = getOneIntersectingObject(Material1.class);
         if (m !=null)
@@ -381,5 +384,28 @@ public class Player extends SmoothMover implements Gravity
             touchingMaterial1 =false;
         }
         
+    }
+    
+    public void checkForPower()
+    {
+        Actor p = getOneIntersectingObject(Power.class);
+        if(p != null)
+        {
+            boolean collected = false;
+            for(int i = 0; i < totalp.size(); i++)
+            {
+                if(p != totalp.get(i))
+                {
+                    collected = true;
+                }
+            }
+            
+            if(collected == false)
+            {
+                totalp.add((Power)p);
+            }
+            
+            System.out.println(totalp.size());
+        }
     }
 }

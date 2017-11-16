@@ -228,6 +228,7 @@ public class SkiWorld extends World
            // if(Greenfoot.getRandomNumber(1000) < 50)
             //{
                 generateLedge();
+                generatePower();
             //}
             
        // }
@@ -269,6 +270,12 @@ public class SkiWorld extends World
     }
     
 
+    private void generatePower()
+    {
+        Power p = new Power();
+        p.setSpeed(levelNumber);
+        addObject(p, 680, 145);
+    }
 
     private void generateLodge()
     {
@@ -276,7 +283,6 @@ public class SkiWorld extends World
         {
             Lodge lodge = new Lodge();
             addObject(lodge, 600, 275);
-            
         }
         
     }
