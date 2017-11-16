@@ -394,7 +394,7 @@ public class Player extends SmoothMover implements Gravity
             boolean collected = false;
             for(int i = 0; i < totalp.size(); i++)
             {
-                if(p != totalp.get(i))
+                if(p == totalp.get(i))
                 {
                     collected = true;
                 }
