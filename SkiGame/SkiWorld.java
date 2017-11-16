@@ -269,6 +269,10 @@ public class SkiWorld extends World
         Ledge l = new Ledge();
         l.setSpeed(levelNumber);
         addObject(l, 680, 170);
+        
+        Material1 material1 = new Material1();
+        material1.setSpeed(levelNumber);
+        addObject(material1, 680, 270);
     }
     
 
