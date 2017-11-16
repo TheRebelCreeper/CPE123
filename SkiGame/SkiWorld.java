@@ -281,7 +281,7 @@ public class SkiWorld extends World
     {
         Power p = new Power();
         p.setSpeed(levelNumber);
-        addObject(p, 680, 155);
+        addObject(p, 665, 150);
     }
 
     private void generateLodge()
@@ -307,13 +307,6 @@ public class SkiWorld extends World
     public static void setLevel(int level)
     {
         levelNumber = level;
-        /**This code doesn't do anything. All local variables*/
-         /*Tree t = new Tree();
-        t.setSpeed(level);
-        Snowball s = new Snowball();
-        s.setSpeed(level);
-        Bird b = new Bird();
-        b.setSpeed(level); */
     }
     
     public int getLodgeDelay()
