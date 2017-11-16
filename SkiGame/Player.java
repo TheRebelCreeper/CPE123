@@ -405,7 +405,7 @@ public class Player extends SmoothMover implements Gravity
                 totalp.add((Power)p);
                 SkiWorld w = (SkiWorld) getWorld();
                 w.removeObject(p);
-                System.out.println(totalp.size());
+                //System.out.println(totalp.size());
             }
             
             
