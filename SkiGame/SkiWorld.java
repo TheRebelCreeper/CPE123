@@ -225,11 +225,7 @@ public class SkiWorld extends World
             material1.setSpeed(levelNumber);
             addObject(material1, 670, 195);
             
-           // if(Greenfoot.getRandomNumber(1000) < 50)
-            //{
-                generateLedge();
-                generatePower();
-            //}
+           
             
        // }
     }
@@ -244,6 +240,12 @@ public class SkiWorld extends World
             Bird bird = new Bird();
             bird.setSpeed(levelNumber);
             addObject(bird, 680, 200);
+            
+            // if(Greenfoot.getRandomNumber(1000) < 50)
+            //{
+                generateLedge();
+                generatePower();
+            //}
         //}
     }
 
