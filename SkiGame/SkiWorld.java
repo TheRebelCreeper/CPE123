@@ -191,7 +191,7 @@ public class SkiWorld extends World
         obstacleDelay--;
         if(obstacleDelay <= 0)
         {
-            int num = Greenfoot.getRandomNumber(3);
+            int num = Greenfoot.getRandomNumber(4);
             if(num == 0)
             {
                 generateTree();
@@ -203,6 +203,10 @@ public class SkiWorld extends World
             if(num == 2)
             {
                 generateSnowball();
+            }
+            if(num == 3)
+            {
+                generateLedge();
             }
             
             int d = Greenfoot.getRandomNumber(40) + spawnRate;
@@ -241,11 +245,6 @@ public class SkiWorld extends World
             bird.setSpeed(levelNumber);
             addObject(bird, 680, 210);
             
-            // if(Greenfoot.getRandomNumber(1000) < 50)
-            //{
-                generateLedge();
-                generatePower();
-            //}
         //}
     }
 
@@ -268,7 +267,9 @@ public class SkiWorld extends World
     {
         Ledge l = new Ledge();
         l.setSpeed(levelNumber);
-        addObject(l, 680, 170);
+        addObject(l, 680, 180);
+        
+        generatePower();
         
         Material1 material1 = new Material1();
         material1.setSpeed(levelNumber);
@@ -280,7 +281,7 @@ public class SkiWorld extends World
     {
         Power p = new Power();
         p.setSpeed(levelNumber);
-        addObject(p, 680, 145);
+        addObject(p, 680, 155);
     }
 
     private void generateLodge()
