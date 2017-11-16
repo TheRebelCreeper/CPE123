@@ -223,7 +223,13 @@ public class SkiWorld extends World
 
             Material1 material1 = new Material1();
             material1.setSpeed(levelNumber);
-            addObject(material1, 670, 190);
+            addObject(material1, 670, 195);
+            
+           // if(Greenfoot.getRandomNumber(1000) < 50)
+            //{
+                generateLedge();
+            //}
+            
        // }
     }
 
@@ -259,7 +265,7 @@ public class SkiWorld extends World
     {
         Ledge l = new Ledge();
         l.setSpeed(levelNumber);
-        addObject(l, 680, 150);
+        addObject(l, 680, 160);
     }
     
 
