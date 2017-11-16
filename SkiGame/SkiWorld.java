@@ -265,7 +265,7 @@ public class SkiWorld extends World
     {
         Ledge l = new Ledge();
         l.setSpeed(levelNumber);
-        addObject(l, 680, 160);
+        addObject(l, 680, 165);
     }
     
 
