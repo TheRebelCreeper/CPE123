@@ -8,10 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MaterialBar extends Actor
 {
-    int health= 3;
+    int mbhealth;
     int MaterialBarWidth= 80;
     int MaterialBarHeight= 15;
-    int pixelsPerHealthPoint = (int)MaterialBarWidth/health;
+    int pixelsPerHealthPoint; 
     
     /**
      * Act - do whatever the MaterialBar wants to do. This method is called whenever
@@ -23,9 +23,9 @@ public class MaterialBar extends Actor
         update();
     }    
     
-    public void MaterialBar()
+    public MaterialBar()
     {
-        update();
+        
     }
    
     public void update()
@@ -35,14 +35,21 @@ public class MaterialBar extends Actor
         myImage.setColor(Color.BLACK);
         myImage.drawRect(0, 0, MaterialBarWidth +1, MaterialBarHeight +1);
         myImage.setColor(Color.GREEN);
-        myImage.fillRect(1, 1, health*pixelsPerHealthPoint, MaterialBarHeight);
-        
-        
+        myImage.fillRect(1, 1, mbhealth*pixelsPerHealthPoint, MaterialBarHeight);
+        //setImage(myImage);
     }
     
     public void loseHealth()
     {
-        health--;
+        System.out.println("in loseHealth()");
+        mbhealth--;
     }
     
+    public void setHealth(int L)
+    {
+        mbhealth = 3 + L;
+        System.out.println("mbhealth is " + mbhealth);
+        pixelsPerHealthPoint = (int)MaterialBarWidth/mbhealth;
+        
+    }
 }

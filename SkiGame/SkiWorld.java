@@ -33,7 +33,7 @@ public class SkiWorld extends World
     
     private Snow snow;
     
-    MaterialBar materialbar = new MaterialBar();
+    MaterialBar mb = new MaterialBar();
     
     /**
      * Constructor for objects of class MyWorld.
@@ -73,7 +73,8 @@ public class SkiWorld extends World
         label = new Label( "Level: " + levelNumber, 48 );
         addObject( label, 100, 50 );
         
-        addObject(materialbar, 90, 350);
+        mb.setHealth(levelNumber);
+        addObject(mb, 90, 350);
 
     }
     
@@ -281,7 +282,7 @@ public class SkiWorld extends World
     {
         Power p = new Power();
         p.setSpeed(levelNumber);
-        addObject(p, 665, 150);
+        addObject(p, 680, 155);
     }
 
     private void generateLodge()
@@ -307,6 +308,13 @@ public class SkiWorld extends World
     public static void setLevel(int level)
     {
         levelNumber = level;
+        /**This code doesn't do anything. All local variables*/
+         /*Tree t = new Tree();
+        t.setSpeed(level);
+        Snowball s = new Snowball();
+        s.setSpeed(level);
+        Bird b = new Bird();
+        b.setSpeed(level); */
     }
     
     public int getLodgeDelay()
@@ -316,6 +324,6 @@ public class SkiWorld extends World
     
     public MaterialBar getMaterialBar()
     {
-        return materialbar;
+        return mb;
     }
 }

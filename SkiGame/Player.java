@@ -371,7 +371,7 @@ public class Player extends SmoothMover implements Gravity
             {
                 materialbar.loseHealth();
                 touchingMaterial1 =true;
-                if(materialbar.health <=0)
+                if(materialbar.mbhealth <=0)
                 {
                     
                 }
