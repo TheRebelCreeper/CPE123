@@ -19,9 +19,18 @@ public class Snow extends Actor
     
     public void addedToWorld(World w)
     {
+        try{
         if (getWorldOfType(BuildWorld.class) != null)
         {
             setImage(new GreenfootImage("WorkingSlopeBW.png"));
+        }
+        else
+        {
+            setImage(new GreenfootImage("WorkingSlope.png"));
+        }}
+        catch(Exception e)
+        {
+            
         }
     }
     
