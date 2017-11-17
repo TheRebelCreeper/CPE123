@@ -412,7 +412,7 @@ public class Player extends SmoothMover implements Gravity
         }
     }
     
-<<<<<<< HEAD
+
    
     public void checkForLedge()
     {
@@ -422,7 +422,5 @@ public class Player extends SmoothMover implements Gravity
             fall();
         }
     }
-=======
-    
->>>>>>> f21d127bd44b784e1d51660a4db783bb0ffc9391
+
 }
