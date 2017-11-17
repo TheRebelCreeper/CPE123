@@ -13,8 +13,8 @@ public class BuildWorld extends World
      * Constructor for objects of class BuildWorld. 
      */
     private int xOffset = 0;
-    private final static int SWIDTH = 600;
-    private final static int SHEIGHT = 400;
+    private final static int SWIDTH = 900;
+    private final static int SHEIGHT = 500;
     private final static int WWIDTH = 1000;
     private GreenfootImage bimg;
     SkierBuild skierbuild;
@@ -92,7 +92,7 @@ public class BuildWorld extends World
     public void prepare()
     {   
         Snow snow = new Snow();
-        addObject(snow,298,399);
+        addObject(snow,450,475);
 
         Tree tree = new Tree();
         //addObject(tree,489,252);

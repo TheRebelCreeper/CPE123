@@ -17,6 +17,14 @@ public class Snow extends Actor
         setImage(new GreenfootImage("WorkingSlope.png"));
     }
     
+    public void addedToWorld(World w)
+    {
+        if (getWorldOfType(BuildWorld.class) != null)
+        {
+            setImage(new GreenfootImage("WorkingSlopeBW.png"));
+        }
+    }
+    
     /**
      * Act - do whatever the Snow wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
