@@ -29,6 +29,7 @@ public class SkierBuild extends ScrollingActor implements Gravity
         boundedMove();
         checkGravity();
         resetAngle();
+        poweredUp();
     }
 
     private void handleKeyPresses() {
@@ -103,6 +104,15 @@ public class SkierBuild extends ScrollingActor implements Gravity
             {
                 setRotation(getRotation() + 3);
             }
+        }
+    }
+    
+    public void poweredUp()
+    {
+        if( isTouching(Power.class) )
+        {
+            setRotation(-45);
+            move(300);
         }
     }
 }

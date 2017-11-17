@@ -50,7 +50,7 @@ public class BuildWorld extends World
 
     public void changeMainMenu()
     {
-        if (skierbuild.getX() > 560){
+        if (skierbuild.getX() > 850){
             LevelMenu world = new LevelMenu();
             Greenfoot.setWorld(world);
             if (SkiWorld.getLevel() == 1){
@@ -130,6 +130,8 @@ public class BuildWorld extends World
         addObject(skierbuild,303,197);
         startbuttonbuildworld = new StartButtonBuildWorld();
         addObject(startbuttonbuildworld,522,338);
+        Power power = new Power();
+        addObject(power,598,290);
     }
 
     public void shiftWorld(int dx) {
