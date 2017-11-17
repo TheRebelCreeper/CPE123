@@ -19,6 +19,13 @@ public class RampHitbox extends Hitbox
      */
     public void act() 
     {
-        // Add your action code here.
+        if (host.getWorld() != null)
+        {
+            setLocation(host.getX() + offsetX, host.getY() + offsetY);
+        }
+        else
+        {
+            getWorld().removeObject(this);
+        }
     }    
 }

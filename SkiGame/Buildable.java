@@ -9,12 +9,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Buildable extends Actor implements Gravity
 {
     /**Instance variable for the MouseInfo*/
-    private MouseInfo mi;
+    protected MouseInfo mi;
     /**Placed holds the current state of the Actor. 
      * 0 for not clicked yet, 
      * 1 for moving around, 
      * 2 for placed*/
-    private int placed;
+    protected int placed;
     
     /**Holds the speed of the Actor*/
     private int ySpeed;
@@ -66,7 +66,7 @@ public class Buildable extends Actor implements Gravity
      * 
      * @return  Returns true if the location is valid
      */
-    private boolean isValidLocation()
+    protected boolean isValidLocation()
     {
         return true;
     }

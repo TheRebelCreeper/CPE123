@@ -108,7 +108,7 @@ public class BuildWorld extends World
 
         for (int i = 0; i < count && i < NUM_OF_CONTAINERS; i++)
         {
-            myContainers[i].setObject(new Buildable());
+            myContainers[i].setObject(new Ramp());
         }
 
         if (myContainers[0].getObject() != null)
