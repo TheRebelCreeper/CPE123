@@ -92,7 +92,7 @@ public class BuildWorld extends World
     public void prepare()
     {   
         Snow snow = new Snow();
-        addObject(snow,298,399);
+        addObject(snow,450,475);
 
         Tree tree = new Tree();
         //addObject(tree,489,252);

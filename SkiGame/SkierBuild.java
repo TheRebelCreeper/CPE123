@@ -101,7 +101,7 @@ public class SkierBuild extends ScrollingActor implements Gravity
         {
             if ((getRotation()) < 10 || getRotation() > 180)
             {
-                setRotation(getRotation() + 2);
+                setRotation(getRotation() + 3);
             }
         }
     }
