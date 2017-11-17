@@ -411,13 +411,7 @@ public class Player extends SmoothMover implements Gravity
             
         }
     }
-<<<<<<< HEAD
-    
 
-   
-=======
-
->>>>>>> b163aef9cceee2c06b751dff013482587c9f4f7b
     public void checkForLedge()
     {
         Actor l = getOneObjectAtOffset(0, -getImage().getHeight() / 2, Ledge.class);
@@ -426,8 +420,5 @@ public class Player extends SmoothMover implements Gravity
             fall();
         }
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> b163aef9cceee2c06b751dff013482587c9f4f7b
 }
