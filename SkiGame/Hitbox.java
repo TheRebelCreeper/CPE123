@@ -29,7 +29,6 @@ public abstract class Hitbox extends Actor
             img.setTransparency(100);
             img.fill();
         }
-        
         setImage(img);
     }
     
