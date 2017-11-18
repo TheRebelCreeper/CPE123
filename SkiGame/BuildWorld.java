@@ -25,6 +25,8 @@ public class BuildWorld extends World
     public static int count = 0;
     private Star star;
     
+    public static int level;
+    
     
 
     public BuildWorld()
@@ -152,5 +154,10 @@ public class BuildWorld extends World
         for( ScrollingActor a : saList ) {
             a.setAbsoluteLocation(dx);
         }
+    }
+    
+    public void setLevel(int l)
+    {
+        level = l;
     }
 }
