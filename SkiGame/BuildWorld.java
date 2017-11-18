@@ -38,71 +38,7 @@ public class BuildWorld extends World
         myContainers = new Container[NUM_OF_CONTAINERS];
         prepare();
         setPaintOrder(Hitbox.class);
-        if(level == 1)
-        {
-            Tree t1 = new Tree();
-            addObject(t1, 300, -300);
-            Tree t2 = new Tree();
-            addObject(t2, 400, -400);
-            Tree t3 = new Tree();
-            addObject(t3, 500, -300);
-        }
-        if(level == 2)
-        {
-            Tree t1 = new Tree();
-            addObject(t1, 300, -300);
-            Tree t2 = new Tree();
-            addObject(t2, 400, -400);
-            Tree t3 = new Tree();
-            addObject(t3, 500, -300);
-            Tree t4 = new Tree();
-            addObject(t4, 600, -300);
-        }
-        if(level == 3)
-        {
-            Tree t1 = new Tree();
-            addObject(t1, 300, -300);
-            Tree t2 = new Tree();
-            addObject(t2, 400, -400);
-            Tree t3 = new Tree();
-            addObject(t3, 500, -300);
-            Tree t4 = new Tree();
-            addObject(t4, 600, -300);
-            Tree t5 = new Tree();
-            addObject(t5, 700, -300);
-        }
-        if(level == 4)
-        {
-            Tree t1 = new Tree();
-            addObject(t1, 300, -300);
-            Tree t2 = new Tree();
-            addObject(t2, 400, -400);
-            Tree t3 = new Tree();
-            addObject(t3, 500, -300);
-            Tree t4 = new Tree();
-            addObject(t4, 600, -300);
-            Tree t5 = new Tree();
-            addObject(t5, 700, -300);
-            Tree t6 = new Tree();
-            addObject(t6, 800, -300);
-        }
-        if(level == 5)
-        {
-            Tree t1 = new Tree();
-            addObject(t1, 300, -300);
-            Tree t2 = new Tree();
-            addObject(t2, 400, -400);
-            Tree t3 = new Tree();
-            addObject(t3, 500, -300);
-            Tree t4 = new Tree();
-            addObject(t4, 600, -300);
-            Tree t5 = new Tree();
-            addObject(t5, 700, -300);
-            Tree t6 = new Tree();
-            addObject(t6, 800, -300);
-            Tree t7 = new Tree();
-            addObject(t7, 900, -300);
-        }
+        
     }
 
     public void act()
@@ -197,6 +133,8 @@ public class BuildWorld extends World
         addObject(skierbuild,303,197);
         startbuttonbuildworld = new StartButtonBuildWorld();
         addObject(startbuttonbuildworld,522,338);
+        
+        setTrees();
     }
 
     public void shiftWorld(int dx) {
@@ -224,5 +162,74 @@ public class BuildWorld extends World
     public void setLevel(int l)
     {
         level = l;
+    }
+    
+    public void setTrees()
+    {
+        if(level == 1)
+        {
+            Tree t1 = new Tree();
+            addObject(t1, 300, -300);
+            Tree t2 = new Tree();
+            addObject(t2, 400, -400);
+            Tree t3 = new Tree();
+            addObject(t3, 500, -300);
+        }
+        if(level == 2)
+        {
+            Tree t1 = new Tree();
+            addObject(t1, 300, -300);
+            Tree t2 = new Tree();
+            addObject(t2, 400, -400);
+            Tree t3 = new Tree();
+            addObject(t3, 500, -300);
+            Tree t4 = new Tree();
+            addObject(t4, 600, -300);
+        }
+        if(level == 3)
+        {
+            Tree t1 = new Tree();
+            addObject(t1, 300, -300);
+            Tree t2 = new Tree();
+            addObject(t2, 400, -400);
+            Tree t3 = new Tree();
+            addObject(t3, 500, -300);
+            Tree t4 = new Tree();
+            addObject(t4, 600, -300);
+            Tree t5 = new Tree();
+            addObject(t5, 700, -300);
+        }
+        if(level == 4)
+        {
+            Tree t1 = new Tree();
+            addObject(t1, 300, -300);
+            Tree t2 = new Tree();
+            addObject(t2, 400, -400);
+            Tree t3 = new Tree();
+            addObject(t3, 500, -300);
+            Tree t4 = new Tree();
+            addObject(t4, 600, -300);
+            Tree t5 = new Tree();
+            addObject(t5, 700, -300);
+            Tree t6 = new Tree();
+            addObject(t6, 800, -300);
+        }
+        if(level == 5)
+        {
+            Tree t1 = new Tree();
+            addObject(t1, 300, -300);
+            Tree t2 = new Tree();
+            addObject(t2, 400, -400);
+            Tree t3 = new Tree();
+            addObject(t3, 500, -300);
+            Tree t4 = new Tree();
+            addObject(t4, 600, -300);
+            Tree t5 = new Tree();
+            addObject(t5, 700, -300);
+            Tree t6 = new Tree();
+            addObject(t6, 800, -300);
+            Tree t7 = new Tree();
+            addObject(t7, 900, -300);
+        }
     }
 }
