@@ -77,6 +77,7 @@ public class SkiWorld extends World
         mb.setHealth(levelNumber);
         addObject(mb, 90, 350);
 
+        
     }
     
 
