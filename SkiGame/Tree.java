@@ -39,6 +39,10 @@ public class Tree extends Obstacle
             int difference = l-1;
             speed = -6 - difference + .5*(l-1);
         }
+        if(l == 0)
+        {
+            speed = 0;
+        }
     }
 
     /**

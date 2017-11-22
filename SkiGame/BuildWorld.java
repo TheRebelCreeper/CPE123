@@ -167,39 +167,46 @@ public class BuildWorld extends World
     public void setTrees1()
     {
         Tree t1 = new Tree();
-        addObject(t1, 300, -300);
+        t1.setSpeed(0);
+        addObject(t1, 400, -300);
         Tree t2 = new Tree();
-        addObject(t2, 400, -400);
+        t2.setSpeed(0);
+        addObject(t2, 500, -300);
         Tree t3 = new Tree();
-        addObject(t3, 500, -300);
+        t3.setSpeed(0);
+        addObject(t3, 600, -300);
     }
     
     public void setTrees2()
     {
         setTrees1();
         Tree t4 = new Tree();
-        addObject(t4, 600, -300);
+        t4.setSpeed(0);
+        addObject(t4, 700, -300);
     }
     
     public void setTrees3()
     {
         setTrees2();
         Tree t5 = new Tree();
-        addObject(t5, 700, -300);
+        t5.setSpeed(0);
+        addObject(t5, 800, -300);
     }
     
     public void setTrees4()
     {
         setTrees3();
         Tree t6 = new Tree();
-        addObject(t6, 800, -300);
+        t6.setSpeed(0);
+        addObject(t6, 900, -300);
     }
     
     public void setTrees5()
     {
         setTrees4();
-        Tree t6 = new Tree();
-        addObject(t6, 800, -300);
+        Tree t7 = new Tree();
+        t7.setSpeed(0);
+        addObject(t7, 1000, -300);
     }
     
     public void setTrees()
