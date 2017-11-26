@@ -41,7 +41,6 @@ public class MaterialBar extends Actor
     
     public void loseHealth()
     {
-        System.out.println("in loseHealth()");
         mbhealth--;
     }
     
