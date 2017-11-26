@@ -233,7 +233,7 @@ public class Player extends SmoothMover implements Gravity
 
         if( ySpeed <= MAX_GRAV)   // If velocity is less than terminal velocity
         {
-            ySpeed += GRAVITY_ACCEL;    // Accelerate
+            ySpeed += GRAVITY_ACCEL;      // Accelerate
         }
     }
 
@@ -246,7 +246,7 @@ public class Player extends SmoothMover implements Gravity
     {
         //List containing Actors the player is touching
         List<Actor> list = hitbox.getHitboxIntersectionsAtOffset(0, hitbox.getImage().getHeight() / 2 + 5, Actor.class);
-        // If the Player's hitbox is touching and actor besides itself
+        // If the Player's hitbox is touching any actor besides itself
         if (list.size() > 0 && !(list.get(0) instanceof Player))
         {
             //System.out.println(list.get(0));
