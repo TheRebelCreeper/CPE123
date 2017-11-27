@@ -27,7 +27,6 @@ public class BuildWorld extends World
     
     public static int level;
     
-    
 
     public BuildWorld()
     {    
