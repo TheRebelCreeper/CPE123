@@ -119,6 +119,7 @@ public class Player extends SmoothMover implements Gravity
         checkJump();        // Checks if the player should jump
         checkForMaterials();
         checkForPower();// Checks for collisions with Material1
+        checkForLedge();
         
         if (downPressed || shiftPressed)    // animation for skier to duck
         { 
@@ -416,8 +417,8 @@ public class Player extends SmoothMover implements Gravity
 
     public void checkForLedge()
     {
-        Actor l = getOneObjectAtOffset(0, -getImage().getHeight() / 2, Ledge.class);
-        if(l != null && objectIsBelow() != true)
+        Actor l = getOneIntersectingObject(Ledge.class);
+        if(l != null && objectIsBelow() == false)
         {
             fall();
         }
