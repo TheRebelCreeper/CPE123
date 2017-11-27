@@ -418,8 +418,8 @@ public class Player extends SmoothMover implements Gravity
     public void checkForLedge()
     {
 
-        Actor l = getOneObjectAtOffset(0, -getImage().getHeight() / 2, Ledge.class);
-        if(l != null && !objectIsBelow())
+        Actor l = getOneIntersectingObject(Ledge.class);
+        if(l != null /*&& !objectIsBelow()*/ )
 
         {
             fall();
