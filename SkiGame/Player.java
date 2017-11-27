@@ -442,10 +442,9 @@ public class Player extends SmoothMover implements Gravity
 
     public void checkForLedge()
     {
-
-        Actor l = getOneIntersectingObject(Ledge.class);
-        if(l != null /*&& !objectIsBelow()*/ )
-
+        //suspend ledges as ground ?
+        Actor l = hitbox.getOneIntersectingObjectPublic(Ledge.class);
+        if(l != null && !objectIsBelow() )
         {
             fall();
         }
