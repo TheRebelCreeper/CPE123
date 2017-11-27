@@ -17,7 +17,7 @@ public class SkierBuild extends ScrollingActor implements Gravity
     public SkierBuild()
     {
         setImage(new GreenfootImage("skiernormalBuild.png"));
-        setRotation(-45);
+        setRotation(10);
     }
     
     /**
@@ -30,6 +30,7 @@ public class SkierBuild extends ScrollingActor implements Gravity
         checkGravity();
         resetAngle();
         poweredUp();
+        isTouchingRamp();
     }
 
     private void handleKeyPresses() {
@@ -59,9 +60,21 @@ public class SkierBuild extends ScrollingActor implements Gravity
     public boolean objectIsBelow()
     {
         // If it is touching another Actor
-        if (getOneObjectAtOffset(0, getImage().getHeight() / 2 + 2, Actor.class) != null)
+        if (getOneObjectAtOffset(0, getImage().getHeight() / 2 + 5, Actor.class) != null)
         {
-            return true;
+            if (getOneObjectAtOffset(0, getImage().getHeight() / 2 + 5, Ramp.class) != null)
+            {
+                if (getOneObjectAtOffset(0, getImage().getHeight() / 2 + 5, Hitbox.class) == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else
+                return true;
         }
         // If it is touching the edge of the world
         else if (getY() >= getWorld().getHeight() - getImage().getHeight())
@@ -113,6 +126,14 @@ public class SkierBuild extends ScrollingActor implements Gravity
         {
             setRotation(-45);
             move(300);
+        }
+    }
+    
+    private void isTouchingRamp()
+    {
+        if (isTouching(Hitbox.class))
+        {
+            setRotation(-18);
         }
     }
 }
