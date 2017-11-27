@@ -288,6 +288,13 @@ public class SkiWorld extends World
         p.setSpeed(levelNumber);
         addObject(p, 680, 155);
     }
+    
+    private void generateShield()
+    {
+        Shield s = new Shield();
+        s.setSpeed(levelNumber);
+        addObject(s, 680, 155);
+    }
 
     private void generateLodge()
     {

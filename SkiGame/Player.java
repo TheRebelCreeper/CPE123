@@ -64,6 +64,7 @@ public class Player extends SmoothMover implements Gravity
     boolean touchingMaterial1 =false;
     
     public ArrayList<Power> totalp = new ArrayList<Power>();
+    public ArrayList<Shield> totals = new ArrayList<Shield>();
     
     /**
      * Constructor
@@ -411,6 +412,30 @@ public class Player extends SmoothMover implements Gravity
                 //System.out.println(totalp.size());
             }
             
+        }
+    }
+    
+    public void checkForShield()
+    {
+        Actor s = getOneIntersectingObject(Shield.class);
+        if(s != null)
+        {
+            boolean collected = false;
+            for(int i = 0; i < totals.size(); i++)
+            {
+                if(s == totals.get(i))
+                {
+                    collected = true;
+                }
+            }
+            
+            if(collected == false)
+            {
+                totals.add((Shield)s);
+                SkiWorld w = (SkiWorld) getWorld();
+                w.removeObject(s);
+                //System.out.println(totalp.size());
+            }
             
         }
     }
