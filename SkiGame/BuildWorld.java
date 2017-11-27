@@ -130,7 +130,7 @@ public class BuildWorld extends World
         }
 
         skierbuild = new SkierBuild();
-        addObject(skierbuild,303,197);
+        addObject(skierbuild, 250, 250);
         startbuttonbuildworld = new StartButtonBuildWorld();
         addObject(startbuttonbuildworld,522,338);
         
