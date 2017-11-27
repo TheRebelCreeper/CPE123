@@ -135,6 +135,7 @@ public class BuildWorld extends World
         addObject(startbuttonbuildworld,522,338);
         
         setTrees();
+        
     }
 
     public void shiftWorld(int dx) {
@@ -167,13 +168,16 @@ public class BuildWorld extends World
     public void setTrees1()
     {
         Tree t1 = new Tree();
+        t1.setImage("buildtree.png");
         t1.setSpeed(0);
         addObject(t1, 400, -300);
         Tree t2 = new Tree();
+        t2.setImage("buildtree.png");
         t2.setSpeed(0);
         addObject(t2, 500, -300);
         Tree t3 = new Tree();
         t3.setSpeed(0);
+        t3.setImage("buildtree.png");
         addObject(t3, 600, -300);
     }
     

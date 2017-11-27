@@ -88,6 +88,8 @@ public class Player extends SmoothMover implements Gravity
         die = new GreenfootSound("sounds/die.mp3");
         
         setImage(normal);
+        
+        
         delay = DELAY;
     }
     
@@ -420,5 +422,6 @@ public class Player extends SmoothMover implements Gravity
             fall();
         }
     }
+
 
 }
