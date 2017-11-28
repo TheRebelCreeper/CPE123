@@ -19,10 +19,12 @@ public class BuildWorld extends World
     private StartButtonBuildWorld startButton;
     private boolean isButtonClicked;
     private Container[] myContainers;
-    private final int NUM_OF_CONTAINERS = 3;
-    public static int count = 0;
+    private final int NUM_OF_CONTAINERS = 8;
+    public static int countRamp = 3;
+    public static int countPowerup = 3;
+    public static int countShield = 2;
     
-    public static int level;
+    public static int level = 5;
     
 
     public BuildWorld()
@@ -75,9 +77,20 @@ public class BuildWorld extends World
         myContainers[2] = new Container();
         addObject(myContainers[2],74,332);
 
-        for (int i = 0; i < count && i < NUM_OF_CONTAINERS; i++)
+        int i;
+        for (i = 0; i < countRamp && i < NUM_OF_CONTAINERS; i++)
         {
             myContainers[i].setObject(new Ramp());
+        }
+        
+        for (i = i; i < countPowerup && i < NUM_OF_CONTAINERS; i++)
+        {
+            myContainers[i].setObject(new PowerUpBuild());
+        }
+        
+        for (i = i; i < countShield && i < NUM_OF_CONTAINERS; i++)
+        {
+            myContainers[i].setObject(new ShieldBuild());
         }
 
         if (myContainers[0].getObject() != null)

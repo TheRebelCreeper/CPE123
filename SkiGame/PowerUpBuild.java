@@ -1,32 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.List;
 
 /**
- * Write a description of class Ramp here.
+ * Write a description of class PowerUpBuild here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Ramp extends Buildable
+public class PowerUpBuild extends Buildable
 {
-    private RampHitbox hitbox;
-    
-    public Ramp()
-    {
-        super();
-        setRotation(10);
-        baseImage = new GreenfootImage("ramp.png");
-    }
-    
-    protected void addedToWorld(World w)
-    {
-        hitbox = new RampHitbox(this, 150, 5, 10, -5, true); // Set to false for invisible hitbox
-        getWorld().addObject(hitbox, getX(), getY());   // Adds the hitbox to the world
-        hitbox.setRotation(getRotation() - 28);
-    }
-    
     /**
-     * Act - do whatever the Ramp wants to do. This method is called whenever
+     * Act - do whatever the PowerUpBuild wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
@@ -41,7 +24,7 @@ public class Ramp extends Buildable
         }
         
         // Controls placing the object
-        if (Greenfoot.mouseClicked(this) || Greenfoot.mouseClicked(hitbox) && placed == 1)    // If the object is clicked on
+        if (Greenfoot.mouseClicked(this) && placed == 1)    // If the object is clicked on
         {
             if (isValidLocation())
             {
@@ -54,5 +37,5 @@ public class Ramp extends Buildable
             checkGravity(); // Gravity will now affect the buildable
             //All normal functionality goes in this if statement
         }
-    }   
+    }    
 }
