@@ -123,7 +123,7 @@ public class SkiWorld extends World
                 imageCount -= 3;
                                 
                 spawnRate = 120;
-                GreenfootImage sb = new GreenfootImage("marsBackground2.png");
+                GreenfootImage sb = new GreenfootImage("marsBackground.png");
                 myBackground = sb;
                 GreenfootImage s = new GreenfootImage("marsSlope.png");
                 snow.setImage(s);
@@ -136,8 +136,10 @@ public class SkiWorld extends World
                 imageCount -= 3;
                                 
                 spawnRate = 100;
-                GreenfootImage sb = new GreenfootImage("Background3.png");
+                GreenfootImage sb = new GreenfootImage("spaceBackground.png");
                 myBackground = sb;
+                GreenfootImage s = new GreenfootImage("spaceslope.png");
+                snow.setImage(s);
                
                 drawBackgroundImage(); 
                 
