@@ -6,18 +6,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class SkierBuild extends ScrollingActor implements Gravity
+public class SkierBuild extends SmoothMover implements Gravity
 {
     /**Vertical Velocity*/
     private int ySpeed = 0;
     private int speedX = 1;
     private static final int SPEED = 2;
     private static final int BOUNDARY = 40;
+    boolean isAlive;
     
     public SkierBuild()
     {
         setImage(new GreenfootImage("skiernormalBuild.png"));
         setRotation(10);
+        isAlive = true;
     }
     
     /**
@@ -25,10 +27,22 @@ public class SkierBuild extends ScrollingActor implements Gravity
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act(){
+        handleKeyPresses();
         checkGravity();
         resetAngle();
         poweredUp();
         isTouchingRamp();
+    }
+
+    private void handleKeyPresses() {
+        handleArrowKey("left", -SPEED);
+        handleArrowKey("right", SPEED);
+    }
+
+    private void handleArrowKey(String k, int sX) {
+        if( Greenfoot.isKeyDown(k) ) {
+            speedX = sX;
+        }
     }
     
     public boolean objectIsBelow()
@@ -73,7 +87,7 @@ public class SkierBuild extends ScrollingActor implements Gravity
     
     public void checkGravity()
     {
-        if (objectIsBelow())    // If object is on solid ground and is alive
+        if (objectIsBelow() && isAlive)    // If object is on solid ground and is alive
         {
             ySpeed = 0;   // Set vertical speed to 0
         }
@@ -98,8 +112,9 @@ public class SkierBuild extends ScrollingActor implements Gravity
     {
         if( isTouching(Power.class) )
         {
+            removeTouching(Power.class);
             setRotation(-45);
-            move(300);
+            move(200);
         }
     }
     
@@ -108,6 +123,24 @@ public class SkierBuild extends ScrollingActor implements Gravity
         if (isTouching(Hitbox.class))
         {
             setRotation(-18);
+        }
+    }
+    
+    public void checkCollision()
+    {
+        Actor o = getOneIntersectingObject(Obstacle.class);
+        if(o != null)
+        {
+            isAlive = false;
+        }
+    }
+    
+    public void checkDie()
+    {
+        if(getY() > getWorld().getHeight() + 30)
+        {
+            SkiWorldOver s = new SkiWorldOver();
+            Greenfoot.setWorld(s);
         }
     }
 }

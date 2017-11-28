@@ -14,7 +14,7 @@ public class Power extends SmoothMover
      * Act - do whatever the Power wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    
+
     public Power()
     {
         setRotation(10);
@@ -22,14 +22,18 @@ public class Power extends SmoothMover
         powerup = new GreenfootImage ("snowflakerainbow.png");
         setImage(powerup);
     }
-    
+
     public void act() 
     {
         // Add your action code here.
-        move(speed);
-        checkRemove();
+        BuildWorld build = new BuildWorld();
+        if( (getWorld().equals(build)))
+        {
+            move(speed);
+            checkRemove();
+        }
     }
-    
+
     public void setSpeed(int l)
     {
         if(l != 0)
@@ -38,7 +42,7 @@ public class Power extends SmoothMover
             speed = -6 - difference + .5*(l-1);
         }
     }
-    
+
     public void checkRemove()
     {
         if(getX() < -20)
