@@ -20,7 +20,7 @@ public class Shield extends SmoothMover
     {
         setRotation(10);
         speed = -6;
-        
+        setImage("Shield.png");
     }
     
     public void act() 
