@@ -9,6 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Shield extends SmoothMover
 {
     public static double speed;
+    
+
+    
     /**
      * Act - do whatever the Shield wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -17,6 +20,7 @@ public class Shield extends SmoothMover
     {
         setRotation(10);
         speed = -6;
+        
     }
     
     public void act() 

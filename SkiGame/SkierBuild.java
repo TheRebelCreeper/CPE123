@@ -15,11 +15,18 @@ public class SkierBuild extends SmoothMover implements Gravity
     private static final int BOUNDARY = 40;
     boolean isAlive;
     
+    public int invincibledelay;
+    public int invincibleDELAY = 50;
+    boolean invincible;
+    
     public SkierBuild()
     {
         setImage(new GreenfootImage("skiernormalBuild.png"));
         setRotation(10);
         isAlive = true;
+        
+        invincible = false;
+        invincibledelay = invincibleDELAY;
     }
     
     /**
@@ -34,6 +41,9 @@ public class SkierBuild extends SmoothMover implements Gravity
         isTouchingRamp();
         checkCollision();
         checkDie();
+        
+        checkForShields();
+        invincibleDelay();
     }
 
     private void handleKeyPresses() {
@@ -131,10 +141,32 @@ public class SkierBuild extends SmoothMover implements Gravity
     public void checkCollision()
     {
         Actor o = getOneIntersectingObject(Obstacle.class);
-        if(o != null)
+        if(o != null && invincible == false)
         {
             isAlive = false;
             setImage("skierhitBuild.png");
+        }
+    }
+    
+    public void checkForShields()
+    {
+        Actor s = getOneIntersectingObject(Shield.class);
+        if(s != null)
+        {
+            invincible = true;
+        }
+    }
+    
+    public void invincibleDelay()
+    {
+        if(invincible == true)
+        {
+            invincibledelay--;
+            if(invincibledelay <= 0)
+            {
+                invincible = false;
+                invincibledelay = invincibleDELAY;
+            }
         }
     }
     
