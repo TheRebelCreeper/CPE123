@@ -110,7 +110,7 @@ public class SkiWorld extends World
                 imageCount -= 3;
                                 
                 spawnRate = 150;
-                GreenfootImage bg = new GreenfootImage("sandbackground.png");
+                GreenfootImage bg = new GreenfootImage("sandBackground.png");
                 myBackground = bg;
                 GreenfootImage s = new GreenfootImage("sandslope.png");
                 snow.setImage(s);
@@ -123,9 +123,9 @@ public class SkiWorld extends World
                 imageCount -= 3;
                                 
                 spawnRate = 120;
-                GreenfootImage sb = new GreenfootImage("spacebackground.png");
+                GreenfootImage sb = new GreenfootImage("marsBackground2.png");
                 myBackground = sb;
-                GreenfootImage s = new GreenfootImage("spaceslope.png");
+                GreenfootImage s = new GreenfootImage("marsSlope.png");
                 snow.setImage(s);
                 drawBackgroundImage(); // Updates the background          
                 spawnObstacles();
@@ -136,8 +136,10 @@ public class SkiWorld extends World
                 imageCount -= 3;
                                 
                 spawnRate = 100;
-                GreenfootImage m = new GreenfootImage("trees.png");
-                myBackground = m;
+                GreenfootImage sb = new GreenfootImage("Background3.png");
+                myBackground = sb;
+               
+                drawBackgroundImage(); 
                 
                 drawBackgroundImage(); // Updates the background          
                 spawnObstacles();
@@ -287,13 +289,6 @@ public class SkiWorld extends World
         Power p = new Power();
         p.setSpeed(levelNumber);
         addObject(p, 680, 155);
-    }
-    
-    private void generateShield()
-    {
-        Shield s = new Shield();
-        s.setSpeed(levelNumber);
-        addObject(s, 680, 155);
     }
 
     private void generateLodge()
