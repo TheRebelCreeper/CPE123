@@ -59,7 +59,7 @@ public class Tree extends Obstacle
         }
         else if(((SkiWorld)getWorld()).getLevel() == 3 )
         {
-            setImage( new GreenfootImage("pine-tree.png"));
+            setImage( new GreenfootImage("stalagmiteFixed.png"));
         }
         else if(((SkiWorld)getWorld()).getLevel() == 4 )
         {
