@@ -17,14 +17,6 @@ public class Snowball extends Obstacle
         setRotation(9);
         speed = -7;
     }
-
-    /**
-     * Called when the Player is added to the world
-     */
-    protected void addedToWorld(World w)
-    {
-        snowBallImage();
-    }
     
     /**
      * Act - do whatever the Snowball wants to do. This method is called whenever
@@ -36,7 +28,7 @@ public class Snowball extends Obstacle
         checkRemove();
     }   
     
-    private void snowBallImage()
+    public void snowBallImage()
     {
         if( ((SkiWorld)getWorld()).getLevel() == 1 )
         {
