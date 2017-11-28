@@ -131,6 +131,7 @@ public class SkierBuild extends SmoothMover implements Gravity
         if(o != null)
         {
             isAlive = false;
+            setImage("skierhitBuild");
         }
     }
     

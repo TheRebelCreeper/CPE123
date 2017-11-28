@@ -160,6 +160,7 @@ public class BuildWorld extends World
         setTrees1();
         Tree t4 = new Tree();
         t4.setSpeed(0);
+        t4.setImage("buildTree");
         addObject(t4, 700, -300);
     }
     
@@ -168,6 +169,7 @@ public class BuildWorld extends World
         setTrees2();
         Tree t5 = new Tree();
         t5.setSpeed(0);
+        t5.setImage("buildTree");
         addObject(t5, 800, -300);
     }
     
@@ -176,6 +178,7 @@ public class BuildWorld extends World
         setTrees3();
         Tree t6 = new Tree();
         t6.setSpeed(0);
+        t6.setImage("buildTree");
         addObject(t6, 900, -300);
     }
     
@@ -184,6 +187,7 @@ public class BuildWorld extends World
         setTrees4();
         Tree t7 = new Tree();
         t7.setSpeed(0);
+        t7.setImage("buildTree");
         addObject(t7, 1000, -300);
     }
     
