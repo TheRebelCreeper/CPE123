@@ -26,12 +26,11 @@ public class Power extends SmoothMover
     public void act() 
     {
         // Add your action code here.
-        BuildWorld build = new BuildWorld();
-        if( (getWorld().equals(build)))
-        {
-            move(speed);
-            checkRemove();
-        }
+        
+        
+        move(speed);
+        checkRemove();
+        
     }
 
     public void setSpeed(int l)
