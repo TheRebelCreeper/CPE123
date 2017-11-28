@@ -26,12 +26,13 @@ public class Power extends SmoothMover
     public void act() 
     {
         // Add your action code here.
-        BuildWorld build = new BuildWorld();
-        if( (getWorld().equals(build)))
+
+        if( getWorld() instanceof SkiWorld )
         {
             move(speed);
-            checkRemove();
         }
+        checkRemove();
+
     }
 
     public void setSpeed(int l)

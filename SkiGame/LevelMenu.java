@@ -10,6 +10,8 @@ public class LevelMenu extends World
 {
     private final int LEVEL_NUMBER = 5;
     private LevelButton[] button = new LevelButton[LEVEL_NUMBER];
+    private static Star[] star = new Star[5];
+    private int starPos[] = {51, 160, 272, 389, 501};
     
     /**
      * Constructor for objects of class MainMenu.
@@ -26,5 +28,11 @@ public class LevelMenu extends World
             button[i] = new LevelButton(i + 1);
             addObject(button[i], i * (getWidth() / LEVEL_NUMBER) + 50, 200);
         }
+    }
+    
+    public void setStar(int i)
+    {
+        star[i - 1] = new Star();
+        addObject(star[i-1], starPos[i-1], 260);
     }
 }
