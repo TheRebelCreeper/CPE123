@@ -112,8 +112,9 @@ public class SkierBuild extends SmoothMover implements Gravity
     {
         if( isTouching(Power.class) )
         {
+            removeTouching(Power.class);
             setRotation(-45);
-            move(300);
+            move(200);
         }
     }
     
