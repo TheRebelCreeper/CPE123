@@ -122,6 +122,7 @@ public class Player extends SmoothMover implements Gravity
         checkForMaterials();
         checkForPower();// Checks for collisions with Material1
         checkForLedge();
+        checkForShield();
         
         if (downPressed || shiftPressed)    // animation for skier to duck
         { 
@@ -379,9 +380,15 @@ public class Player extends SmoothMover implements Gravity
                 //if(materialbar.mbhealth <=0)
                 //{
                     
+<<<<<<< HEAD
                 //}
             //} */
             BuildWorld.count += 1;
+=======
+                }
+            }
+            BuildWorld.countRamp += 1;
+>>>>>>> c259a7c01b92ea5b720fe0a3b5ab1636c976a703
             world.removeObject(m);
         }
 
@@ -405,6 +412,7 @@ public class Player extends SmoothMover implements Gravity
             if(collected == false)
             {
                 totalp.add((Power)p);
+                BuildWorld.countPowerup += 1;
                 SkiWorld w = (SkiWorld) getWorld();
                 w.removeObject(p);
                 
@@ -434,6 +442,7 @@ public class Player extends SmoothMover implements Gravity
             if(collected == false)
             {
                 totals.add((Shield)s);
+                BuildWorld.countShield += 1;
                 SkiWorld w = (SkiWorld) getWorld();
                 w.removeObject(s);
                 
