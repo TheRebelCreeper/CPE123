@@ -9,8 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class SkierBuild extends SmoothMover implements Gravity
 {
     /**Vertical Velocity*/
-    private double ySpeed = 0;
-    private double speedX = 1;
+    private int ySpeed = 0;
+    private int speedX = 1;
     private static final int SPEED = 2;
     private static final int BOUNDARY = 40;
     boolean isAlive;
@@ -28,7 +28,6 @@ public class SkierBuild extends SmoothMover implements Gravity
      */
     public void act(){
         handleKeyPresses();
-        boundedMove();
         checkGravity();
         resetAngle();
         poweredUp();
@@ -44,19 +43,6 @@ public class SkierBuild extends SmoothMover implements Gravity
         if( Greenfoot.isKeyDown(k) ) {
             speedX = sX;
         }
-    }
-
-    private void boundedMove() {
-        if( speedX+getX() <= BOUNDARY ) {
-            setLocation(BOUNDARY, getY());
-            ((BuildWorld)getWorld()).shiftWorld(-speedX);
-        } else if( speedX+getX() >= getWorld().getWidth()-BOUNDARY ) {
-            setLocation(getWorld().getWidth()-BOUNDARY, getY());
-            ((BuildWorld)getWorld()).shiftWorld(-speedX);
-        } else {
-            setLocation(getX()+speedX, getY());
-        }
-        speedX = 0;
     }
     
     public boolean objectIsBelow()
