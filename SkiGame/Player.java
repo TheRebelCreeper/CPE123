@@ -381,7 +381,7 @@ public class Player extends SmoothMover implements Gravity
                     
                 }
             }
-            BuildWorld.count += 1;
+            BuildWorld.countRamp += 1;
             world.removeObject(m);
         }
         else 
@@ -408,6 +408,7 @@ public class Player extends SmoothMover implements Gravity
             if(collected == false)
             {
                 totalp.add((Power)p);
+                BuildWorld.countPowerup += 1;
                 SkiWorld w = (SkiWorld) getWorld();
                 w.removeObject(p);
                 //System.out.println(totalp.size());
@@ -433,6 +434,7 @@ public class Player extends SmoothMover implements Gravity
             if(collected == false)
             {
                 totals.add((Shield)s);
+                BuildWorld.countShield += 1;
                 SkiWorld w = (SkiWorld) getWorld();
                 w.removeObject(s);
                 //System.out.println(totalp.size());
