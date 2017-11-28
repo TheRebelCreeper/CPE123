@@ -32,10 +32,7 @@ public class Tree extends Obstacle
         checkRemove();      // Checks to remove Tree
         
     }
-    protected void addedToWorld(World w)
-    {
-        treeImage();
-    }
+
     public void setSpeed(int l)
     {
         if(l != 0)
@@ -48,17 +45,30 @@ public class Tree extends Obstacle
             speed = 0;
         }
     }
-    private void treeImage()
+    
+    public void treeImage()
     {
-        if( ((SkiWorld)getWorld()).getLevel() == 1 )
+        //BuildWorld build = new BuildWorld();
+        if(((SkiWorld)getWorld()).getLevel() == 1 )
         {
             setImage( new GreenfootImage("pine-tree.png"));
         }
-        else if( ((SkiWorld)getWorld()).getLevel() == 2 )
+        else if(((SkiWorld)getWorld()).getLevel() == 2 )
         {
             setImage( new GreenfootImage("cactus.png"));
         }
-       
+        else if(((SkiWorld)getWorld()).getLevel() == 3 )
+        {
+            setImage( new GreenfootImage("pine-tree.png"));
+        }
+        else if(((SkiWorld)getWorld()).getLevel() == 4 )
+        {
+            setImage( new GreenfootImage("pine-tree.png"));
+        }
+        else if(((SkiWorld)getWorld()).getLevel() == 5 )
+        {
+            setImage( new GreenfootImage("pine-tree.png"));
+        }
     }
 
     /**
