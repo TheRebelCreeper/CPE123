@@ -25,36 +25,10 @@ public class SkierBuild extends ScrollingActor implements Gravity
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act(){
-        handleKeyPresses();
-        boundedMove();
         checkGravity();
         resetAngle();
         poweredUp();
         isTouchingRamp();
-    }
-
-    private void handleKeyPresses() {
-        handleArrowKey("left", -SPEED);
-        handleArrowKey("right", SPEED);
-    }
-
-    private void handleArrowKey(String k, int sX) {
-        if( Greenfoot.isKeyDown(k) ) {
-            speedX = sX;
-        }
-    }
-
-    private void boundedMove() {
-        if( speedX+getX() <= BOUNDARY ) {
-            setLocation(BOUNDARY, getY());
-            ((BuildWorld)getWorld()).shiftWorld(-speedX);
-        } else if( speedX+getX() >= getWorld().getWidth()-BOUNDARY ) {
-            setLocation(getWorld().getWidth()-BOUNDARY, getY());
-            ((BuildWorld)getWorld()).shiftWorld(-speedX);
-        } else {
-            setLocation(getX()+speedX, getY());
-        }
-        speedX = 0;
     }
     
     public boolean objectIsBelow()

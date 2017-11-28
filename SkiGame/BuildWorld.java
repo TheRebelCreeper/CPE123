@@ -13,9 +13,7 @@ public class BuildWorld extends World
      * Constructor for objects of class BuildWorld. 
      */
     private int xOffset = 0;
-    private final static int SWIDTH = 900;
-    private final static int SHEIGHT = 500;
-    private final static int WWIDTH = 1000;
+   
     private GreenfootImage bimg;
     SkierBuild skierbuild;
     StartButtonBuildWorld startbuttonbuildworld;
@@ -31,9 +29,8 @@ public class BuildWorld extends World
     public BuildWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(SWIDTH, SHEIGHT, 1, false); 
+        super(900, 500, 1, false); 
         bimg = new GreenfootImage("BackgroundEx.png");
-        shiftWorld(0);
         myContainers = new Container[NUM_OF_CONTAINERS];
         prepare();
         setPaintOrder(Hitbox.class);
@@ -135,28 +132,6 @@ public class BuildWorld extends World
         
         setTrees();
         
-    }
-
-    public void shiftWorld(int dx) {
-        if( (xOffset + dx) <= 0 && (xOffset + dx) >= SWIDTH - WWIDTH) {
-            xOffset = xOffset + dx;
-            shiftWorldBackground(dx);
-            shiftWorldActors(dx);
-        }
-    }
-
-    private void shiftWorldBackground(int dx) {
-        GreenfootImage bkgd = new GreenfootImage(SWIDTH, SHEIGHT);
-        bkgd.drawImage(bimg, xOffset, 0);
-        setBackground(bkgd);
-    }
-
-    private void shiftWorldActors(int dx) {
-        List<ScrollingActor> saList =
-            getObjects(ScrollingActor.class);
-        for( ScrollingActor a : saList ) {
-            a.setAbsoluteLocation(dx);
-        }
     }
     
     public void setLevel(int l)
