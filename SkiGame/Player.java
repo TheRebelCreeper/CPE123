@@ -121,6 +121,7 @@ public class Player extends SmoothMover implements Gravity
         checkForMaterials();
         checkForPower();// Checks for collisions with Material1
         checkForLedge();
+        checkForShield();
         
         if (downPressed || shiftPressed)    // animation for skier to duck
         { 
