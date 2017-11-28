@@ -16,7 +16,7 @@ public class Tree extends Obstacle
     public Tree()
     {
         setRotation(10);
-        setImage(new GreenfootImage("pine-tree.png"));  // Sets the image of Tree
+        //setImage(new GreenfootImage("pine-tree.png"));  // Sets the image of Tree
         speed = -6;
     }
 
@@ -30,8 +30,12 @@ public class Tree extends Obstacle
         move(speed);
         checkGravity();     // Checks the gravity for Tree
         checkRemove();      // Checks to remove Tree
+        
     }
-
+    protected void addedToWorld(World w)
+    {
+        treeImage();
+    }
     public void setSpeed(int l)
     {
         if(l != 0)
@@ -43,6 +47,18 @@ public class Tree extends Obstacle
         {
             speed = 0;
         }
+    }
+    private void treeImage()
+    {
+        if( ((SkiWorld)getWorld()).getLevel() == 1 )
+        {
+            setImage( new GreenfootImage("pine-tree.png"));
+        }
+        else if( ((SkiWorld)getWorld()).getLevel() == 2 )
+        {
+            setImage( new GreenfootImage("cactus.png"));
+        }
+       
     }
 
     /**

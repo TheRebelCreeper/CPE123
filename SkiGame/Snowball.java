@@ -46,6 +46,18 @@ public class Snowball extends Obstacle
         {
             setImage( new GreenfootImage("tumbleweed.png"));
         }
+        else if( ((SkiWorld)getWorld()).getLevel() == 3 )
+        {
+            setImage( new GreenfootImage("asteroid.png"));
+        }
+        else if( ((SkiWorld)getWorld()).getLevel() == 4 )
+        {
+            setImage( new GreenfootImage("asteroid.png"));
+        }
+        else if( ((SkiWorld)getWorld()).getLevel() == 5 )
+        {
+            setImage( new GreenfootImage("tumbleweed.png"));
+        }
     }
 
     public void setSpeed(int l)
