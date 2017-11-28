@@ -232,14 +232,13 @@ public class SkiWorld extends World
         //{
             Tree tree = new Tree();
             tree.setSpeed(levelNumber);
+            tree.treeImage();
             addObject(tree, 680, 230);
 
             Material1 material1 = new Material1();
             material1.setSpeed(levelNumber);
             addObject(material1, 670, 195);
-            
-           
-            
+
        // }
     }
 
@@ -266,6 +265,7 @@ public class SkiWorld extends World
         //{
             Snowball sb = new Snowball();
             sb.setSpeed(levelNumber);
+            sb.snowBallImage();
             addObject(sb, 680, 210);
         //}
     }
