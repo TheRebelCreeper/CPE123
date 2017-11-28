@@ -133,4 +133,13 @@ public class SkierBuild extends SmoothMover implements Gravity
             isAlive = false;
         }
     }
+    
+    public void checkDie()
+    {
+        if(getY() > getWorld().getHeight() + 30)
+        {
+            SkiWorldOver s = new SkiWorldOver();
+            Greenfoot.setWorld(s);
+        }
+    }
 }
