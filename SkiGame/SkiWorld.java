@@ -273,7 +273,7 @@ public class SkiWorld extends World
         l.setSpeed(levelNumber);
         addObject(l, 680, 180);
 
-        int num = Greenfoot.getRandomNumber(3);
+        int num = Greenfoot.getRandomNumber(2);
 
         if(num ==0)
         {

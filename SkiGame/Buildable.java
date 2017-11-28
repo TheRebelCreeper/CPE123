@@ -19,6 +19,8 @@ public class Buildable extends Actor implements Gravity
     /**Holds the speed of the Actor*/
     private int ySpeed;
     
+    protected GreenfootImage baseImage;
+    
     /**
      * Constructor for buildable
      */
@@ -26,7 +28,8 @@ public class Buildable extends Actor implements Gravity
     {
         placed = 0;
         ySpeed = 0;
-        setImage(new GreenfootImage("barrel.png"));
+        baseImage = new GreenfootImage("rampSmall.png");
+        setImage(new GreenfootImage("rampSmall.png"));
     }
     
     /**
