@@ -13,11 +13,13 @@ public class SkierBuild extends ScrollingActor implements Gravity
     private int speedX = 1;
     private static final int SPEED = 2;
     private static final int BOUNDARY = 40;
+    boolean isAlive;
     
     public SkierBuild()
     {
         setImage(new GreenfootImage("skiernormalBuild.png"));
         setRotation(10);
+        isAlive = true;
     }
     
     /**
@@ -25,10 +27,36 @@ public class SkierBuild extends ScrollingActor implements Gravity
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act(){
+        handleKeyPresses();
+        boundedMove();
         checkGravity();
         resetAngle();
         poweredUp();
         isTouchingRamp();
+    }
+
+    private void handleKeyPresses() {
+        handleArrowKey("left", -SPEED);
+        handleArrowKey("right", SPEED);
+    }
+
+    private void handleArrowKey(String k, int sX) {
+        if( Greenfoot.isKeyDown(k) ) {
+            speedX = sX;
+        }
+    }
+
+    private void boundedMove() {
+        if( speedX+getX() <= BOUNDARY ) {
+            setLocation(BOUNDARY, getY());
+            ((BuildWorld)getWorld()).shiftWorld(-speedX);
+        } else if( speedX+getX() >= getWorld().getWidth()-BOUNDARY ) {
+            setLocation(getWorld().getWidth()-BOUNDARY, getY());
+            ((BuildWorld)getWorld()).shiftWorld(-speedX);
+        } else {
+            setLocation(getX()+speedX, getY());
+        }
+        speedX = 0;
     }
     
     public boolean objectIsBelow()
@@ -73,7 +101,7 @@ public class SkierBuild extends ScrollingActor implements Gravity
     
     public void checkGravity()
     {
-        if (objectIsBelow())    // If object is on solid ground and is alive
+        if (objectIsBelow() && isAlive)    // If object is on solid ground and is alive
         {
             ySpeed = 0;   // Set vertical speed to 0
         }
@@ -108,6 +136,15 @@ public class SkierBuild extends ScrollingActor implements Gravity
         if (isTouching(Hitbox.class))
         {
             setRotation(-18);
+        }
+    }
+    
+    public void checkCollision()
+    {
+        Actor o = getOneIntersectingObject(Obstacle.class);
+        if(o != null)
+        {
+            isAlive = false;
         }
     }
 }
