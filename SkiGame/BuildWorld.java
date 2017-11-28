@@ -21,7 +21,6 @@ public class BuildWorld extends World
     private Container[] myContainers;
     private final int NUM_OF_CONTAINERS = 3;
     public static int count = 0;
-    private Star star;
     
     public static int level;
     
@@ -49,39 +48,10 @@ public class BuildWorld extends World
 
     public void changeMainMenu()
     {
-        if (skierbuild.getX() > 850){
+        if (skierbuild.getX() > getWidth() - 50){
             LevelMenu world = new LevelMenu();
+            world.setStar(SkiWorld.getLevel());
             Greenfoot.setWorld(world);
-            if (SkiWorld.getLevel() == 1){
-                star = new Star();
-                world.addObject(star,51,261);
-            }
-            if (SkiWorld.getLevel() == 2){
-                star = new Star();
-                world.addObject(star,51,261);
-                world.addObject(star,160,260);
-            }
-            if (SkiWorld.getLevel() == 3){
-                star = new Star();
-                world.addObject(star,51,261);
-                world.addObject(star,160,260);
-                world.addObject(star,272,259);
-            }
-            if (SkiWorld.getLevel() == 4){
-                star = new Star();
-                world.addObject(star,51,261);
-                world.addObject(star,160,260);
-                world.addObject(star,272,259);
-                world.addObject(star,389,262);
-            }
-            if (SkiWorld.getLevel() == 5){
-                star = new Star();
-                world.addObject(star,51,261);
-                world.addObject(star,160,260);
-                world.addObject(star,272,259);
-                world.addObject(star,389,262);
-                world.addObject(star,501,260);
-            }
         }
     }
 
