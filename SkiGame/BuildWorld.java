@@ -20,9 +20,9 @@ public class BuildWorld extends World
     private boolean isButtonClicked;
     private Container[] myContainers;
     private final int NUM_OF_CONTAINERS = 8;
-    public static int countRamp = 3;
-    public static int countPowerup = 3;
-    public static int countShield = 2;
+    public static int countRamp = 0;
+    public static int countPowerup = 0;
+    public static int countShield = 0;
     
     public static int level = 5;
     
@@ -68,14 +68,11 @@ public class BuildWorld extends World
         Tree tree = new Tree();
         //addObject(tree,489,252);
 
-        myContainers[0] = new Container();
-        addObject(myContainers[0],74,71);
-
-        myContainers[1] = new Container();
-        addObject(myContainers[1],74,204);
-
-        myContainers[2] = new Container();
-        addObject(myContainers[2],74,332);
+        for (int i = 0; i < countRamp + countPowerup + countShield; i++)
+        {
+            myContainers[i] = new Container();
+            addObject(myContainers[i], 50, (i * 62) + 33);
+        }
 
         int i;
         for (i = 0; i < countRamp && i < NUM_OF_CONTAINERS; i++)
@@ -93,19 +90,12 @@ public class BuildWorld extends World
             myContainers[i].setObject(new ShieldBuild());
         }
 
-        if (myContainers[0].getObject() != null)
+        for (int j = 0; j < countRamp + countPowerup + countShield; j++)
         {
-            addObject(myContainers[0].getObject(),74,71);
-        }
-
-        if (myContainers[1].getObject() != null)
-        {
-            addObject(myContainers[1].getObject(),74,203);
-        }
-
-        if (myContainers[2].getObject() != null)
-        {
-            addObject(myContainers[2].getObject(),74,333);
+            if (myContainers[j].getObject() != null)
+            {
+                addObject(myContainers[j].getObject(), 50, (j * 62) + 30);
+            }
         }
 
         skierbuild = new SkierBuild();
