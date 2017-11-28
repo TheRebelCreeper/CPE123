@@ -382,8 +382,8 @@ public class Player extends SmoothMover implements Gravity
                     
                 //}
             //} */
-
-            BuildWorld.countRamp += 1;
+            if (!BuildWorld.isFull())
+                BuildWorld.countRamp += 1;
             world.removeObject(m);
         
                 }
@@ -407,7 +407,8 @@ public class Player extends SmoothMover implements Gravity
             if(collected == false)
             {
                 totalp.add((Power)p);
-                BuildWorld.countPowerup += 1;
+                if (!BuildWorld.isFull())
+                    BuildWorld.countPowerup += 1;
                 SkiWorld w = (SkiWorld) getWorld();
                 w.removeObject(p);
                 
@@ -437,7 +438,8 @@ public class Player extends SmoothMover implements Gravity
             if(collected == false)
             {
                 totals.add((Shield)s);
-                BuildWorld.countShield += 1;
+                if (!BuildWorld.isFull())
+                    BuildWorld.countShield += 1;
                 SkiWorld w = (SkiWorld) getWorld();
                 w.removeObject(s);
                 

@@ -8,6 +8,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ShieldBuild extends Buildable
 {
+    public ShieldBuild()
+    {
+        super();
+        setRotation(10);
+        baseImage = new GreenfootImage("Shield.png");
+        setImage(baseImage);
+    }
+    
     /**
      * Act - do whatever the ShieldBuild wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -16,8 +24,7 @@ public class ShieldBuild extends Buildable
     {
         //controls where to place the object
         if (placed == 1)    // If the container has been clicked
-        {
-            setImage(baseImage);
+        { 
             mi = Greenfoot.getMouseInfo();
             if (mi != null) // If the mouse is on the window
                 setLocation(mi.getX(), mi.getY());  // Set to location to the current mouse position

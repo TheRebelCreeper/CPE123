@@ -19,7 +19,7 @@ public class Power extends SmoothMover
     {
         setRotation(10);
         speed = -6;
-        powerup = new GreenfootImage ("snowflakerainbow.png");
+        powerup = new GreenfootImage("snowflakerainbow.png");
         setImage(powerup);
     }
 

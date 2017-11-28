@@ -19,8 +19,8 @@ public class BuildWorld extends World
     private StartButtonBuildWorld startButton;
     private boolean isButtonClicked;
     private Container[] myContainers;
-    private final int NUM_OF_CONTAINERS = 8;
-    public static int countRamp = 8;
+    private static final int NUM_OF_CONTAINERS = 8;
+    public static int countRamp = 0;
     public static int countPowerup = 0;
     public static int countShield = 0;
     
@@ -32,6 +32,7 @@ public class BuildWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1024, 500, 1, false); 
         bimg = new GreenfootImage("BackgroundEx.png");
+        setBackground(bimg);
         myContainers = new Container[NUM_OF_CONTAINERS];
         prepare();
         setPaintOrder(Hitbox.class);
@@ -74,27 +75,30 @@ public class BuildWorld extends World
             addObject(myContainers[i], 50, (i * 62) + 33);
         }
 
-        int i;
-        for (i = 0; i < countRamp && i < NUM_OF_CONTAINERS; i++)
+        int c = 0;
+        for (int i = 0; i < countRamp && c < NUM_OF_CONTAINERS; i++)
         {
-            myContainers[i].setObject(new Ramp());
+            myContainers[c].setObject(new Ramp());
+            c++;
         }
         
-        for (i = i; i < countPowerup && i < NUM_OF_CONTAINERS; i++)
+        for (int i = 0; i < countPowerup && c < NUM_OF_CONTAINERS; i++)
         {
-            myContainers[i].setObject(new PowerUpBuild());
+            myContainers[c].setObject(new PowerUpBuild());
+            c++;
         }
         
-        for (i = i; i < countShield && i < NUM_OF_CONTAINERS; i++)
+        for (int i = 0; i < countShield && c < NUM_OF_CONTAINERS; i++)
         {
-            myContainers[i].setObject(new ShieldBuild());
+            myContainers[c].setObject(new ShieldBuild());
+            c++;
         }
 
-        for (int j = 0; j < countRamp + countPowerup + countShield; j++)
+        for (int i = 0; i < countRamp + countPowerup + countShield; i++)
         {
-            if (myContainers[j].getObject() != null)
+            if (myContainers[i].getObject() != null)
             {
-                addObject(myContainers[j].getObject(), 50, (j * 62) + 30);
+                addObject(myContainers[i].getObject(), 50, (i * 62) + 33);
             }
         }
 
@@ -186,5 +190,10 @@ public class BuildWorld extends World
         {
             setTrees5();
         }
+    }
+    
+    public static boolean isFull()
+    {
+        return (countRamp + countPowerup + countShield >= NUM_OF_CONTAINERS);
     }
 }
