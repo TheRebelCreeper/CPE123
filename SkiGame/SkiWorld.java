@@ -200,8 +200,8 @@ public class SkiWorld extends World
         obstacleDelay--;
         if(obstacleDelay <= 0)
         {
-            int num = Greenfoot.getRandomNumber(4);
-            if(num == 0)
+            int num = Greenfoot.getRandomNumber(5);
+            if(num == 0 || num == 4)
             {
                 generateTree();
             }
@@ -317,13 +317,6 @@ public class SkiWorld extends World
     public static void setLevel(int level)
     {
         levelNumber = level;
-        /**This code doesn't do anything. All local variables*/
-         /*Tree t = new Tree();
-        t.setSpeed(level);
-        Snowball s = new Snowball();
-        s.setSpeed(level);
-        Bird b = new Bird();
-        b.setSpeed(level); */
     }
     
     public int getLodgeDelay()
