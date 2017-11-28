@@ -62,6 +62,7 @@ public class Player extends SmoothMover implements Gravity
     private GreenfootSound die;
     
     boolean touchingMaterial1 =false;
+    boolean touchingpowerup =false;
     
     public ArrayList<Power> totalp = new ArrayList<Power>();
     public ArrayList<Shield> totals = new ArrayList<Shield>();
@@ -372,22 +373,25 @@ public class Player extends SmoothMover implements Gravity
         if (m !=null)
         {   SkiWorld world =(SkiWorld) getWorld();
             MaterialBar materialbar =world.getMaterialBar();
-            if(touchingMaterial1 ==false)
-            {
+            /*if(touchingMaterial1 ==false)
+            { */
                 materialbar.loseHealth();
-                touchingMaterial1 =true;
-                if(materialbar.mbhealth <=0)
-                {
+                //touchingMaterial1 =true;
+                //if(materialbar.mbhealth <=0)
+                //{
                     
+<<<<<<< HEAD
+                //}
+            //} */
+            BuildWorld.count += 1;
+=======
                 }
             }
             BuildWorld.countRamp += 1;
+>>>>>>> c259a7c01b92ea5b720fe0a3b5ab1636c976a703
             world.removeObject(m);
         }
-        else 
-        {
-            touchingMaterial1 =false;
-        }
+
         
     }
     
@@ -411,6 +415,10 @@ public class Player extends SmoothMover implements Gravity
                 BuildWorld.countPowerup += 1;
                 SkiWorld w = (SkiWorld) getWorld();
                 w.removeObject(p);
+                
+                SkiWorld world =(SkiWorld) getWorld();
+                MaterialBar materialbar =world.getMaterialBar();
+                materialbar.loseHealth();
                 //System.out.println(totalp.size());
             }
             
@@ -437,6 +445,10 @@ public class Player extends SmoothMover implements Gravity
                 BuildWorld.countShield += 1;
                 SkiWorld w = (SkiWorld) getWorld();
                 w.removeObject(s);
+                
+                SkiWorld world =(SkiWorld) getWorld();
+                MaterialBar materialbar =world.getMaterialBar();
+                materialbar.loseHealth();
                 //System.out.println(totalp.size());
             }
             
