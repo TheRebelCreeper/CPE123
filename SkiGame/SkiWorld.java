@@ -110,7 +110,7 @@ public class SkiWorld extends World
                 imageCount -= 3;
                                 
                 spawnRate = 150;
-                GreenfootImage bg = new GreenfootImage("sandBackground.png");
+                GreenfootImage bg = new GreenfootImage("sandbackground.png");
                 myBackground = bg;
                 GreenfootImage s = new GreenfootImage("sandslope.png");
                 snow.setImage(s);
