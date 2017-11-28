@@ -21,6 +21,7 @@ public class BuildWorld extends World
     private Container[] myContainers;
     private final int NUM_OF_CONTAINERS = 3;
     public static int count = 0;
+    private Star star;
     
     public static int level;
     
@@ -48,10 +49,39 @@ public class BuildWorld extends World
 
     public void changeMainMenu()
     {
-        if (skierbuild.getX() > getWidth()){
+        if (skierbuild.getX() > 850){
             LevelMenu world = new LevelMenu();
-            world.setStar(SkiWorld.getLevel());
             Greenfoot.setWorld(world);
+            if (SkiWorld.getLevel() == 1){
+                star = new Star();
+                world.addObject(star,51,261);
+            }
+            if (SkiWorld.getLevel() == 2){
+                star = new Star();
+                world.addObject(star,51,261);
+                world.addObject(star,160,260);
+            }
+            if (SkiWorld.getLevel() == 3){
+                star = new Star();
+                world.addObject(star,51,261);
+                world.addObject(star,160,260);
+                world.addObject(star,272,259);
+            }
+            if (SkiWorld.getLevel() == 4){
+                star = new Star();
+                world.addObject(star,51,261);
+                world.addObject(star,160,260);
+                world.addObject(star,272,259);
+                world.addObject(star,389,262);
+            }
+            if (SkiWorld.getLevel() == 5){
+                star = new Star();
+                world.addObject(star,51,261);
+                world.addObject(star,160,260);
+                world.addObject(star,272,259);
+                world.addObject(star,389,262);
+                world.addObject(star,501,260);
+            }
         }
     }
 
@@ -130,7 +160,7 @@ public class BuildWorld extends World
         setTrees1();
         Tree t4 = new Tree();
         t4.setSpeed(0);
-        t4.setImage("buildTree");
+        t4.setImage("buildtree.png");
         addObject(t4, 700, -300);
     }
     
@@ -139,7 +169,7 @@ public class BuildWorld extends World
         setTrees2();
         Tree t5 = new Tree();
         t5.setSpeed(0);
-        t5.setImage("buildTree");
+        t5.setImage("buildtree.png");
         addObject(t5, 800, -300);
     }
     
@@ -148,7 +178,7 @@ public class BuildWorld extends World
         setTrees3();
         Tree t6 = new Tree();
         t6.setSpeed(0);
-        t6.setImage("buildTree");
+        t6.setImage("buildtree.png");
         addObject(t6, 900, -300);
     }
     
@@ -157,7 +187,7 @@ public class BuildWorld extends World
         setTrees4();
         Tree t7 = new Tree();
         t7.setSpeed(0);
-        t7.setImage("buildTree");
+        t7.setImage("buildtree.png");
         addObject(t7, 1000, -300);
     }
     
