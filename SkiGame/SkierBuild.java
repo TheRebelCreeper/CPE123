@@ -32,6 +32,8 @@ public class SkierBuild extends SmoothMover implements Gravity
         resetAngle();
         poweredUp();
         isTouchingRamp();
+        checkCollision();
+        checkDie();
     }
 
     private void handleKeyPresses() {
@@ -132,7 +134,7 @@ public class SkierBuild extends SmoothMover implements Gravity
         if(o != null)
         {
             isAlive = false;
-            setImage("skierhitBuild");
+            setImage("skierhitBuild.png");
         }
     }
     
