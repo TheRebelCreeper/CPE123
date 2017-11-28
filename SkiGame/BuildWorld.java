@@ -52,7 +52,7 @@ public class BuildWorld extends World
 
     public void changeMainMenu()
     {
-        if (skierbuild.getX() > 560){
+        if (skierbuild.getX() > 850){
             LevelMenu world = new LevelMenu();
             Greenfoot.setWorld(world);
             if (SkiWorld.getLevel() == 1){
