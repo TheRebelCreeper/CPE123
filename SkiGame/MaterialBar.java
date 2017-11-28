@@ -46,7 +46,7 @@ public class MaterialBar extends Actor
     
     public void setHealth(int L)
     {
-        mbhealth = 3 + (L - 1);
+        mbhealth = 4 + (L - 1);
         pixelsPerHealthPoint = (int)MaterialBarWidth/mbhealth;
         
     }
