@@ -15,8 +15,8 @@ public class BuildWorld extends World
     private int xOffset = 0;
    
     private GreenfootImage bimg;
-    SkierBuild skierbuild;
-    StartButtonBuildWorld startbuttonbuildworld;
+    private SkierBuild skierbuild;
+    private StartButtonBuildWorld startButton;
     private boolean isButtonClicked;
     private Container[] myContainers;
     private final int NUM_OF_CONTAINERS = 3;
@@ -29,7 +29,7 @@ public class BuildWorld extends World
     public BuildWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(900, 500, 1, false); 
+        super(1024, 500, 1, false); 
         bimg = new GreenfootImage("BackgroundEx.png");
         myContainers = new Container[NUM_OF_CONTAINERS];
         prepare();
@@ -39,7 +39,7 @@ public class BuildWorld extends World
 
     public void act()
     {
-        if(Greenfoot.mouseClicked(startbuttonbuildworld) || isButtonClicked)
+        if(Greenfoot.mouseClicked(startButton) || isButtonClicked)
         {
             skierbuild.move(5);
             isButtonClicked = true;
@@ -91,7 +91,7 @@ public class BuildWorld extends World
     public void prepare()
     {   
         Snow snow = new Snow();
-        addObject(snow,450,475);
+        addObject(snow,450,500);
 
         Tree tree = new Tree();
         //addObject(tree,489,252);
@@ -127,11 +127,11 @@ public class BuildWorld extends World
 
         skierbuild = new SkierBuild();
         addObject(skierbuild, 250, 250);
-        startbuttonbuildworld = new StartButtonBuildWorld();
-        addObject(startbuttonbuildworld,522,338);
         
+        startButton = new StartButtonBuildWorld();
+        addObject(startButton, getWidth() - 55, 30);
+
         setTrees();
-        
     }
     
     public void setLevel(int l)

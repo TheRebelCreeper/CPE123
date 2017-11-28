@@ -6,11 +6,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class SkierBuild extends ScrollingActor implements Gravity
+public class SkierBuild extends SmoothMover implements Gravity
 {
     /**Vertical Velocity*/
-    private int ySpeed = 0;
-    private int speedX = 1;
+    private double ySpeed = 0;
+    private double speedX = 1;
     private static final int SPEED = 2;
     private static final int BOUNDARY = 40;
     
