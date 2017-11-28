@@ -12,30 +12,24 @@ public class SkiWorld extends World
 
     //private int treeSpawnRate, birdSpawnRate, snowballSpawnRate;
     private int spawnRate;
-    
+
     private int imageCount = 0;
-    
 
     /**Current level of the game*/
     public static int levelNumber = 1;
     /**Whether the player is alive or not*/
     public boolean isAlive = true;
-    
+
     Heart[] health = new Heart[3];
 
     private int lodgeDelay = 0;
     public int obstacleDelay = 0;
     public int obstacleDELAY;
-    
-    
+
     private Label label;
-    
     private Player player;
-    
     private Snow snow;
-    
     MaterialBar mb = new MaterialBar();
-    
     /**
      * Constructor for objects of class MyWorld.
      */
@@ -69,17 +63,14 @@ public class SkiWorld extends World
         addObject(health[1], getWidth()-95, 50);
         health[0] = new Heart();
         addObject(health[0], getWidth()-140, 50);
-        
 
         label = new Label( "Level: " + levelNumber, 48 );
         addObject( label, 100, 50 );
-        
+
         mb.setHealth(levelNumber);
         addObject(mb, 90, 350);
 
-        
     }
-    
 
     /**
      * Act method for SkiWorld
@@ -97,18 +88,18 @@ public class SkiWorld extends World
             if (levelNumber == 1)
             {
                 imageCount -= 3;
-                
+
                 spawnRate = 200;
-                
+
                 drawBackgroundImage(); // Updates the background          
-                
+
                 spawnObstacles();
                 generateLodge();
             }
             else if (levelNumber == 2)
             {
                 imageCount -= 3;
-                                
+
                 spawnRate = 150;
                 GreenfootImage bg = new GreenfootImage("sandBackground.png");
                 myBackground = bg;
@@ -121,7 +112,7 @@ public class SkiWorld extends World
             else if (levelNumber == 3)
             {
                 imageCount -= 3;
-                                
+
                 spawnRate = 120;
                 GreenfootImage sb = new GreenfootImage("marsBackground.png");
                 myBackground = sb;
@@ -134,15 +125,15 @@ public class SkiWorld extends World
             else if (levelNumber == 4)
             {
                 imageCount -= 3;
-                                
+
                 spawnRate = 100;
                 GreenfootImage sb = new GreenfootImage("spaceBackground.png");
                 myBackground = sb;
                 GreenfootImage s = new GreenfootImage("spaceslope.png");
                 snow.setImage(s);
-               
+
                 drawBackgroundImage(); 
-                
+
                 drawBackgroundImage(); // Updates the background          
                 spawnObstacles();
                 generateLodge();
@@ -150,9 +141,9 @@ public class SkiWorld extends World
             else if (levelNumber == 5)
             {
                 imageCount -= 3;
-                                
+
                 spawnRate = 80;
-                
+
                 drawBackgroundImage();
                 spawnObstacles();        
                 generateLodge();
@@ -217,29 +208,35 @@ public class SkiWorld extends World
             {
                 generateLedge();
             }
-            
+
             int d = Greenfoot.getRandomNumber(40) + spawnRate;
             obstacleDelay = d;
         }
     }
-    
+
     /**
      * Randomly generates Trees
      */
     private void generateTree()
     {
-        //if(Greenfoot.getRandomNumber(1000) < treeSpawnRate) // Chance of spawning a tree
-        //{
-            Tree tree = new Tree();
-            tree.setSpeed(levelNumber);
-            tree.treeImage();
-            addObject(tree, 680, 230);
+        Tree tree = new Tree();
+        tree.setSpeed(levelNumber);
+        tree.treeImage();
+        addObject(tree, 680, 230);
 
+        int num = Greenfoot.getRandomNumber(2);
+        if(num == 0)
+        {
             Material1 material1 = new Material1();
             material1.setSpeed(levelNumber);
             addObject(material1, 670, 195);
-
-       // }
+        }
+        if(num == 1)
+        {
+            Shield s = new Shield();
+            s.setSpeed(levelNumber);
+            addObject(s, 670, 195);
+        }
     }
 
     /**
@@ -249,10 +246,10 @@ public class SkiWorld extends World
     {
         //if(Greenfoot.getRandomNumber(1000) < birdSpawnRate) // Chance of spawning a bird
         //{
-            Bird bird = new Bird();
-            bird.setSpeed(levelNumber);
-            addObject(bird, 680, 210);
-            
+        Bird bird = new Bird();
+        bird.setSpeed(levelNumber);
+        addObject(bird, 680, 210);
+
         //}
     }
 
@@ -263,34 +260,48 @@ public class SkiWorld extends World
     {
         //if(Greenfoot.getRandomNumber(1000) < snowballSpawnRate) // Chance of spawning a snowball
         //{
-            Snowball sb = new Snowball();
-            sb.setSpeed(levelNumber);
-            sb.snowBallImage();
-            addObject(sb, 680, 210);
+        Snowball sb = new Snowball();
+        sb.setSpeed(levelNumber);
+        sb.snowBallImage();
+        addObject(sb, 680, 210);
         //}
     }
-    
-
 
     private void generateLedge()
     {
         Ledge l = new Ledge();
         l.setSpeed(levelNumber);
         addObject(l, 680, 180);
-        
-        generatePower();
-        
-        Material1 material1 = new Material1();
-        material1.setSpeed(levelNumber);
-        addObject(material1, 680, 270);
+
+        int num = Greenfoot.getRandomNumber(3);
+
+        if(num ==0)
+        {
+            Material1 material1 = new Material1();
+            material1.setSpeed(levelNumber);
+            addObject(material1, 680, 270);
+
+            generatePower();
+        }
+        if(num == 1)
+        {
+            generatePower();
+            generateShield();
+        }
     }
-    
 
     private void generatePower()
     {
         Power p = new Power();
         p.setSpeed(levelNumber);
         addObject(p, 680, 155);
+    }
+
+    private void generateShield()
+    {
+        Shield s = new Shield();
+        s.setSpeed(levelNumber);
+        addObject(s, 680, 270);
     }
 
     private void generateLodge()
@@ -301,14 +312,14 @@ public class SkiWorld extends World
             Lodge lodge = new Lodge();
             addObject(lodge, 600, 275);
         }
-        
+
     }
-    
+
     public Heart getHealth(int n)
     {
         return health[n];
     }
-    
+
     public static int getLevel()
     {
         return levelNumber;
@@ -318,17 +329,17 @@ public class SkiWorld extends World
     {
         levelNumber = level;
     }
-    
+
     public int getLodgeDelay()
     {
         return lodgeDelay;
     }
-    
+
     public MaterialBar getMaterialBar()
     {
         return mb;
     }
-    
+
     public void setBuildWorldLevel()
     {
         BuildWorld bw = new BuildWorld();
