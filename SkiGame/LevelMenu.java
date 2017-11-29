@@ -32,7 +32,11 @@ public class LevelMenu extends World
     public void setStar(int i)
     {
         star[i - 1] = new Star(i);
-        addObject(star[i-1], starPos[i-1], 260);
+        for (int j = 0; j < LEVEL_NUMBER; j++)
+        {
+            if (star[j] != null)
+                addObject(star[j], starPos[j], 260);
+        }
     }
     
     public boolean isLocked(int i)

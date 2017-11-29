@@ -62,7 +62,8 @@ public class SkierBuild extends SmoothMover implements Gravity
         // If it is touching another Actor
         if (getOneObjectAtOffset(0, getImage().getHeight() / 2 + 5, Actor.class) != null)
         {
-            if (getOneObjectAtOffset(0, getImage().getHeight() / 2 + 5, Ramp.class) != null)
+            Ramp r = (Ramp)getOneObjectAtOffset(0, getImage().getHeight() / 2 + 5, Ramp.class);
+            if (r != null && r.getPlaced() == 2)
             {
                 if (getOneObjectAtOffset(0, getImage().getHeight() / 2 + 5, Hitbox.class) == null)
                 {
@@ -141,8 +142,8 @@ public class SkierBuild extends SmoothMover implements Gravity
         if (isTouching(Hitbox.class))
         {
             Ramp r = (Ramp)getOneIntersectingObject(Ramp.class);
-            if (r != null)
-            setRotation(-18);
+            if (r != null && r.getPlaced() == 2)
+                setRotation(-18);
         }
     }
     
