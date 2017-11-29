@@ -150,7 +150,7 @@ public class SkierBuild extends SmoothMover implements Gravity
     
     public void checkForShields()
     {
-        Actor s = getOneIntersectingObject(Shield.class);
+        Actor s = getOneIntersectingObject(ShieldBuild.class);
         if(s != null)
         {
             invincible = true;
