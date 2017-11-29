@@ -40,7 +40,7 @@ public class Snowball extends Obstacle
         }
         else if( ((SkiWorld)getWorld()).getLevel() == 3 )
         {
-            setImage( new GreenfootImage("asteroid.png"));
+            setImage( new GreenfootImage("snowball.png"));
         }
         else if( ((SkiWorld)getWorld()).getLevel() == 4 )
         {
