@@ -61,8 +61,8 @@ public class Player extends SmoothMover implements Gravity
     private GreenfootSound gettinghit;
     private GreenfootSound die;
     
-    boolean touchingMaterial1 =false;
-    boolean touchingpowerup =false;
+    boolean touchingMaterial1 = false;
+    boolean touchingpowerup = false;
     
     public ArrayList<Power> totalp = new ArrayList<Power>();
     public ArrayList<Shield> totals = new ArrayList<Shield>();
@@ -362,7 +362,8 @@ public class Player extends SmoothMover implements Gravity
     {
         if( isTouching( Lodge.class ) )
         {
-            BuildWorld b = new BuildWorld();      
+            BuildWorld b = new BuildWorld();
+            b.level = ((SkiWorld)getWorld()).getLevel();
             Greenfoot.setWorld(b);
         }
     }
