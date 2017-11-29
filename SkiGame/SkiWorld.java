@@ -270,7 +270,12 @@ public class SkiWorld extends World
     {
         Ledge l = new Ledge();
         l.setSpeed(levelNumber);
-        addObject(l, 680, 180);
+        addObject(l, 680, 210);
+        //680,180
+        
+        Ledge l2 = new Ledge();
+        l2.setSpeed(levelNumber);
+        addObject(l2, 820, 150);
 
         int num = Greenfoot.getRandomNumber(2);
 
@@ -278,7 +283,7 @@ public class SkiWorld extends World
         {
             Material1 material1 = new Material1();
             material1.setSpeed(levelNumber);
-            addObject(material1, 680, 270);
+            addObject(material1, 800, 270);
 
             generatePower();
         }
@@ -293,14 +298,14 @@ public class SkiWorld extends World
     {
         Power p = new Power();
         p.setSpeed(levelNumber);
-        addObject(p, 680, 155);
+        addObject(p, 810, 125);
     }
 
     private void generateShield()
     {
         Shield s = new Shield();
         s.setSpeed(levelNumber);
-        addObject(s, 680, 270);
+        addObject(s, 800, 270);
     }
 
     private void generateLodge()
