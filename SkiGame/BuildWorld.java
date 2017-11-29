@@ -25,7 +25,7 @@ public class BuildWorld extends World
     public static int countPowerup = 3;
     public static int countShield = 2;
     
-    public static int level = 4;
+    public static int level = 5;
 
     public BuildWorld()
     {    
@@ -206,11 +206,34 @@ public class BuildWorld extends World
     
     public void setTrees5()
     {
-        setTrees4();
+        Tree t1 = new Tree();
+        t1.setImage("buildtree.png");
+        t1.setSpeed(0);
+        addObject(t1, 350, -300);
+        Tree t2 = new Tree();
+        t2.setImage("buildtree.png");
+        t2.setSpeed(0);
+        addObject(t2, 550, -300);
+        Tree t3 = new Tree();
+        t3.setSpeed(0);
+        t3.setImage("buildtree.png");
+        addObject(t3, 560, -300);
+        Tree t4 = new Tree();
+        t4.setSpeed(0);
+        t4.setImage("buildtree.png");
+        addObject(t4, 570, -300);
+        Tree t5 = new Tree();
+        t5.setSpeed(0);
+        t5.setImage("buildtree.png");
+        addObject(t5, 750, -300);
+        Tree t6 = new Tree();
+        t6.setSpeed(0);
+        t6.setImage("buildtree.png");
+        addObject(t6, 760, -300);
         Tree t7 = new Tree();
         t7.setSpeed(0);
         t7.setImage("buildtree.png");
-        addObject(t7, 1000, -300);
+        addObject(t7, 910, -300);
     }
     
     public void setTrees()
