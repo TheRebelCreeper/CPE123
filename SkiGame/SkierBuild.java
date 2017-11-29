@@ -16,7 +16,7 @@ public class SkierBuild extends SmoothMover implements Gravity
     boolean isAlive;
     
     public int invincibledelay;
-    public int invincibleDELAY = 50;
+    public int invincibleDELAY = 30;
     boolean invincible;
     
     public SkierBuild()
