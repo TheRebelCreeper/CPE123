@@ -20,7 +20,7 @@ public class Ramp extends Buildable
     
     protected void addedToWorld(World w)
     {
-        hitbox = new RampHitbox(this, 150, 5, 10, -5, true); // Set to false for invisible hitbox
+        hitbox = new RampHitbox(this, 150, 5, 10, -5, false); // Set to false for invisible hitbox
         getWorld().addObject(hitbox, getX(), getY());   // Adds the hitbox to the world
         hitbox.setRotation(getRotation() - 28);
     }
