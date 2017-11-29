@@ -114,10 +114,8 @@ public class SkiWorld extends World
                 imageCount -= 3;
 
                 spawnRate = 120;
-                GreenfootImage sb = new GreenfootImage("marsBackground.png");
-                myBackground = sb;
-                GreenfootImage s = new GreenfootImage("marsSlope.png");
-                snow.setImage(s);
+                GreenfootImage t = new GreenfootImage("trees.png");
+                myBackground = t;
                 drawBackgroundImage(); // Updates the background          
                 spawnObstacles();
                 generateLodge();
@@ -127,9 +125,9 @@ public class SkiWorld extends World
                 imageCount -= 3;
 
                 spawnRate = 100;
-                GreenfootImage sb = new GreenfootImage("spacebackground.png");
+                GreenfootImage sb = new GreenfootImage("marsBackground.png");
                 myBackground = sb;
-                GreenfootImage s = new GreenfootImage("spaceslope.png");
+                GreenfootImage s = new GreenfootImage("marsSlope.png");
                 snow.setImage(s);
 
                 drawBackgroundImage(); 
