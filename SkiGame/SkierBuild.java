@@ -185,7 +185,7 @@ public class SkierBuild extends SmoothMover implements Gravity
     {
         if(getY() > getWorld().getHeight() + 30)
         {
-            SkiWorldOver s = new SkiWorldOver();
+            SkiWorldOver s = new SkiWorldOver(false);
             Greenfoot.setWorld(s);
         }
     }

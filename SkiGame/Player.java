@@ -160,7 +160,7 @@ public class Player extends SmoothMover implements Gravity
         
         if(getY() > getWorld().getHeight() + 30)
         {
-            SkiWorldOver s = new SkiWorldOver();
+            SkiWorldOver s = new SkiWorldOver(true);
             Greenfoot.setWorld(s);
         }
         

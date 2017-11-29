@@ -182,7 +182,7 @@ public class SkiWorld extends World
      */
     public void endGame()
     {
-        Greenfoot.setWorld(new SkiWorldOver());
+        Greenfoot.setWorld(new SkiWorldOver(true));
     }
 
     public void spawnObstacles()
