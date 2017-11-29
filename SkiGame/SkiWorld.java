@@ -298,7 +298,7 @@ public class SkiWorld extends World
     {
         Power p = new Power();
         p.setSpeed(levelNumber);
-        addObject(p, 810, 125);
+        addObject(p, 820, 125);
     }
 
     private void generateShield()
