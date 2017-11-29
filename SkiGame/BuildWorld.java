@@ -169,7 +169,7 @@ public class BuildWorld extends World
         Tree t4 = new Tree();
         t4.setSpeed(0);
         t4.setImage("buildtree.png");
-        addObject(t4, 720, -300);
+        addObject(t4, 730, -300);
         Tree t5 = new Tree();
         t5.setSpeed(0);
         t5.setImage("buildtree.png");
@@ -185,23 +185,23 @@ public class BuildWorld extends World
         Tree t2 = new Tree();
         t2.setImage("buildtree.png");
         t2.setSpeed(0);
-        addObject(t2, 550, -300);
+        addObject(t2, 520, -300);
         Tree t3 = new Tree();
         t3.setSpeed(0);
         t3.setImage("buildtree.png");
-        addObject(t3, 600, -300);
+        addObject(t3, 570, -300);
         Tree t4 = new Tree();
         t4.setSpeed(0);
         t4.setImage("buildtree.png");
-        addObject(t4, 800, -300);
+        addObject(t4, 760, -300);
         Tree t5 = new Tree();
         t5.setSpeed(0);
         t5.setImage("buildtree.png");
-        addObject(t5, 810, -300);
+        addObject(t5, 790, -300);
         Tree t6 = new Tree();
         t6.setSpeed(0);
         t6.setImage("buildtree.png");
-        addObject(t6, 900, -300);
+        addObject(t6, 930, 100);
     }
     
     public void setTrees5()
@@ -213,19 +213,19 @@ public class BuildWorld extends World
         Tree t2 = new Tree();
         t2.setImage("buildtree.png");
         t2.setSpeed(0);
-        addObject(t2, 550, -300);
+        addObject(t2, 520, -300);
         Tree t3 = new Tree();
         t3.setSpeed(0);
         t3.setImage("buildtree.png");
-        addObject(t3, 560, -300);
+        addObject(t3, 550, -300);
         Tree t4 = new Tree();
         t4.setSpeed(0);
         t4.setImage("buildtree.png");
-        addObject(t4, 570, -300);
+        addObject(t4, 580, -300);
         Tree t5 = new Tree();
         t5.setSpeed(0);
         t5.setImage("buildtree.png");
-        addObject(t5, 750, -300);
+        addObject(t5, 730, -300);
         Tree t6 = new Tree();
         t6.setSpeed(0);
         t6.setImage("buildtree.png");
