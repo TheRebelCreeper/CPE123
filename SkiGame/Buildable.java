@@ -131,4 +131,9 @@ public class Buildable extends Actor implements Gravity
             ySpeed += GRAVITY_ACCEL;
         }
     }
+    
+    public int getPlaced()
+    {
+        return placed;
+    }
 }
