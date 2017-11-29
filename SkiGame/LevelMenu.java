@@ -25,13 +25,13 @@ public class LevelMenu extends World
         for (int i = 0; i < LEVEL_NUMBER; i++)
         {
             button[i] = new LevelButton(i + 1);
-            addObject(button[i], i * (getWidth() / LEVEL_NUMBER) + 50, 200);
+            addObject(button[i], i * (getWidth() / LEVEL_NUMBER) + 57, 200);
         }
     }
     
     public void setStar(int i)
     {
-        star[i - 1] = new Star();
+        star[i - 1] = new Star(i);
         addObject(star[i-1], starPos[i-1], 260);
     }
     
