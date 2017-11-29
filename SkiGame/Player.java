@@ -91,6 +91,9 @@ public class Player extends SmoothMover implements Gravity
         
         setImage(normal);
         
+        BuildWorld.countRamp = 0;
+        BuildWorld.countShield = 0;
+        BuildWorld.countPowerup = 0;
         
         delay = DELAY;
     }
@@ -363,7 +366,8 @@ public class Player extends SmoothMover implements Gravity
         if( isTouching( Lodge.class ) )
         {
             BuildWorld b = new BuildWorld();
-            b.level = ((SkiWorld)getWorld()).getLevel();
+            System.out.println(SkiWorld.getLevel());
+            b.setLevel(SkiWorld.getLevel());
             Greenfoot.setWorld(b);
         }
     }
