@@ -366,7 +366,6 @@ public class Player extends SmoothMover implements Gravity
         if( isTouching( Lodge.class ) )
         {
             BuildWorld b = new BuildWorld();
-            System.out.println(SkiWorld.getLevel());
             b.setLevel(SkiWorld.getLevel());
             Greenfoot.setWorld(b);
         }

@@ -140,6 +140,8 @@ public class SkierBuild extends SmoothMover implements Gravity
     {
         if (isTouching(Hitbox.class))
         {
+            Ramp r = (Ramp)getOneIntersectingObject(Ramp.class);
+            if (r != null)
             setRotation(-18);
         }
     }
