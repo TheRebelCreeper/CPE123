@@ -16,7 +16,7 @@ public class SkierBuild extends SmoothMover implements Gravity
     boolean isAlive;
     
     public int invincibledelay;
-    public int invincibleDELAY = 30;
+    public int invincibleDELAY = 20;
     boolean invincible;
     
     public SkierBuild()
@@ -122,9 +122,9 @@ public class SkierBuild extends SmoothMover implements Gravity
     
     public void poweredUp()
     {
-        if( isTouching(PowerUpBuild.class) )
+        if( isTouching(Power.class) )
         {
-            removeTouching(PowerUpBuild.class);
+            removeTouching(Power.class);
             setRotation(-45);
             move(200);
         }
@@ -162,9 +162,11 @@ public class SkierBuild extends SmoothMover implements Gravity
         if(invincible == true)
         {
             invincibledelay--;
+            setImage("skiernormalBuildring.png");
             if(invincibledelay <= 0)
             {
                 invincible = false;
+                setImage("skiernormalBuild.png");
                 invincibledelay = invincibleDELAY;
             }
         }
