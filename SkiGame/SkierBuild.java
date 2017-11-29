@@ -122,15 +122,15 @@ public class SkierBuild extends SmoothMover implements Gravity
     
     public void poweredUp()
     {
-        if( isTouching(Power.class) )
+        if( isTouching(PowerUpBuild.class) )
         {
 
-            removeTouching(Power.class);
+            removeTouching(PowerUpBuild.class);
             setRotation(-45);
             move(200);
 
             PowerUpBuild p = (PowerUpBuild)getOneIntersectingObject(PowerUpBuild.class);
-            if ( p.getPlaced() == 2)
+            if (p != null && p.getPlaced() == 2)
             {
                 removeTouching(PowerUpBuild.class);
                 setRotation(-45);
