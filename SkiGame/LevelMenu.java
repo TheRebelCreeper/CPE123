@@ -22,7 +22,6 @@ public class LevelMenu extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(568, 400, 1); 
         setBackground("LevelSelect.png");
-        BuildWorld b = new BuildWorld();
         for (int i = 0; i < LEVEL_NUMBER; i++)
         {
             button[i] = new LevelButton(i + 1);

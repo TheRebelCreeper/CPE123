@@ -20,12 +20,12 @@ public class BuildWorld extends World
     private boolean isButtonClicked;
     private Container[] myContainers;
     private static final int NUM_OF_CONTAINERS = 8;
+    
     public static int countRamp = 0;
     public static int countPowerup = 0;
     public static int countShield = 0;
     
     public static int level = 5;
-    
 
     public BuildWorld()
     {    

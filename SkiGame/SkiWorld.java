@@ -308,7 +308,6 @@ public class SkiWorld extends World
     {
         if( lodgeDelay >= 1800 ) 
         {
-            setBuildWorldLevel();
             Lodge lodge = new Lodge();
             addObject(lodge, 600, 275);
         }
@@ -338,11 +337,5 @@ public class SkiWorld extends World
     public MaterialBar getMaterialBar()
     {
         return mb;
-    }
-
-    public void setBuildWorldLevel()
-    {
-        BuildWorld bw = new BuildWorld();
-        bw.setLevel(levelNumber);
     }
 }
