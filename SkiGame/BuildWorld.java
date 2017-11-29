@@ -25,7 +25,7 @@ public class BuildWorld extends World
     public static int countPowerup = 3;
     public static int countShield = 2;
     
-    public static int level = 1;
+    public static int level = 3;
 
     public BuildWorld()
     {    
@@ -125,29 +125,55 @@ public class BuildWorld extends World
         Tree t2 = new Tree();
         t2.setImage("buildtree.png");
         t2.setSpeed(0);
-        addObject(t2, 500, -300);
+        addObject(t2, 620, -300);
         Tree t3 = new Tree();
         t3.setSpeed(0);
         t3.setImage("buildtree.png");
-        addObject(t3, 600, -300);
+        addObject(t3, 840, -300);
     }
     
     public void setTrees2()
     {
-        setTrees1();
+        Tree t1 = new Tree();
+        t1.setImage("buildtree.png");
+        t1.setSpeed(0);
+        addObject(t1, 400, -300);
+        Tree t2 = new Tree();
+        t2.setImage("buildtree.png");
+        t2.setSpeed(0);
+        addObject(t2, 575, -300);
+        Tree t3 = new Tree();
+        t3.setSpeed(0);
+        t3.setImage("buildtree.png");
+        addObject(t3, 750, -300);
         Tree t4 = new Tree();
         t4.setSpeed(0);
         t4.setImage("buildtree.png");
-        addObject(t4, 700, -300);
+        addObject(t4, 925, -300);
     }
     
     public void setTrees3()
     {
-        setTrees2();
+        Tree t1 = new Tree();
+        t1.setImage("buildtree.png");
+        t1.setSpeed(0);
+        addObject(t1, 350, -300);
+        Tree t2 = new Tree();
+        t2.setImage("buildtree.png");
+        t2.setSpeed(0);
+        addObject(t2, 540, -300);
+        Tree t3 = new Tree();
+        t3.setSpeed(0);
+        t3.setImage("buildtree.png");
+        addObject(t3, 700, -300);
+        Tree t4 = new Tree();
+        t4.setSpeed(0);
+        t4.setImage("buildtree.png");
+        addObject(t4, 720, -300);
         Tree t5 = new Tree();
         t5.setSpeed(0);
         t5.setImage("buildtree.png");
-        addObject(t5, 800, -300);
+        addObject(t5, 875, -300);
     }
     
     public void setTrees4()
