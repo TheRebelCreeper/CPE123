@@ -1,31 +1,31 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class SkiWorldIntro here.
+ * Write a description of class Story here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class SkiWorldIntro extends World
+public class Story extends World
 {
 
     /**
-     * Constructor for objects of class SkiWorldIntro.
+     * Constructor for objects of class Story.
      * 
      */
-    public SkiWorldIntro()
+    public Story()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
-        setBackground(new GreenfootImage("SSYEE.jpg"));
+        setBackground(new GreenfootImage("story.png"));
+        
     }
-    
     public void act()
     {
         if (Greenfoot.mouseClicked(this))
         {
-            Story sWorld = new Story();
-            Greenfoot.setWorld(sWorld);
+            Rules rWorld = new Rules();
+            Greenfoot.setWorld(rWorld);
          }
     }
 }
