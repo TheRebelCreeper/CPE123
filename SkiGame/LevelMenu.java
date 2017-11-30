@@ -35,7 +35,7 @@ public class LevelMenu extends World
         for (int j = 0; j < LEVEL_NUMBER; j++)
         {
             if (star[j] != null)
-                addObject(star[j], starPos[j], 260);
+                addObject(star[j], starPos[j], 300);
         }
     }
     
