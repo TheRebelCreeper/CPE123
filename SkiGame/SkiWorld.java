@@ -141,6 +141,11 @@ public class SkiWorld extends World
                 imageCount -= 3;
 
                 spawnRate = 80;
+<<<<<<< HEAD
+=======
+                GreenfootImage last = new GreenfootImage("Background1.png");
+                myBackground = last;
+>>>>>>> c2e1a4e36342ad17120b178c65d2ca5784f6756f
                 drawBackgroundImage();
                 spawnObstacles();        
                 generateLodge();
@@ -188,8 +193,8 @@ public class SkiWorld extends World
         obstacleDelay--;
         if(obstacleDelay <= 0)
         {
-            int num = Greenfoot.getRandomNumber(5);
-            if(num == 0 || num == 4)
+            int num = Greenfoot.getRandomNumber(6);
+            if(num == 0 || num == 4 || num == 5)
             {
                 generateTree();
             }
@@ -222,20 +227,24 @@ public class SkiWorld extends World
         addObject(tree, 680, 230);
 
         int num = Greenfoot.getRandomNumber(2);
+        int num2 = Greenfoot.getRandomNumber(2);
+
         if(num == 0)
         {
-            Material1 material1 = new Material1();
-            material1.setSpeed(levelNumber);
-            addObject(material1, 670, 195);
-        }
-        if(num == 1)
-        {
-            Shield s = new Shield();
-            s.setSpeed(levelNumber);
-            addObject(s, 670, 195);
+            if(num2 == 0)
+            {
+                Material1 material1 = new Material1();
+                material1.setSpeed(levelNumber);
+                addObject(material1, 670, 195);
+            }
+            if(num2 == 1)
+            {
+                Shield s = new Shield();
+                s.setSpeed(levelNumber);
+                addObject(s, 670, 195);
+            }
         }
     }
-
     /**
      * Randomly generates Birds
      */
@@ -270,7 +279,7 @@ public class SkiWorld extends World
         l.setSpeed(levelNumber);
         addObject(l, 680, 210);
         //680,180
-        
+
         Ledge l2 = new Ledge();
         l2.setSpeed(levelNumber);
         addObject(l2, 820, 150);
@@ -341,7 +350,7 @@ public class SkiWorld extends World
     {
         return mb;
     }
-    
+
     public void setBuildWorldLevel()
     {
         BuildWorld bw = new BuildWorld();
