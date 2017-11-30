@@ -6,7 +6,8 @@ all he/she needs to know. The comments should usually include at least:
 
 PROJECT TITLE: Slope Survival    
 PURPOSE OF PROJECT: CPE 123
-VERSION or DATE: 1.0 BETA
+VERSION or DATE: 1.0 
 HOW TO START THIS PROJECT:
 AUTHORS: Tony Bone, Ritu Bhalodia, Elena Fowler, Aaron Lampert, Jarod Morris
 USER INSTRUCTIONS:
+Game might need to compile after unzipping
