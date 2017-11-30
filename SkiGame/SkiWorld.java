@@ -67,7 +67,7 @@ public class SkiWorld extends World
         label = new Label( "Level: " + levelNumber, 48 );
         addObject( label, 100, 50 );
 
-        mb.setHealth(levelNumber);
+        mb.setHealth(4);
         addObject(mb, 90, 350);
 
     }
@@ -141,8 +141,6 @@ public class SkiWorld extends World
                 imageCount -= 3;
 
                 spawnRate = 80;
-                GreenfootImage last = new GreenfootImage("finalLevel.png");
-                myBackground = last;
                 drawBackgroundImage();
                 spawnObstacles();        
                 generateLodge();
