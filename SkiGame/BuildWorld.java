@@ -46,6 +46,9 @@ public class BuildWorld extends World
             skierbuild.move(5);
             isButtonClicked = true;
         }
+        
+        if (Greenfoot.isKeyDown("escape"))
+            Greenfoot.setWorld(new LevelMenu());
         changeMainMenu();
     }
 

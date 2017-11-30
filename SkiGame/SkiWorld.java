@@ -18,9 +18,9 @@ public class SkiWorld extends World
     /**Current level of the game*/
     public static int levelNumber = 1;
     /**Whether the player is alive or not*/
-    public boolean isAlive = true;
+    private boolean isAlive = true;
 
-    Heart[] health = new Heart[3];
+    private Heart[] health = new Heart[3];
 
     private int lodgeDelay = 0;
     public int obstacleDelay = 0;
@@ -29,7 +29,7 @@ public class SkiWorld extends World
     private Label label;
     private Player player;
     private Snow snow;
-    MaterialBar mb = new MaterialBar();
+    private MaterialBar mb = new MaterialBar();
     /**
      * Constructor for objects of class MyWorld.
      */
@@ -77,11 +77,8 @@ public class SkiWorld extends World
      */
     public void act()
     {
-        //Checks what the level number is
-        if (levelNumber % 5 == 0)
-        {
-            //Building interface
-        }
+        if (Greenfoot.isKeyDown("escape"))
+            Greenfoot.setWorld(new LevelMenu());
 
         if(isAlive) // If the player is alive
         {
