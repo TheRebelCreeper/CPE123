@@ -35,7 +35,7 @@ public class BuildWorld extends World
         setBackground(bimg);
         myContainers = new Container[NUM_OF_CONTAINERS];
         prepare();
-        setPaintOrder(Hitbox.class);
+        setPaintOrder(ContainerHitbox.class, Hitbox.class);
         
     }
 
@@ -54,12 +54,11 @@ public class BuildWorld extends World
         if (skierbuild.getX() > getWidth() - 50){
             LevelMenu world = new LevelMenu();
             world.setStar(SkiWorld.getLevel());
-            
-            Greenfoot.setWorld(world);
             if( SkiWorld.getLevel() == 5 )
             {
                 world.addObject(new Label("YOU WIN", 96), 300, 100 );
             }
+            Greenfoot.setWorld(world);
         }
     }
 

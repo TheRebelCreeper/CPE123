@@ -391,8 +391,7 @@ public class Player extends SmoothMover implements Gravity
             world.removeObject(m);
         
                 }
-            }
-            
+    }  
     
     public void checkForPower()
     {

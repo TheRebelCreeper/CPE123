@@ -30,9 +30,6 @@ public class SkiWorldOver extends World
     { 
         if(Greenfoot.mouseClicked(this))
         {   
-            BuildWorld.countRamp = 0;
-            BuildWorld.countShield = 0;
-            BuildWorld.countPowerup = 0;
             Greenfoot.setWorld(nextWorld);
         }
     }
