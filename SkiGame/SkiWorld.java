@@ -315,7 +315,7 @@ public class SkiWorld extends World
 
     private void generateLodge()
     {
-        if( lodgeDelay >= 1800 ) 
+        if( lodgeDelay >= 1800 && (BuildWorld.countRamp + BuildWorld.countShield + BuildWorld.countPowerup >= 4)) 
         {
             setBuildWorldLevel();
             Lodge lodge = new Lodge();
