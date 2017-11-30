@@ -10,9 +10,6 @@ public class SkierBuild extends SmoothMover implements Gravity
 {
     /**Vertical Velocity*/
     private int ySpeed = 0;
-    private int speedX = 1;
-    private static final int SPEED = 2;
-    private static final int BOUNDARY = 40;
     boolean isAlive;
     
     public int invincibledelay;
@@ -33,8 +30,8 @@ public class SkierBuild extends SmoothMover implements Gravity
      * Act - do whatever the Hiker wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act(){
-        handleKeyPresses();
+    public void act()
+    {
         checkGravity();
         resetAngle();
         poweredUp();
@@ -44,17 +41,6 @@ public class SkierBuild extends SmoothMover implements Gravity
         
         checkForShields();
         invincibleDelay();
-    }
-
-    private void handleKeyPresses() {
-        handleArrowKey("left", -SPEED);
-        handleArrowKey("right", SPEED);
-    }
-
-    private void handleArrowKey(String k, int sX) {
-        if( Greenfoot.isKeyDown(k) ) {
-            speedX = sX;
-        }
     }
     
     public boolean objectIsBelow()

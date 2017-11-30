@@ -141,11 +141,9 @@ public class SkiWorld extends World
                 imageCount -= 3;
 
                 spawnRate = 80;
-<<<<<<< HEAD
-=======
+
                 GreenfootImage last = new GreenfootImage("Background1.png");
                 myBackground = last;
->>>>>>> c2e1a4e36342ad17120b178c65d2ca5784f6756f
                 drawBackgroundImage();
                 spawnObstacles();        
                 generateLodge();
