@@ -22,6 +22,13 @@ public class LevelButton extends Actor
      */
     public void act() 
     {
+        if (((LevelMenu)getWorld()).isLocked(level))
+        {
+            GreenfootImage i = getImage();
+            i.setTransparency(128);
+            setImage(i);
+        }
+        
         if (Greenfoot.mouseClicked(this) && !((LevelMenu)getWorld()).isLocked(level))
         {
             SkiWorld.setLevel(level);
