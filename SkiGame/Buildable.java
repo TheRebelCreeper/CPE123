@@ -1,26 +1,30 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
 /**
  * Write a description of class Buildable here.
- * 
- * @author (your name) 
+ *
+ * @author (your name)
  * @version (a version number or a date)
  */
 public class Buildable extends Actor implements Gravity
 {
-    /**Instance variable for the MouseInfo*/
+    /**
+     * Instance variable for the MouseInfo
+     */
     protected MouseInfo mi;
-    /**Placed holds the current state of the Actor. 
-     * 0 for not clicked yet, 
-     * 1 for moving around, 
-     * 2 for placed*/
+    /**
+     * Placed holds the current state of the Actor.
+     * 0 for not clicked yet,
+     * 1 for moving around,
+     * 2 for placed
+     */
     protected int placed;
-    
-    /**Holds the speed of the Actor*/
-    private int ySpeed;
-    
     protected GreenfootImage baseImage;
-    
+    /**
+     * Holds the speed of the Actor
+     */
+    private int ySpeed;
+
     /**
      * Constructor for buildable
      */
@@ -31,21 +35,23 @@ public class Buildable extends Actor implements Gravity
         baseImage = new GreenfootImage("rampSmall.png");
         setImage(new GreenfootImage("rampSmall.png"));
     }
-    
+
     /**
      * Act - do whatever the Buildable wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act() 
+    public void act()
     {
         //controls where to place the object
         if (placed == 1)    // If the container has been clicked
         {
             mi = Greenfoot.getMouseInfo();
             if (mi != null) // If the mouse is on the window
+            {
                 setLocation(mi.getX(), mi.getY());  // Set to location to the current mouse position
+            }
         }
-        
+
         // Controls placing the object
         if (Greenfoot.mouseClicked(this) && placed == 1)    // If the object is clicked on
         {
@@ -54,36 +60,26 @@ public class Buildable extends Actor implements Gravity
                 placed = 2; // Place the object
             }
         }
-        
+
         if (placed == 2)
         {
             checkGravity(); // Gravity will now affect the buildable
             //All normal functionality goes in this if statement
         }
-    }    
-    
+    }
+
     /**
      * Checks if the posision where the object is placed is valid
-     * 
+     * <p>
      * To be implemented later
-     * 
-     * @return  Returns true if the location is valid
+     *
+     * @return Returns true if the location is valid
      */
     protected boolean isValidLocation()
     {
         return true;
     }
-    
-    /**
-     * Setter for the placed variable
-     * 
-     * @param int placed    Value to set placed to
-     */
-    public void setPlaced(int placed)
-    {
-        this.placed = placed;
-    }
-    
+
     /**
      * Determines if the player should fall or not
      */
@@ -98,10 +94,10 @@ public class Buildable extends Actor implements Gravity
             fall();
         }
     }
-    
+
     /**
      * Checks if an Actor is at the coordinates passed in
-     * 
+     *
      * @return Returns true if there is an object at the coordinates passed in
      */
     public boolean objectIsBelow()
@@ -119,21 +115,31 @@ public class Buildable extends Actor implements Gravity
             return false;
         }
     }
-    
+
     /**
      * Causes the player to fall due to gravity if there is empty space below
      */
     public void fall()
     {
         setLocation(getX(), getY() + ySpeed);
-        if( ySpeed <= MAX_GRAV)   // Terminal Velocity
+        if (ySpeed <= MAX_GRAV)   // Terminal Velocity
         {
             ySpeed += GRAVITY_ACCEL;
         }
     }
-    
+
     public int getPlaced()
     {
         return placed;
+    }
+
+    /**
+     * Setter for the placed variable
+     *
+     * @param int placed    Value to set placed to
+     */
+    public void setPlaced(int placed)
+    {
+        this.placed = placed;
     }
 }

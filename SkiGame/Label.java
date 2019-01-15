@@ -1,36 +1,35 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
 
 /**
  * A Label class that allows you to display a textual value on screen.
- * 
+ * <p>
  * The Label is an actor, so you will need to create it, and then add it to the world
  * in Greenfoot.  If you keep a reference to the Label then you can change the text it
- * displays.  
+ * displays.
  *
- * @author Amjad Altadmri 
+ * @author Amjad Altadmri
  * @version 1.1
  */
 public class Label extends Actor
 {
+    private static final Color transparent = new Color(0, 0, 0, 0);
     private String value;
     private int fontSize;
     private Color lineColor = Color.BLACK;
     private Color fillColor = Color.WHITE;
-    
-    private static final Color transparent = new Color(0,0,0,0);
 
-    
+
     /**
-     * Create a new label, initialise it with the int value to be shown and the font size 
+     * Create a new label, initialise it with the int value to be shown and the font size
      */
     public Label(int value, int fontSize)
     {
         this(Integer.toString(value), fontSize);
     }
-    
+
     /**
-     * Create a new label, initialise it with the needed text and the font size 
+     * Create a new label, initialise it with the needed text and the font size
      */
     public Label(String value, int fontSize)
     {
@@ -41,7 +40,7 @@ public class Label extends Actor
 
     /**
      * Sets the value  as text
-     * 
+     *
      * @param value the text to be show
      */
     public void setValue(String value)
@@ -49,10 +48,10 @@ public class Label extends Actor
         this.value = value;
         updateImage();
     }
-    
+
     /**
      * Sets the value as integer
-     * 
+     *
      * @param value the value to be show
      */
     public void setValue(int value)
@@ -60,10 +59,10 @@ public class Label extends Actor
         this.value = Integer.toString(value);
         updateImage();
     }
-    
+
     /**
      * Sets the line color of the text
-     * 
+     *
      * @param lineColor the line color of the text
      */
     public void setLineColor(Color lineColor)
@@ -71,10 +70,10 @@ public class Label extends Actor
         this.lineColor = lineColor;
         updateImage();
     }
-    
+
     /**
      * Sets the fill color of the text
-     * 
+     *
      * @param fillColor the fill color of the text
      */
     public void setFillColor(Color fillColor)
@@ -82,7 +81,7 @@ public class Label extends Actor
         this.fillColor = fillColor;
         updateImage();
     }
-    
+
 
     /**
      * Update the image on screen to show the current value.

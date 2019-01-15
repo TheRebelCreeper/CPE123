@@ -1,9 +1,9 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
 /**
  * Write a description of class RampHitbox here.
- * 
- * @author (your name) 
+ *
+ * @author (your name)
  * @version (a version number or a date)
  */
 public class RampHitbox extends Hitbox
@@ -12,12 +12,12 @@ public class RampHitbox extends Hitbox
     {
         super(a, w, h, x, y, visible);
     }
-    
+
     /**
      * Act - do whatever the RampHitbox wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act() 
+    public void act()
     {
         if (host.getWorld() != null)
         {
@@ -27,5 +27,5 @@ public class RampHitbox extends Hitbox
         {
             getWorld().removeObject(this);
         }
-    }    
+    }
 }

@@ -1,15 +1,16 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
 /**
  * Write a description of class Trees here.
- * 
- * @author (your name) 
+ *
+ * @author (your name)
  * @version (a version number or a date)
  */
 public class Tree extends Obstacle
-{      
+{
 
     public static double speed;
+
     /**
      * Constructor
      */
@@ -24,56 +25,56 @@ public class Tree extends Obstacle
      * Act - do whatever the Trees wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act() 
+    public void act()
     {
         // Add your action code here.
         move(speed);
         checkGravity();     // Checks the gravity for Tree
         checkRemove();      // Checks to remove Tree
-        
+
     }
 
     public void setSpeed(int l)
     {
-        if(l != 0)
+        if (l != 0)
         {
-            int difference = l-1;
-            speed = -6 - difference + .5*(l-1);
+            int difference = l - 1;
+            speed = -6 - difference + .5 * (l - 1);
         }
-        if(l == 0)
+        if (l == 0)
         {
             speed = 0;
         }
     }
-    
+
     public void treeImage()
     {
         //BuildWorld build = new BuildWorld();
-        if(((SkiWorld)getWorld()).getLevel() == 1 )
+        if (((SkiWorld) getWorld()).getLevel() == 1)
         {
-            setImage( new GreenfootImage("pine-tree.png"));
+            setImage(new GreenfootImage("pine-tree.png"));
         }
-        else if(((SkiWorld)getWorld()).getLevel() == 2 )
+        else if (((SkiWorld) getWorld()).getLevel() == 2)
         {
-            setImage( new GreenfootImage("cactus.png"));
+            setImage(new GreenfootImage("cactus.png"));
         }
-        else if(((SkiWorld)getWorld()).getLevel() == 3 )
+        else if (((SkiWorld) getWorld()).getLevel() == 3)
         {
-            setImage( new GreenfootImage("pine-tree.png"));
+            setImage(new GreenfootImage("pine-tree.png"));
         }
-        else if(((SkiWorld)getWorld()).getLevel() == 4 )
+        else if (((SkiWorld) getWorld()).getLevel() == 4)
         {
-            setImage( new GreenfootImage("stalagmiteFixed.png"));
+            setImage(new GreenfootImage("stalagmiteFixed.png"));
         }
-        else if(((SkiWorld)getWorld()).getLevel() == 5 )
+        else if (((SkiWorld) getWorld()).getLevel() == 5)
         {
-            setImage( new GreenfootImage("pine-tree.png"));
+            setImage(new GreenfootImage("pine-tree.png"));
         }
     }
 
     /**
      * Checks if an Actor is at the coordinates passed in
-     * 
+     *
      * @return Returns true if there is an object at the coordinates passed in
      */
     @Override
@@ -84,9 +85,13 @@ public class Tree extends Obstacle
         {
             // If it isn't another Tree
             if (getOneObjectAtOffset(0, getImage().getHeight() / 2 + 2, Tree.class) == null)
+            {
                 return true;
+            }
             else
+            {
                 return false;
+            }
         }
         // If it is touching the edge of the world
         else if (getY() >= getWorld().getHeight() - getImage().getHeight())

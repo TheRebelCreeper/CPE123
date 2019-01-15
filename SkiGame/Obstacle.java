@@ -1,30 +1,32 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
 /**
  * Write a description of class Obstacles here.
- * 
- * @author (your name) 
+ *
+ * @author (your name)
  * @version (a version number or a date)
  */
 public abstract class Obstacle extends SmoothMover implements Gravity
 {
-    /**Vertical Velocity*/
+    /**
+     * Vertical Velocity
+     */
     protected double ySpeed = 0;
     //protected int speed = 0;
-    
+
     /**
      * Act - do whatever the Obstacles wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public abstract void act();   
-    
+    public abstract void act();
+
     /**
      * Causes the player to fall due to gravity if there is empty space below
      */
     public void fall()
     {
         setLocation(getX(), getY() + ySpeed);
-        if( ySpeed <= MAX_GRAV)   // If velocity is less than terminal velocity
+        if (ySpeed <= MAX_GRAV)   // If velocity is less than terminal velocity
         {
             ySpeed += GRAVITY_ACCEL;    // Accelerate
         }
@@ -32,7 +34,7 @@ public abstract class Obstacle extends SmoothMover implements Gravity
 
     /**
      * Checks if an Actor is at the coordinates passed in
-     * 
+     *
      * @return Returns true if there is an object at the coordinates passed in
      */
     public boolean objectIsBelow()
@@ -52,7 +54,7 @@ public abstract class Obstacle extends SmoothMover implements Gravity
             return false;
         }
     }
-    
+
     /**
      * Determines if the player should fall or not
      */
@@ -67,7 +69,7 @@ public abstract class Obstacle extends SmoothMover implements Gravity
             fall();     // Fall due to gravity
         }
     }
-    
+
     /**
      * Checks if the Actor should be removed from the world
      */

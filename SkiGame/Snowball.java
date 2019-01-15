@@ -1,14 +1,15 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
 /**
  * Write a description of class Snowball here.
- * 
- * @author (your name) 
+ *
+ * @author (your name)
  * @version (a version number or a date)
  */
 public class Snowball extends Obstacle
 {
     public static double speed;
+
     /**
      * Constructor for Snowball
      */
@@ -17,47 +18,47 @@ public class Snowball extends Obstacle
         setRotation(9);
         speed = -7;
     }
-    
+
     /**
      * Act - do whatever the Snowball wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act() 
+    public void act()
     {
-        move (-7);
+        move(-7);
         checkRemove();
-    }   
-    
+    }
+
     public void snowBallImage()
     {
-        if( ((SkiWorld)getWorld()).getLevel() == 1 )
+        if (((SkiWorld) getWorld()).getLevel() == 1)
         {
-            setImage( new GreenfootImage("snowball.png"));
+            setImage(new GreenfootImage("snowball.png"));
         }
-        else if( ((SkiWorld)getWorld()).getLevel() == 2 )
+        else if (((SkiWorld) getWorld()).getLevel() == 2)
         {
-            setImage( new GreenfootImage("tumbleweed.png"));
+            setImage(new GreenfootImage("tumbleweed.png"));
         }
-        else if( ((SkiWorld)getWorld()).getLevel() == 3 )
+        else if (((SkiWorld) getWorld()).getLevel() == 3)
         {
-            setImage( new GreenfootImage("snowball.png"));
+            setImage(new GreenfootImage("snowball.png"));
         }
-        else if( ((SkiWorld)getWorld()).getLevel() == 4 )
+        else if (((SkiWorld) getWorld()).getLevel() == 4)
         {
-            setImage( new GreenfootImage("asteroid.png"));
+            setImage(new GreenfootImage("asteroid.png"));
         }
-        else if( ((SkiWorld)getWorld()).getLevel() == 5 )
+        else if (((SkiWorld) getWorld()).getLevel() == 5)
         {
-            setImage( new GreenfootImage("snowball.png"));
+            setImage(new GreenfootImage("snowball.png"));
         }
     }
 
     public void setSpeed(int l)
     {
-        if(l != 0)
+        if (l != 0)
         {
             int difference = l - 1;
-            speed = -7 - difference + .5*(l-1);
+            speed = -7 - difference + .5 * (l - 1);
         }
     }
 }
